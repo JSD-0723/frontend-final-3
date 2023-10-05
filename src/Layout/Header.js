@@ -5,6 +5,7 @@ import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import { styled } from "@mui/joy/styles";
 import { Link } from "react-router-dom";
+import { DrawerMobileNavigation } from "../Components/MobileNavigation";
 
 const NavbarContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -43,8 +44,17 @@ export const Header = () => {
     <>
       <NavbarContainer>
         <SideContainer>
+          <DrawerMobileNavigation />
           <StoreName>CORA'L</StoreName>
-          <NavbarLinksContainer>
+          <NavbarLinksContainer
+            sx={{
+              display: {
+                xs: "none",
+                sm: "none",
+                md: "none",
+                lg: "block",
+              },
+            }}>
             <NavbarLink>Handbags</NavbarLink>
             <NavbarLink>Watches</NavbarLink>
             <NavbarLink>Skincare</NavbarLink>
