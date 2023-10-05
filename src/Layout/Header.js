@@ -10,13 +10,13 @@ const NavbarContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  padding: "27px 22px",
-  background: "primary"
+  padding: "15px 22px",
+  background: "primary",
 }));
 
 const SideContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
-  gap: "15px",
+  gap: "20px",
 }));
 
 const StoreName = styled("h1")(({ theme }) => ({}));
@@ -25,13 +25,17 @@ const NavbarLinksContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
   gap: "12px",
   alignItems: "center",
+  marginLeft: "10px",
 }));
 
-const NavbarLink = styled(Link)(({ theme }) => ({}));
+const NavbarLink = styled(Link)(({ theme }) => ({
+  textDecoration: "none",
+}));
 
 const IconContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
   gap: "15px",
+  alignItems: "center",
 }));
 
 export const Header = () => {
@@ -51,9 +55,9 @@ export const Header = () => {
         <SideContainer>
           <SearchInput />
           <IconContainer>
-            <FavoriteBorderOutlinedIcon />
-            <PersonOutlineOutlinedIcon />
-            <LocalMallOutlinedIcon />
+            <FavoriteBorderOutlinedIcon fontSize="medium" />
+            <PersonOutlineOutlinedIcon fontSize="medium" />
+            <LocalMallOutlinedIcon fontSize="medium" />
           </IconContainer>
         </SideContainer>
       </NavbarContainer>
