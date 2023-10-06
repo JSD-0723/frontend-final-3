@@ -3,6 +3,7 @@ import { SearchInput } from "../Components/SearchInput";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import { styled } from "@mui/joy/styles";
 import { Link } from "react-router-dom";
 import { DrawerMobileNavigation } from "../Components/MobileNavigation";
@@ -23,7 +24,6 @@ const SideContainer = styled(Sheet)(({ theme }) => ({
 const StoreName = styled("h1")(({ theme }) => ({}));
 
 const NavbarLinksContainer = styled(Sheet)(({ theme }) => ({
-  display: "flex",
   gap: "12px",
   alignItems: "center",
   marginLeft: "10px",
@@ -52,7 +52,7 @@ export const Header = () => {
                 xs: "none",
                 sm: "none",
                 md: "none",
-                lg: "block",
+                lg: "flex",
               },
             }}>
             <NavbarLink>Handbags</NavbarLink>
@@ -65,9 +65,53 @@ export const Header = () => {
         <SideContainer>
           <SearchInput />
           <IconContainer>
-            <FavoriteBorderOutlinedIcon fontSize="medium" />
-            <PersonOutlineOutlinedIcon fontSize="medium" />
-            <LocalMallOutlinedIcon fontSize="medium" />
+            <FavoriteBorderOutlinedIcon
+              fontSize="medium"
+              sx={{
+                display: {
+                  xs: "none",
+                  sm: "none",
+                  md: "none",
+                  lg: "inline",
+                  xl: "inline",
+                },
+              }}
+            />
+            <PersonOutlineOutlinedIcon
+              fontSize="medium"
+              sx={{
+                display: {
+                  xs: "none",
+                  sm: "none",
+                  md: "none",
+                  lg: "inline",
+                  xl: "inline",
+                },
+              }}
+            />
+            <LocalMallOutlinedIcon
+              fontSize="medium"
+              sx={{
+                display: {
+                  xs: "none",
+                  sm: "none",
+                  md: "none",
+                  lg: "inline",
+                  xl: "inline",
+                },
+              }}
+            />
+            <NotificationsOutlinedIcon
+              sx={{
+                display: {
+                  xs: "inline",
+                  sm: "inline",
+                  md: "inline",
+                  lg: "none",
+                  xl: "none",
+                },
+              }}
+            />
           </IconContainer>
         </SideContainer>
       </NavbarContainer>

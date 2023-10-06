@@ -5,7 +5,9 @@ export const SearchInput = ({ value, onChange }) => {
   return (
     <>
       <Input
-        sx={{ width: "30vw" }}
+        sx={{
+          width: "30vw",
+        }}
         variant="soft"
         startDecorator={<SearchIcon />}
         placeholder="Search for products or brands....."
