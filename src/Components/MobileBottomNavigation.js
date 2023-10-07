@@ -5,9 +5,9 @@ import Tabs from "@mui/joy/Tabs";
 import TabList from "@mui/joy/TabList";
 import Tab, { tabClasses } from "@mui/joy/Tab";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
-import Search from "@mui/icons-material/Search";
+import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
 import Person from "@mui/icons-material/Person";
+import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import { Link } from "react-router-dom";
 
 export const TabsBottomNavExample = () => {
@@ -46,22 +46,22 @@ export const TabsBottomNavExample = () => {
           <Tab disableIndicator orientation="vertical">
             <ListItemDecorator>
               <Link>
-                <FavoriteBorder />
+                <CategoryOutlinedIcon />
               </Link>
             </ListItemDecorator>
-            Likes
-          </Tab>
-          <Tab disableIndicator orientation="vertical">
-            <ListItemDecorator>
-              <Search />
-            </ListItemDecorator>
-            Search
+            Category
           </Tab>
           <Tab disableIndicator orientation="vertical">
             <ListItemDecorator>
               <Person />
             </ListItemDecorator>
             Profile
+          </Tab>
+          <Tab disableIndicator orientation="vertical">
+            <ListItemDecorator>
+              <LocalMallOutlinedIcon />
+            </ListItemDecorator>
+            Bag
           </Tab>
         </TabList>
       </Tabs>
