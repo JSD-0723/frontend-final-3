@@ -7,6 +7,7 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import { styled } from "@mui/joy/styles";
 import { Link } from "react-router-dom";
 import { DrawerMobileNavigation } from "../Components/MobileNavigation";
+import { TabsBottomNavExample } from "../Components/MobileBottomNavigation";
 
 const NavbarContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -115,6 +116,22 @@ export const Header = () => {
           </IconContainer>
         </SideContainer>
       </NavbarContainer>
+      <Sheet
+        sx={{
+          display: {
+            xs: "inline",
+            sm: "inline",
+            md: "inline",
+            lg: "none",
+            xl: "none",
+          },
+          position: "fixed",
+          bottom: "0",
+          left: "0",
+          width: "100vw",
+        }}>
+        <TabsBottomNavExample />
+      </Sheet>
     </>
   );
 };
