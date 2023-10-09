@@ -38,29 +38,35 @@ export const TabsBottomNavExample = () => {
         })}>
         <TabList size="sm" disableUnderline>
           <Tab disableIndicator orientation="vertical">
-            <ListItemDecorator>
-              <HomeRoundedIcon />
-            </ListItemDecorator>
+            <Link>
+              <ListItemDecorator>
+                <HomeRoundedIcon />
+              </ListItemDecorator>
+            </Link>
             Home
           </Tab>
           <Tab disableIndicator orientation="vertical">
-            <ListItemDecorator>
-              <Link>
+            <Link>
+              <ListItemDecorator>
                 <CategoryOutlinedIcon />
-              </Link>
-            </ListItemDecorator>
+              </ListItemDecorator>
+            </Link>
             Category
           </Tab>
           <Tab disableIndicator orientation="vertical">
-            <ListItemDecorator>
-              <Person />
-            </ListItemDecorator>
+            <Link>
+              <ListItemDecorator>
+                <Person />
+              </ListItemDecorator>
+            </Link>
             Profile
           </Tab>
           <Tab disableIndicator orientation="vertical">
-            <ListItemDecorator>
-              <LocalMallOutlinedIcon />
-            </ListItemDecorator>
+            <Link>
+              <ListItemDecorator>
+                <LocalMallOutlinedIcon />
+              </ListItemDecorator>
+            </Link>
             Bag
           </Tab>
         </TabList>
