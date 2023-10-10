@@ -14,7 +14,6 @@ const NavbarContainer = styled(Sheet)(({ theme }) => ({
   justifyContent: "space-between",
   alignItems: "center",
   padding: "15px 22px",
-  background: "primary",
 }));
 
 const SideContainer = styled(Sheet)(({ theme }) => ({
