@@ -121,13 +121,14 @@ export const Header = () => {
           display: {
             xs: "inline",
             sm: "inline",
-            md: "inline",
+            md: "none",
             lg: "none",
             xl: "none",
           },
           position: "fixed",
           bottom: "0",
           left: "0",
+          zIndex: "1",
           width: "100vw",
         }}>
         <TabsBottomNavExample />
