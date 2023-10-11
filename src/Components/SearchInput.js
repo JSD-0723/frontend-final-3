@@ -8,7 +8,7 @@ export const SearchInput = ({ value, onChange }) => {
         sx={{
           width: "30vw",
         }}
-        variant="soft"
+        variant="solid"
         startDecorator={<SearchIcon />}
         placeholder="Search for products or brands....."
         value={value}

@@ -10,9 +10,9 @@ export const Footer = () => {
           display: {
             xs: "none",
             sm: "none",
-            md: "inline",
-            lg: "inline",
-            xl: "inline",
+            md: "block",
+            lg: "block",
+            xl: "block",
           },
         }}>
         <FooterContent />
@@ -20,8 +20,8 @@ export const Footer = () => {
       <Sheet
         sx={{
           display: {
-            xs: "inline",
-            sm: "inline",
+            xs: "block",
+            sm: "block",
             md: "none",
             lg: "none",
             xl: "none",
