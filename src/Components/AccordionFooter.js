@@ -7,9 +7,11 @@ import { FooterContent } from "./FooterContent";
 
 export default function AccordionBasic() {
   return (
-    <AccordionGroup sx={{ width: "100vw" }}>
-      <Accordion>
-        <AccordionSummary sx={{ p: "3" }}>More about CORA'L</AccordionSummary>
+    <AccordionGroup sx={{ width: "100vw", background: "var(--bright)" }}>
+      <Accordion sx={{ padding: "0px" }}>
+        <AccordionSummary sx={{ padding: "0px 25px" }}>
+          More about CORA'L
+        </AccordionSummary>
         <AccordionDetails>
           <FooterContent />
         </AccordionDetails>

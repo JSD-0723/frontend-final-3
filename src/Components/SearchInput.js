@@ -9,6 +9,7 @@ export const SearchInput = ({ value, onChange }) => {
           width: "30vw",
         }}
         variant="solid"
+        color="--type-low-emphasis"
         startDecorator={<SearchIcon />}
         placeholder="Search for products or brands....."
         value={value}
