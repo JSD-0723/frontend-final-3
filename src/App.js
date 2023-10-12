@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { MainLayout } from "./Layout/MainLayout";
+import { Home } from "./Pages/Home";
+import "./App.css";
+import { CssVarsProvider, extendTheme } from "@mui/joy";
 
+const theme = extendTheme({
+  colorSchemes: {
+    light: {
+      palette: {
+        primary: {
+          solidBg: "#1B4B66",
+        },
+        neutral: {
+          solidBg: "#F1F1F1",
+        },
+        danger: {
+          solidBg: "#B00020",
+        },
+      },
+    },
+  },
+  fontFamily: {
+    display: "Inter, var(--joy-fontFamily-fallback)",
+    body: "Inter, var(--joy-fontFamily-fallback)",
+  },
+});
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CssVarsProvider theme={theme}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<Home />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </CssVarsProvider>
   );
 }
 
