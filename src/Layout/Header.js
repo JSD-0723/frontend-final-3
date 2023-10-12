@@ -14,11 +14,13 @@ const NavbarContainer = styled(Sheet)(({ theme }) => ({
   justifyContent: "space-between",
   alignItems: "center",
   padding: "15px 22px",
+  background: "var(--bright)",
 }));
 
 const SideContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
   gap: "20px",
+  background: "var(--bright)",
 }));
 
 const StoreName = styled("h1")(({ theme }) => ({}));
@@ -27,16 +29,20 @@ const NavbarLinksContainer = styled(Sheet)(({ theme }) => ({
   gap: "12px",
   alignItems: "center",
   marginLeft: "10px",
+  background: "var(--bright)",
 }));
 
 const NavbarLink = styled(Link)(({ theme }) => ({
   textDecoration: "none",
+  color: "var(--type-high-emphasis)",
+  fontWeight: "var(--medium-font)",
 }));
 
 const IconContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
   gap: "15px",
   alignItems: "center",
+  background: "var(--bright)",
 }));
 
 export const Header = () => {
