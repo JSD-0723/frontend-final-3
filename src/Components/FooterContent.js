@@ -52,12 +52,11 @@ const List = styled(Sheet)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   gap: "3px",
-  
 }));
 
 const FilterLinks = styled(Link)(({ theme }) => ({
   textDecoration: "none",
-  color: "#B6B6B6",
+  color: "var( --light-text)",
 }));
 
 const IconsContainer = styled(Sheet)(({ theme }) => ({
@@ -83,6 +82,10 @@ const Location = styled(Sheet)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     justifyContent: "start",
   },
+}));
+
+const RightsInfo = styled("p")(({ theme }) => ({
+  color: "var(--light-text)",
 }));
 
 export const FooterContent = () => {
@@ -132,7 +135,9 @@ export const FooterContent = () => {
               <p>United States</p>
             </Location>
             <Sheet variant="solid" color="primary">
-              <p>© 2021 | Cora Levience All Rights Reserved</p>
+              <RightsInfo>
+                © 2021 | Cora Levience All Rights Reserved
+              </RightsInfo>
             </Sheet>
           </Sheet>
         </RightSide>

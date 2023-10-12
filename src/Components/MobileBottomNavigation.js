@@ -40,7 +40,10 @@ export const TabsBottomNavExample = () => {
           <Tab disableIndicator orientation="vertical">
             <Link>
               <ListItemDecorator>
-                <HomeRoundedIcon />
+                <HomeRoundedIcon
+                  fontSize="xl"
+                  sx={{ color: "var(--primary)" }}
+                />
               </ListItemDecorator>
             </Link>
             Home
@@ -48,7 +51,10 @@ export const TabsBottomNavExample = () => {
           <Tab disableIndicator orientation="vertical">
             <Link>
               <ListItemDecorator>
-                <CategoryOutlinedIcon />
+                <CategoryOutlinedIcon
+                  fontSize="xl"
+                  sx={{ color: "var(--primary)" }}
+                />
               </ListItemDecorator>
             </Link>
             Category
@@ -56,7 +62,7 @@ export const TabsBottomNavExample = () => {
           <Tab disableIndicator orientation="vertical">
             <Link>
               <ListItemDecorator>
-                <Person />
+                <Person fontSize="xl" sx={{ color: "var(--primary)" }} />
               </ListItemDecorator>
             </Link>
             Profile
@@ -64,7 +70,10 @@ export const TabsBottomNavExample = () => {
           <Tab disableIndicator orientation="vertical">
             <Link>
               <ListItemDecorator>
-                <LocalMallOutlinedIcon />
+                <LocalMallOutlinedIcon
+                  fontSize="xl"
+                  sx={{ color: "var(--primary)" }}
+                />
               </ListItemDecorator>
             </Link>
             Bag
