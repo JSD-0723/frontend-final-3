@@ -6,21 +6,41 @@ const CardInfo = styled(Sheet)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
   width: "420px",
+  background: "var(--bright)",
+}));
+
+const Image = styled("img")(({ theme }) => ({
+  width: "100%",
+}));
+
+const Brandname = styled("h4")(({ theme }) => ({
+  fontSize: "12px",
+  fontWeight: "var(--medium-font)",
+}));
+
+const ItemName = styled("h5")(({ theme }) => ({
+  fontSize: "12px",
+  fontWeight: "var(--extra-light-font)",
+}));
+
+const Price = styled("p")(({ theme }) => ({
+  fontSize: "12px",
+  fontWeight: "var(--medium-font)",
 }));
 
 export const ProductCard = ({ data }) => {
   return (
     <>
       {data.map((item) => (
-        <Sheet>
-          <img src="../Assets/1.png" />
+        <Sheet sx={{ background: "var(--bright)" }}>
+          <Image src={require(`../Assets/class.png`)} />
           <CardInfo>
-            <Sheet>
-              <h4>Grande</h4>
-              <h5>{item.title}</h5>
-              <p>${item.price}</p>
+            <Sheet sx={{ background: "var(--bright)" }}>
+              <Brandname>Grande</Brandname>
+              <ItemName>{item.title}</ItemName>
+              <Price>${item.price}</Price>
             </Sheet>
-            <Sheet>
+            <Sheet sx={{ background: "var(--bright)" }}>
               <FavoriteBorderOutlinedIcon fontSize="large" />
             </Sheet>
           </CardInfo>
@@ -29,3 +49,4 @@ export const ProductCard = ({ data }) => {
     </>
   );
 };
+// require(`${item.imageUrl}`)}
