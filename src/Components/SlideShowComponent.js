@@ -1,28 +1,42 @@
 import * as React from "react";
-import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
+import { Sheet } from "@mui/joy";
 import { ProductCard } from "./ProductCard";
-import Grid from "@mui/joy/Grid";
+import { styled } from "@mui/joy/styles";
+import { NavigateButton } from "./NavigateButton";
 
-export const SlideShowComponent = () => {
+const ComponantNavigater = styled(Sheet)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  background: "var(--bright)",
+  padding: "0 20px",
+}));
+
+export const SlideShowComponent = ({ fetchedData }) => {
+  const data = fetchedData.data;
+
   return (
-    <Box
-      sx={{
-        gap: 1,
-        p: 1,
-        overflow: "auto",
-        width: "100vw",
-        scrollSnapType: "x mandatory",
-        "& > *": {
-          scrollSnapAlign: "center",
-        },
-        "::-webkit-scrollbar": { display: "none" },
-      }}>
-      <Grid container spacing={{ xs: 2, md: 3 }} sx={{ flexGrow: 1 }}>
-        <Grid lg={3} sm={3}>
-          <ProductCard />
-        </Grid>
-      </Grid>
-    </Box>
+    <>
+      <ComponantNavigater>
+        <h2>New Arrivals</h2>
+        <NavigateButton text={"View All"} />
+      </ComponantNavigater>
+      <Box
+        sx={{
+          display: "flex",
+          gap: 4,
+          py: 1,
+          px: 2,
+          overflow: "auto",
+          width: "100vw",
+          scrollSnapType: "x mandatory",
+          "& > *": {
+            scrollSnapAlign: "center",
+          },
+          "::-webkit-scrollbar": { display: "none" },
+        }}>
+        <ProductCard data={data} />
+      </Box>
+    </>
   );
 };
