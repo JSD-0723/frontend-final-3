@@ -1,6 +1,8 @@
 import { Sheet } from "@mui/joy";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import { styled } from "@mui/joy/styles";
+import { Link } from "react-router-dom";
+import Card from "@mui/joy/Card";
 
 const CardInfo = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -10,7 +12,8 @@ const CardInfo = styled(Sheet)(({ theme }) => ({
 
 const Image = styled("img")(({ theme }) => ({
   width: "100%",
-  height: "200px",
+  height: "80%",
+  borderRadius: "5%",
 }));
 
 const Brandname = styled("h4")(({ theme }) => ({
@@ -28,23 +31,35 @@ const Price = styled("p")(({ theme }) => ({
   fontWeight: "var(--medium-font)",
 }));
 
+const LinkedCard = styled(Link)(({ theme }) => ({
+  textDecoration: "none",
+}));
+
 export const ProductCard = ({ data }) => {
   return (
     <>
       {data.map((item) => (
-        <Sheet sx={{ background: "var(--bright)" }}>
-          <Image src={require(`../Assets/class.png`)} />
-          <CardInfo>
-            <Sheet sx={{ background: "var(--bright)" }}>
-              <Brandname>Grande</Brandname>
-              <ItemName>{item.title}</ItemName>
-              <Price>${item.price}</Price>
-            </Sheet>
-            <Sheet sx={{ background: "var(--bright)" }}>
-              <FavoriteBorderOutlinedIcon fontSize="large" />
-            </Sheet>
-          </CardInfo>
-        </Sheet>
+        <LinkedCard>
+          <Card
+            variant="plain"
+            sx={{
+              background: "var(--bright)",
+              minWidth: "260px",
+              padding: "0",
+            }}>
+            <Image src={require(`../Assets/class.png`)} />
+            <CardInfo>
+              <Sheet sx={{ background: "var(--bright)", padding: "0 " }}>
+                <Brandname>Grande</Brandname>
+                <ItemName>{item.title}</ItemName>
+                <Price>${item.price}</Price>
+              </Sheet>
+              <Sheet sx={{ background: "var(--bright)" }}>
+                <FavoriteBorderOutlinedIcon fontSize="large" />
+              </Sheet>
+            </CardInfo>
+          </Card>
+        </LinkedCard>
       ))}
     </>
   );
