@@ -317,11 +317,12 @@ export const Home = () => {
       },
     ],
   };
-  console.log(fetchedData.data);
+
   return (
     <>
       <SlideShowComponent fetchedData={fetchedData} />
       <Brands />
+     
     </>
   );
 };
