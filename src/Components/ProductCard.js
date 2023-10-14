@@ -5,12 +5,12 @@ import { styled } from "@mui/joy/styles";
 const CardInfo = styled(Sheet)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
-  width: "420px",
   background: "var(--bright)",
 }));
 
 const Image = styled("img")(({ theme }) => ({
   width: "100%",
+  height: "200px",
 }));
 
 const Brandname = styled("h4")(({ theme }) => ({

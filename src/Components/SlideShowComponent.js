@@ -4,6 +4,7 @@ import { Sheet } from "@mui/joy";
 import { ProductCard } from "./ProductCard";
 import { styled } from "@mui/joy/styles";
 import Grid from "@mui/joy/Grid";
+import AspectRatio from "@mui/joy/AspectRatio";
 import { NavigateButton } from "./NavigateButton";
 
 const ComponantNavigater = styled(Sheet)(({ theme }) => ({
@@ -22,11 +23,22 @@ export const SlideShowComponent = ({ fetchedData }) => {
         <h2>New Arrivals</h2>
         <NavigateButton text={"View All"} />
       </ComponantNavigater>
-      <Grid container spacing={3} sx={{ flexGrow: 1 }}>
-        <Grid xs={3}>
-          <ProductCard data={data} />
-        </Grid>
-      </Grid>
+      <Box
+        sx={{
+          display: "flex",
+          gap: 2,
+          py: 1,
+          px: 1,
+          overflow: "auto",
+          width: "100vw",
+          scrollSnapType: "x mandatory",
+          "& > *": {
+            scrollSnapAlign: "center",
+          },
+          "::-webkit-scrollbar": { display: "none" },
+        }}>
+        <ProductCard data={data} />
+      </Box>
     </>
   );
 };
