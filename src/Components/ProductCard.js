@@ -39,7 +39,7 @@ export const ProductCard = ({ data }) => {
   return (
     <>
       {data.map((item) => (
-        <LinkedCard>
+        <LinkedCard to={`/detail/${item.id}`}>
           <Card
             variant="plain"
             sx={{
@@ -47,7 +47,7 @@ export const ProductCard = ({ data }) => {
               minWidth: "260px",
               padding: "0",
             }}>
-            <Image src={require(`../Assets/class.png`)} />
+            <Image src={"Assets/class.png"} />
             <CardInfo>
               <Sheet sx={{ background: "var(--bright)", padding: "0 " }}>
                 <Brandname>Grande</Brandname>

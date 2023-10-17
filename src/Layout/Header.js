@@ -22,7 +22,13 @@ const SideContainer = styled(Sheet)(({ theme }) => ({
   background: "var(--bright)",
 }));
 
-const StoreName = styled("h1")(({ theme }) => ({}));
+const StoreName = styled("h1")(({ theme }) => ({
+  color: "#17494D",
+}));
+
+const AppTitle = styled(Link)(({ theme }) => ({
+  textDecoration: "none",
+}));
 
 const NavbarLinksContainer = styled(Sheet)(({ theme }) => ({
   gap: "12px",
@@ -50,7 +56,9 @@ export const Header = () => {
       <NavbarContainer>
         <SideContainer>
           <DrawerMobileNavigation />
-          <StoreName>CORA'L</StoreName>
+          <AppTitle to={"/"}>
+            <StoreName>CORA'L</StoreName>
+          </AppTitle>
           <NavbarLinksContainer
             sx={{
               display: {

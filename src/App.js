@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { MainLayout } from "./Layout/MainLayout";
 import { Home } from "./Pages/Home";
+import { Detail } from "./Pages/Detail";
 import "./App.css";
 import { CssVarsProvider, extendTheme } from "@mui/joy";
 
@@ -32,6 +33,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
+            <Route path="/detail/:productId" element={<Detail />} />
           </Route>
         </Routes>
       </BrowserRouter>
