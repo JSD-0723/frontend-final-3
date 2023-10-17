@@ -9,7 +9,6 @@ const SliderContainer = styled(Sheet)(({ theme }) => ({
   background: "var(--bright)",
   display: "flex",
   flexDirection: "column",
-  justifyContent: "center",
   alignItems: "center",
 }));
 
