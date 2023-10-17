@@ -124,10 +124,18 @@ export const FooterContent = () => {
         />
         <RightSide variant="solid" color="primary">
           <IconsContainer variant="solid" color="primary">
-            <img src={Fblogo} />
-            <img src={Instalogo} />
-            <img src={Twitterlogo} />
-            <img src={Youtubelogo} />
+            <Link to={"https://www.facebook.com/"}>
+              <img src={Fblogo} />
+            </Link>
+            <Link to={"https://www.instagram.com/"}>
+              <img src={Instalogo} />
+            </Link>
+            <Link to={"https://www.twitter.com/"}>
+              <img src={Twitterlogo} />
+            </Link>
+            <Link to={"https://www.youtube.com/"}>
+              <img src={Youtubelogo} />
+            </Link>
           </IconsContainer>
           <Sheet>
             <Location variant="solid" color="primary">
