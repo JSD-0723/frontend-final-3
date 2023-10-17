@@ -7,22 +7,31 @@ import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 const SliderContainer = styled(Sheet)(({ theme }) => ({
   width: "40vw",
   background: "var(--bright)",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
 }));
 
-const DisplyedPic = styled(Sheet)(({ theme }) => ({
+const DisplyedPic = styled("img")(({ theme }) => ({
+  width: "500px",
+  height: "500px",
   background: "var(--bright)",
-  width: "250px",
-  height: "70%",
+  borderRadius: "16px",
 }));
 
 const ThumbnailStack = styled(Sheet)(({ theme }) => ({
   background: "var(--bright)",
-  textAlign: "center",
+  marginTop: "20px",
+  display: "flex",
+  alignItems: "center",
+  gap: "20px",
 }));
 
 const PreviewPic = styled("img")(({ theme }) => ({
   width: "80px",
   height: "80px",
+  borderRadius: "8px",
 }));
 
 export const ImageSlider = ({ images }) => {
@@ -40,12 +49,10 @@ export const ImageSlider = ({ images }) => {
 
   return (
     <SliderContainer>
-      <DisplyedPic>
-        <img
-          src={images[currentImageIndex]}
-          alt={`Image ${currentImageIndex}`}
-        />
-      </DisplyedPic>
+      <DisplyedPic
+        src={images[currentImageIndex]}
+        alt={`Image ${currentImageIndex}`}
+      />
       <ThumbnailStack>
         <KeyboardArrowLeft onClick={prevSlide} />
         {images.map((image, index) => (
@@ -62,3 +69,5 @@ export const ImageSlider = ({ images }) => {
     </SliderContainer>
   );
 };
+
+// require(`${images[currentImageIndex]}`)

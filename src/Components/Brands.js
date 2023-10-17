@@ -25,22 +25,22 @@ export const Brands = () => {
           padding: "20px",
         }}>
         <Grid>
-          <Image src={require(`../Assets/zara.png`)} />
+          <Image src={"/Assets/zara.png"} />
         </Grid>
         <Grid>
-          <Image src={require(`../Assets/D&G.png`)} />
+          <Image src={"/Assets/D&G.png"} />
         </Grid>
         <Grid>
-          <Image src={require(`../Assets/H&M.png`)} />
+          <Image src={"/Assets/H&M.png"} />
         </Grid>
         <Grid>
-          <Image src={require(`../Assets/chanel.png`)} />
+          <Image src={"/Assets/chanel.png"} />
         </Grid>
         <Grid>
-          <Image src={require(`../Assets/prada.png`)} />
+          <Image src={"/Assets/prada.png"} />
         </Grid>
         <Grid>
-          <Image src={require(`../Assets/biba.png`)} />
+          <Image src={"/Assets/biba.png"} />
         </Grid>
       </Grid>
     </>
