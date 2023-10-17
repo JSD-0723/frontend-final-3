@@ -1,3 +1,4 @@
+import { Sheet } from "@mui/joy";
 import { ImageSlider } from "../Components/ImageSlider";
 
 export const Detail = () => {
@@ -9,7 +10,10 @@ export const Detail = () => {
 
   return (
     <>
-      <ImageSlider images={images} />
+      <Sheet sx={{ display: "flex", justifyContent: "space-around" }}>
+        <ImageSlider images={images} />
+        <Sheet>Test component</Sheet>
+      </Sheet>
     </>
   );
 };

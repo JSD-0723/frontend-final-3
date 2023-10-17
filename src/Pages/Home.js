@@ -1,5 +1,6 @@
 import { SlideShowComponent } from "../Components/SlideShowComponent";
 import { Brands } from "../Components/Brands";
+import { ImageSlider } from "../Components/ImageSlider";
 
 export const Home = () => {
   const fetchedData = {
@@ -322,7 +323,6 @@ export const Home = () => {
     <>
       <SlideShowComponent fetchedData={fetchedData} />
       <Brands />
-     
     </>
   );
 };
