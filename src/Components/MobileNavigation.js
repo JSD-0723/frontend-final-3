@@ -12,7 +12,7 @@ export const DrawerMobileNavigation = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <React.Fragment>
+    <>
       <IconButton
         sx={{
           display: {
@@ -62,6 +62,6 @@ export const DrawerMobileNavigation = () => {
           <ListItemButton>Apparels</ListItemButton>
         </List>
       </Drawer>
-    </React.Fragment>
+    </>
   );
 };

@@ -38,7 +38,7 @@ export const TabsBottomNavExample = () => {
         })}>
         <TabList size="sm" disableUnderline>
           <Tab disableIndicator orientation="vertical">
-            <Link>
+            <Link to={"/"}>
               <ListItemDecorator>
                 <HomeRoundedIcon
                   fontSize="xl"
