@@ -6,6 +6,7 @@ export const NavigateButton = ({ text, onClick }) => {
     <Button
       endDecorator={<KeyboardArrowRight color="neutral" fontSize="lg" />}
       variant="plain"
+      onClick={onClick}
       sx={{
         color: "var(--primary)",
         fontWeight: "var(--light-text)",
