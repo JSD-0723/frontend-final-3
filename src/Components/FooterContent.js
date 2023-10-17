@@ -1,11 +1,11 @@
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import { Sheet } from "@mui/joy";
-import Fblogo from "../Assets/fb logo.svg";
-import Instalogo from "../Assets/insta logo.svg";
-import Twitterlogo from "../Assets/twitter.svg";
-import Youtubelogo from "../Assets/youtube.svg";
-import Locationlogo from "../Assets/location.svg";
+import Fblogo from "../icons/fb logo.svg";
+import Instalogo from "../icons/insta logo.svg";
+import Twitterlogo from "../icons/twitter.svg";
+import Youtubelogo from "../icons/youtube.svg";
+import Locationlogo from "../icons/location.svg";
 import Divider from "@mui/joy/Divider";
 
 const FooterContainer = styled(Sheet)(({ theme }) => ({
