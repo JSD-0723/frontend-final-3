@@ -1,4 +1,4 @@
-import { Divider, Sheet } from "@mui/joy";
+import { Button, Divider, Sheet } from "@mui/joy";
 import { styled } from "@mui/joy/styles";
 
 const FlexedContainer = styled(Sheet)(({ theme }) => ({
@@ -26,18 +26,40 @@ const ProductInfo = styled(Sheet)(({ theme }) => ({
   background: "var(--bright)",
 }));
 
+const TableHeader = styled("p")(({ theme }) => ({
+  color: "var(--type-low-emphasis)",
+  fontWeight: "var(--medium-font)",
+}));
+
+const ItemDesc = styled("p")(({ theme }) => ({
+  color: "var(--type-low-emphasis)",
+}));
+
+const RemoveButton = styled(Button)(({ theme }) => ({
+  color: "var(--error)",
+  textDecoration: "underline",
+}));
+
+const Container = styled(Sheet)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+}));
+
 export const ProductList = () => {
   return (
     <>
       <FlexedContainer>
-        <Sheet>
-          <p>Product Name</p>
+        <Sheet
+          sx={{
+            background: "var(--bright)",
+          }}>
+          <TableHeader>Product Name</TableHeader>
         </Sheet>
         <ProductElements>
           <FlexedContainer>
-            <p>Price</p>
-            <p>Qty</p>
-            <p>Subtotal</p>
+            <TableHeader>Price</TableHeader>
+            <TableHeader>Qty</TableHeader>
+            <TableHeader>Subtotal</TableHeader>
           </FlexedContainer>
         </ProductElements>
       </FlexedContainer>
@@ -47,16 +69,21 @@ export const ProductList = () => {
           <Image src="/Assets/class.png" alt="" />
           <Sheet sx={{ background: "var(--bright)" }}>
             <p>Coach</p>
-            <p>Leather Coach Bag</p>
-            <p>Qty- 1</p>
+            <ItemDesc>Leather Coach Bag</ItemDesc>
+            <ItemDesc>Qty- 1</ItemDesc>
           </Sheet>
         </ProductInfo>
         <ProductElements>
-          <FlexedContainer>
-            <p>$54.69</p>
-            <p>1</p>
-            <p>$54.69</p>
-          </FlexedContainer>
+          <Container>
+            <FlexedContainer>
+              <p>$54.69</p>
+              <p>1</p>
+              <p>$54.69</p>
+            </FlexedContainer>
+            <Sheet sx={{ textAlign: "center" }}>
+              <RemoveButton variant="palin">Remove</RemoveButton>
+            </Sheet>
+          </Container>
         </ProductElements>
       </FlexedContainer>
     </>
