@@ -4,6 +4,7 @@ import { Home } from "./Pages/Home";
 import { Detail } from "./Pages/Detail";
 import "./App.css";
 import { CssVarsProvider, extendTheme } from "@mui/joy";
+import { Cart } from "./Pages/Cart";
 
 const theme = extendTheme({
   colorSchemes: {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
             <Route path="/detail/:productId" element={<Detail />} />
+            <Route path="/cart" element={<Cart />} />
           </Route>
         </Routes>
       </BrowserRouter>
