@@ -45,6 +45,10 @@ const Container = styled(Sheet)(({ theme }) => ({
   flexDirection: "column",
 }));
 
+const BrandName = styled("p")(({ theme }) => ({
+  fontWeight: "var(--semi-bold-font)",
+}));
+
 export const ProductList = () => {
   return (
     <>
@@ -68,7 +72,7 @@ export const ProductList = () => {
         <ProductInfo>
           <Image src="/Assets/class.png" alt="" />
           <Sheet sx={{ background: "var(--bright)" }}>
-            <p>Coach</p>
+            <BrandName>Coach</BrandName>
             <ItemDesc>Leather Coach Bag</ItemDesc>
             <ItemDesc>Qty- 1</ItemDesc>
           </Sheet>
@@ -80,7 +84,7 @@ export const ProductList = () => {
               <p>1</p>
               <p>$54.69</p>
             </FlexedContainer>
-            <Sheet sx={{ textAlign: "center" }}>
+            <Sheet sx={{ textAlign: "center", background: "var(--bright)" }}>
               <RemoveButton variant="palin">Remove</RemoveButton>
             </Sheet>
           </Container>
