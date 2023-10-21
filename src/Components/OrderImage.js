@@ -4,7 +4,7 @@ import { styled } from "@mui/joy/styles";
 const ProductInfo = styled(Sheet)(({ theme }) => ({
   display: "flex",
   gap: "12px",
-  padding: "20px 10px",
+  padding: "20px 0px 0px",
   background: "var(--bright)",
 }));
 

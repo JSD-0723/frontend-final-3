@@ -21,7 +21,7 @@ const LeftSide = styled(Sheet)(({ theme }) => ({
 
 const RightSide = styled(Sheet)(({ theme }) => ({
   background: "var(--bright)",
-  paddingRight: "20px",
+  textAlign: "end",
 }));
 
 const PriceDetail = styled("p")(({ theme }) => ({
@@ -48,7 +48,7 @@ export const OrderSummary = () => {
         <RightSide>
           <Values>$119.69</Values>
           <Values>-$13.40</Values>
-          <Values>-$0.00</Values>
+          <Values>$12.00</Values>
           <h4>$106.29</h4>
         </RightSide>
       </Container>

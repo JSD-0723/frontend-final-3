@@ -14,7 +14,7 @@ const Container = styled(Sheet)(({ theme }) => ({
   background: "var(--bright)",
   display: "flex",
   justifyContent: "space-between",
-  paddingBottom: "30px",
+  padding: "0px 7px 30px",
   [theme.breakpoints.down("sm")]: {
     display: "flex",
     flexDirection: "column",
@@ -51,6 +51,7 @@ const LeftSideContainer = styled(Sheet)(({ theme }) => ({
 const RightSideContainer = styled(Sheet)(({ theme }) => ({
   background: "var(--bright)",
   width: "30vw",
+  paddingRight: "5px",
   [theme.breakpoints.down("sm")]: {
     width: "100%",
   },
