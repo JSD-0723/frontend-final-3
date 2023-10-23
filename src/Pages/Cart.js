@@ -4,6 +4,7 @@ import { PageTitle } from "../Components/PageTitle";
 import { ProductList } from "../Components/ProductList";
 import { NavigateButton } from "../Components/NavigateButton";
 import { OrderSummary } from "../Components/OrderSummary";
+import { CartItemCard } from "../Components/CartItemCard";
 
 const RecentPage = styled("p")(({ theme }) => ({
   fontSize: ".83rem",
@@ -29,12 +30,12 @@ const Container = styled(Sheet)(({ theme }) => ({
   },
 }));
 
-const MobileApproachContainer = styled(Sheet)(({ theme }) => ({
+const MediumScreenContainer = styled(Sheet)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     width: "80%",
   },
   [theme.breakpoints.down("md")]: {
-    width: "80%",
+    width: "100%",
   },
 }));
 
@@ -74,16 +75,36 @@ export const Cart = () => {
       </Sheet>
       <PageTitle text={"My Cart"} />
       <Container>
-        <MobileApproachContainer>
-          <LeftSideContainer>
+        <MediumScreenContainer>
+          <Sheet
+            sx={{
+              display: {
+                lg: "none",
+                md: "none",
+                sm: "none",
+                xs: "block",
+              },
+              background: "var(--accent)",
+            }}>
+            <CartItemCard />
+          </Sheet>
+          <LeftSideContainer
+            sx={{
+              display: {
+                lg: "block",
+                md: "block",
+                sm: "block",
+                xs: "none",
+              },
+            }}>
             <ProductList />
           </LeftSideContainer>
-        </MobileApproachContainer>
-        <MobileApproachContainer>
+        </MediumScreenContainer>
+        <MediumScreenContainer>
           <RightSideContainer>
             <OrderSummary />
           </RightSideContainer>
-        </MobileApproachContainer>
+        </MediumScreenContainer>
       </Container>
     </>
   );

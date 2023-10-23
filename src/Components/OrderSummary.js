@@ -22,6 +22,7 @@ const LeftSide = styled(Sheet)(({ theme }) => ({
 const RightSide = styled(Sheet)(({ theme }) => ({
   background: "var(--bright)",
   textAlign: "end",
+  paddingRight: "15px",
 }));
 
 const PriceDetail = styled("p")(({ theme }) => ({
@@ -53,10 +54,18 @@ export const OrderSummary = () => {
         </RightSide>
       </Container>
       <Container>
-        <Button as={Link} to="/checkout">
+        <Button as={Link} to="/">
           Proceed to Checkout
         </Button>
-        <Button as={Link} to="/">
+        <Button
+          as={Link}
+          to="/"
+          variant="outlined"
+          sx={{
+            color: "var(--primary)",
+            borderColor: "var(--primary)",
+            marginRight: "15px",
+          }}>
           Continue Shopping
         </Button>
       </Container>

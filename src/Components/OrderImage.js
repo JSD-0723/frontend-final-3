@@ -22,7 +22,17 @@ const BrandName = styled("p")(({ theme }) => ({
   fontWeight: "var(--semi-bold-font)",
 }));
 
-export const OrderImage = () => {
+const Price = styled("p")(({ theme }) => ({}));
+
+const Discount = styled("p")(({ theme }) => ({}));
+
+const DiscountedPrice = styled("p")(({ theme }) => ({}));
+
+const PriceDetail = styled(Sheet)(({ theme }) => ({
+  fontWeight: "var(--semi-bold-font)",
+}));
+
+export const OrderImage = ({ price, discount, discountedPrice }) => {
   return (
     <>
       <ProductInfo>
@@ -31,6 +41,11 @@ export const OrderImage = () => {
           <BrandName>Coach</BrandName>
           <ItemDesc>Leather Coach Bag</ItemDesc>
           <ItemDesc>Qty- 1</ItemDesc>
+          <PriceDetail>
+            <DiscountedPrice></DiscountedPrice>
+            <Price></Price>
+            <Discount></Discount>
+          </PriceDetail>
         </Sheet>
       </ProductInfo>
     </>
