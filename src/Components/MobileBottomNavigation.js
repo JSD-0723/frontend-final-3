@@ -68,7 +68,7 @@ export const TabsBottomNavExample = () => {
             Profile
           </Tab>
           <Tab disableIndicator orientation="vertical">
-            <Link>
+            <Link to={"/cart"}>
               <ListItemDecorator>
                 <LocalMallOutlinedIcon
                   fontSize="xl"
