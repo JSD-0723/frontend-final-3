@@ -6,6 +6,7 @@ import { OrderImage } from "../Components/OrderImage";
 import { PageTitle } from "../Components/PageTitle";
 import { styled } from "@mui/joy/styles";
 import { OrderSummary } from "../Components/OrderSummary";
+import { AccordionComponent } from "../Components/AccordionComponent";
 
 const ContainerAll = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -27,7 +28,11 @@ export const Checkout = () => {
       <PageTitle text={"Checkout"} />
       <ContainerAll>
         <Sheet sx={{ width: "55vw" }}>
-          <AddressForm />
+          <AccordionComponent
+            Content={<AddressForm />}
+            title={<SectionTitle text={"Add New Address"} />}
+          />
+          <AccordionComponent title={<SectionTitle text={"Place Order"} />} />
         </Sheet>
         <RightSide>
           <Sheet sx={{ width: "30vw" }}>

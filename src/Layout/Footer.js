@@ -1,7 +1,7 @@
 import { FooterContent } from "../Components/FooterContent";
 import { TabsBottomNavExample } from "../Components/MobileBottomNavigation";
-import { AccordionFooter } from "../Components/AccordionFooter";
 import { Sheet } from "@mui/joy";
+import { AccordionComponent } from "../Components/AccordionComponent";
 
 export const Footer = () => {
   return (
@@ -29,7 +29,10 @@ export const Footer = () => {
           },
           marginBottom: "60px",
         }}>
-        <AccordionFooter />
+        <AccordionComponent
+          title={"More about CORA'L"}
+          Content={<FooterContent />}
+        />
       </Sheet>
       <Sheet
         sx={{
