@@ -23,35 +23,47 @@ const LefttSide = styled(Sheet)(({ theme }) => ({
   width: "40%",
 }));
 
+const StyledForm = styled("form")(({ theme }) => ({
+  background: "var(--bright)",
+  padding: "15px 0 0 15px",
+}));
+
 export const AddressForm = () => {
   return (
     <>
-      <AccordionGroup sx={{ background: "var(--bright)" }}>
-        <Accordion defaultExpanded={true}>
-          <AccordionSummary>
-            <SectionTitle text={"Add New Address"} />
-          </AccordionSummary>
-          <Divider />
-          <AccordionDetails>
-            <form>
-              <FormRaw>
-                <LefttSide>
-                  <InputWithLabel
-                    label={"First Name"}
-                    placeholder={"Enter First Name"}
-                  />
-                </LefttSide>
-                <RightSide>
-                  <InputWithLabel
-                    label={"Last Name"}
-                    placeholder={"Enter Last Name"}
-                  />
-                </RightSide>
-              </FormRaw>
-            </form>
-          </AccordionDetails>
-        </Accordion>
-      </AccordionGroup>
+      <Divider />
+      <StyledForm>
+        <FormRaw>
+          <LefttSide>
+            <InputWithLabel
+              label={"First Name"}
+              placeholder={"Enter First Name"}
+            />
+          </LefttSide>
+          <RightSide>
+            <InputWithLabel
+              label={"Last Name"}
+              placeholder={"Enter Last Name"}
+            />
+          </RightSide>
+        </FormRaw>
+        <FormRaw>
+          <LefttSide>
+            <InputWithLabel
+              label={"Mobile Number"}
+              placeholder={"Enter Mobile Number"}
+            />
+          </LefttSide>
+          <RightSide>
+            <InputWithLabel label={"Email"} placeholder={"Enter Email"} />
+          </RightSide>
+        </FormRaw>
+        <FormRaw>
+          <LefttSide>
+            <InputWithLabel label={"Location"} placeholder={"Enter Location"} />
+          </LefttSide>
+        </FormRaw>
+      </StyledForm>
     </>
   );
 };
