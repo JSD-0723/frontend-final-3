@@ -15,6 +15,7 @@ import pinkArrow from '../Assets/pinkArrow.svg';
 import blueArrow from '../Assets/blueArrow.svg';
 import { CardActions } from '@mui/joy';
 import IconButton from '@mui/joy/IconButton';
+import { maxHeight } from '@mui/system';
 
 function ThreeCards() {
     return (
@@ -75,7 +76,7 @@ function ThreeCards() {
                     </CardContent>
                 </Card>
             </Grid>
-
+          
         </Grid>
     );
 }

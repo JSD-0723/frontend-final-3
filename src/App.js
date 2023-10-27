@@ -3,6 +3,9 @@ import { MainLayout } from "./Layout/MainLayout";
 import { Home } from "./Pages/Home";
 import "./App.css";
 import { CssVarsProvider, extendTheme } from "@mui/joy";
+import hero from './Assets/hero.svg';
+import spring from './Assets/spring.svg';
+import SlidesContext from './Shared/Context/SlidesContext';
 
 const theme = extendTheme({
   colorSchemes: {
@@ -26,7 +29,26 @@ const theme = extendTheme({
   },
 });
 function App() {
+  const slidesImages = [
+    {
+        imgPath: hero,
+        title: "Carry your Funk",
+        subTitle: "Trendy handbags collection for your party animal",
+        backgroundColor: '#1B4B66',
+        mainDivClass: 'tag',
+        clickHandler: () => console.log("111")
+    },
+    {
+        imgPath: spring,
+        title: "Spring Summer Collection",
+        subTitle: "UPTO 20% OFF",
+        backgroundColor: '#B00020',
+        mainDivClass: 'tag1',
+        clickHandler: () => console.log("2222")
+    },
+];
   return (
+    <SlidesContext.Provider value={ slidesImages }>
     <CssVarsProvider theme={theme}>
       <BrowserRouter>
         <Routes>
@@ -36,6 +58,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </CssVarsProvider>
+    </SlidesContext.Provider>
   );
 }
 
