@@ -1,11 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { MainLayout } from "./Layout/MainLayout";
 import { Home } from "./Pages/Home";
+import { Detail } from "./Pages/Detail";
 import "./App.css";
 import { CssVarsProvider, extendTheme } from "@mui/joy";
+import { Cart } from "./Pages/Cart";
 import hero from './Assets/hero.svg';
 import spring from './Assets/spring.svg';
 import SlidesContext from './Shared/Context/SlidesContext';
+
 
 const theme = extendTheme({
   colorSchemes: {
@@ -54,6 +57,8 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
+            <Route path="/detail/:productId" element={<Detail />} />
+            <Route path="/cart" element={<Cart />} />
           </Route>
         </Routes>
       </BrowserRouter>

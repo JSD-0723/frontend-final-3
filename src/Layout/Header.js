@@ -7,36 +7,47 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import { styled } from "@mui/joy/styles";
 import { Link } from "react-router-dom";
 import { DrawerMobileNavigation } from "../Components/MobileNavigation";
-import { TabsBottomNavExample } from "../Components/MobileBottomNavigation";
 
 const NavbarContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
   padding: "15px 22px",
+  background: "var(--bright)",
 }));
 
 const SideContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
   gap: "20px",
+  background: "var(--bright)",
 }));
 
-const StoreName = styled("h1")(({ theme }) => ({}));
+const StoreName = styled("h1")(({ theme }) => ({
+  color: "#17494D",
+}));
+
+const AppTitle = styled(Link)(({ theme }) => ({
+  textDecoration: "none",
+}));
 
 const NavbarLinksContainer = styled(Sheet)(({ theme }) => ({
   gap: "12px",
   alignItems: "center",
   marginLeft: "10px",
+  background: "var(--bright)",
 }));
 
 const NavbarLink = styled(Link)(({ theme }) => ({
   textDecoration: "none",
+  color: "var(--type-high-emphasis)",
+  fontWeight: "var(--medium-font)",
 }));
 
 const IconContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
   gap: "15px",
   alignItems: "center",
+  background: "var(--bright)",
 }));
 
 export const Header = () => {
@@ -45,7 +56,9 @@ export const Header = () => {
       <NavbarContainer>
         <SideContainer>
           <DrawerMobileNavigation />
-          <StoreName>CORA'L</StoreName>
+          <AppTitle to={"/"}>
+            <StoreName>CORA'L</StoreName>
+          </AppTitle>
           <NavbarLinksContainer
             sx={{
               display: {
@@ -115,23 +128,6 @@ export const Header = () => {
           </IconContainer>
         </SideContainer>
       </NavbarContainer>
-      <Sheet
-        sx={{
-          display: {
-            xs: "inline",
-            sm: "inline",
-            md: "none",
-            lg: "none",
-            xl: "none",
-          },
-          position: "fixed",
-          bottom: "0",
-          left: "0",
-          zIndex: "1",
-          width: "100vw",
-        }}>
-        <TabsBottomNavExample />
-      </Sheet>
     </>
   );
 };

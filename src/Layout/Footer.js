@@ -1,6 +1,7 @@
-import AccordionBasic from "../Components/AccordionFooter";
-import { Sheet } from "@mui/joy";
 import { FooterContent } from "../Components/FooterContent";
+import { TabsBottomNavExample } from "../Components/MobileBottomNavigation";
+import { AccordionFooter } from "../Components/AccordionFooter";
+import { Sheet } from "@mui/joy";
 
 export const Footer = () => {
   return (
@@ -26,8 +27,25 @@ export const Footer = () => {
             lg: "none",
             xl: "none",
           },
+          marginBottom: "60px",
         }}>
-        <AccordionBasic />
+        <AccordionFooter />
+      </Sheet>
+      <Sheet
+        sx={{
+          display: {
+            xs: "inline",
+            sm: "inline",
+            md: "none",
+            lg: "none",
+            xl: "none",
+          },
+          position: "fixed",
+          bottom: "0",
+          zIndex: "1",
+          width: "100vw",
+        }}>
+        <TabsBottomNavExample />
       </Sheet>
     </>
   );

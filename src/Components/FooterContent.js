@@ -1,11 +1,11 @@
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import { Sheet } from "@mui/joy";
-import Fblogo from "../Assets/fb logo.svg";
-import Instalogo from "../Assets/insta logo.svg";
-import Twitterlogo from "../Assets/twitter.svg";
-import Youtubelogo from "../Assets/youtube.svg";
-import Locationlogo from "../Assets/location.svg";
+import Fblogo from "../icons/fb logo.svg";
+import Instalogo from "../icons/insta logo.svg";
+import Twitterlogo from "../icons/twitter.svg";
+import Youtubelogo from "../icons/youtube.svg";
+import Locationlogo from "../icons/location.svg";
 import Divider from "@mui/joy/Divider";
 
 const FooterContainer = styled(Sheet)(({ theme }) => ({
@@ -52,12 +52,11 @@ const List = styled(Sheet)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   gap: "3px",
-  
 }));
 
 const FilterLinks = styled(Link)(({ theme }) => ({
   textDecoration: "none",
-  color: "#B6B6B6",
+  color: "var( --light-text)",
 }));
 
 const IconsContainer = styled(Sheet)(({ theme }) => ({
@@ -83,6 +82,10 @@ const Location = styled(Sheet)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     justifyContent: "start",
   },
+}));
+
+const RightsInfo = styled("p")(({ theme }) => ({
+  color: "var(--light-text)",
 }));
 
 export const FooterContent = () => {
@@ -121,10 +124,18 @@ export const FooterContent = () => {
         />
         <RightSide variant="solid" color="primary">
           <IconsContainer variant="solid" color="primary">
-            <img src={Fblogo} />
-            <img src={Instalogo} />
-            <img src={Twitterlogo} />
-            <img src={Youtubelogo} />
+            <Link to={"https://www.facebook.com/"}>
+              <img src={Fblogo} />
+            </Link>
+            <Link to={"https://www.instagram.com/"}>
+              <img src={Instalogo} />
+            </Link>
+            <Link to={"https://www.twitter.com/"}>
+              <img src={Twitterlogo} />
+            </Link>
+            <Link to={"https://www.youtube.com/"}>
+              <img src={Youtubelogo} />
+            </Link>
           </IconsContainer>
           <Sheet>
             <Location variant="solid" color="primary">
@@ -132,7 +143,9 @@ export const FooterContent = () => {
               <p>United States</p>
             </Location>
             <Sheet variant="solid" color="primary">
-              <p>© 2021 | Cora Levience All Rights Reserved</p>
+              <RightsInfo>
+                © 2021 | Cora Levience All Rights Reserved
+              </RightsInfo>
             </Sheet>
           </Sheet>
         </RightSide>
