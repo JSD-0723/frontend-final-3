@@ -3,19 +3,16 @@ import AccordionGroup from "@mui/joy/AccordionGroup";
 import Accordion from "@mui/joy/Accordion";
 import AccordionDetails from "@mui/joy/AccordionDetails";
 import AccordionSummary from "@mui/joy/AccordionSummary";
-import { FooterContent } from "./FooterContent";
 
-export const AccordionFooter = () => {
+export const AccordionComponent = ({ title, Content }) => {
   return (
     <>
-      <AccordionGroup sx={{ width: "100vw", background: "var(--bright)" }}>
-        <Accordion sx={{ padding: "0px" }}>
+      <AccordionGroup sx={{ background: "var(--bright)" }}>
+        <Accordion defaultExpanded={true} sx={{ padding: "0px" }}>
           <AccordionSummary sx={{ padding: "0px 25px" }}>
-            More about CORA'L
+            {title}
           </AccordionSummary>
-          <AccordionDetails>
-            <FooterContent />
-          </AccordionDetails>
+          <AccordionDetails>{Content}</AccordionDetails>
         </Accordion>
       </AccordionGroup>
     </>

@@ -5,6 +5,7 @@ import { ProductList } from "../Components/ProductList";
 import { NavigateButton } from "../Components/NavigateButton";
 import { OrderSummary } from "../Components/OrderSummary";
 import { CartItemCard } from "../Components/CartItemCard";
+import { SectionTitle } from "../Components/SectionTitle";
 
 const RecentPage = styled("p")(({ theme }) => ({
   fontSize: ".83rem",
@@ -102,6 +103,7 @@ export const Cart = () => {
         </MediumScreenContainer>
         <MediumScreenContainer>
           <RightSideContainer>
+            <SectionTitle text={"Order Summary"} />
             <OrderSummary />
           </RightSideContainer>
         </MediumScreenContainer>

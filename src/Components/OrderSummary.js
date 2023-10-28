@@ -1,12 +1,7 @@
 import { Button, Divider, Sheet } from "@mui/joy";
 import { styled } from "@mui/joy/styles";
 import { Link } from "react-router-dom";
-
-const Title = styled("h3")(({ theme }) => ({
-  fontSize: "1.05rem",
-  fontWeight: "var(--semi-bold-font)",
-  padding: "4px  0",
-}));
+import { SectionTitle } from "./SectionTitle";
 
 const Container = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -34,10 +29,9 @@ const Values = styled("p")(({ theme }) => ({
   fontWeight: "var(--medium-font)",
 }));
 
-export const OrderSummary = () => {
+export const OrderSummary = ({ showButtons = true }) => {
   return (
     <>
-      <Title>Order Summary</Title>
       <Divider />
       <Container>
         <LeftSide>
@@ -53,22 +47,24 @@ export const OrderSummary = () => {
           <h4>$106.29</h4>
         </RightSide>
       </Container>
-      <Container>
-        <Button as={Link} to="/">
-          Proceed to Checkout
-        </Button>
-        <Button
-          as={Link}
-          to="/"
-          variant="outlined"
-          sx={{
-            color: "var(--primary)",
-            borderColor: "var(--primary)",
-            marginRight: "15px",
-          }}>
-          Continue Shopping
-        </Button>
-      </Container>
+      {showButtons && (
+        <Container>
+          <Button as={Link} to="/checkout">
+            Proceed to Checkout
+          </Button>
+          <Button
+            as={Link}
+            to="/"
+            variant="outlined"
+            sx={{
+              color: "var(--primary)",
+              borderColor: "var(--primary)",
+              marginRight: "15px",
+            }}>
+            Continue Shopping
+          </Button>
+        </Container>
+      )}
     </>
   );
 };
