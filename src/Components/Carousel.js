@@ -1,9 +1,9 @@
-import { Box } from '@mui/material';
+import { Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { useContext, useState } from 'react';
+import { useContext, useState } from "react";
 import AutoPlaySwipeableViews from "react-swipeable-views-react-18-fix";
-import SlidesGenerator from './SlidesGenerator';
-import SlidesContext from '../Shared/Context/SlidesContext';
+import SlidesGenerator from "./SlidesGenerator";
+import SlidesContext from "../Shared/Context/SlidesContext";
 
 const Carousel = () => {
   const theme = useTheme();
@@ -11,9 +11,7 @@ const Carousel = () => {
   const images = useContext(SlidesContext);
 
   setTimeout(() => {
-    setActiveStep(
-      activeStep === images.length - 1 ? 0 : activeStep + 1
-    );
+    setActiveStep(activeStep === images.length - 1 ? 0 : activeStep + 1);
   }, 4000);
 
   const handleStepChange = (step) => {
@@ -21,17 +19,16 @@ const Carousel = () => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1,height: 400, margin: 3 }}>
+    <Box sx={{ flexGrow: 1, height: 400, margin: 3 }}>
       <AutoPlaySwipeableViews
         axis={theme.direction === "ltr" ? "x-reverse" : "x"}
         index={activeStep}
         onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
-        { SlidesGenerator() }
+        enableMouseEvents>
+        {SlidesGenerator()}
       </AutoPlaySwipeableViews>
     </Box>
-  )
+  );
 };
 
 export default Carousel;

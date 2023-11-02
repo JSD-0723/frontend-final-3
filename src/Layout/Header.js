@@ -79,7 +79,6 @@ export const Header = () => {
           <SearchInput />
           <IconContainer>
             <FavoriteBorderOutlinedIcon
-              fontSize="medium"
               sx={{
                 display: {
                   xs: "none",
@@ -91,7 +90,6 @@ export const Header = () => {
               }}
             />
             <PersonOutlineOutlinedIcon
-              fontSize="medium"
               sx={{
                 display: {
                   xs: "none",
@@ -103,7 +101,6 @@ export const Header = () => {
               }}
             />
             <LocalMallOutlinedIcon
-              fontSize="medium"
               sx={{
                 display: {
                   xs: "none",

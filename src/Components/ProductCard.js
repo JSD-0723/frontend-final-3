@@ -17,7 +17,7 @@ const Image = styled("img")(({ theme }) => ({
 }));
 
 const Brandname = styled("h4")(({ theme }) => ({
-  fontSize: "12px",
+  fontSize: ".9rem",
   fontWeight: "var(--medium-font)",
 }));
 
@@ -26,20 +26,15 @@ const ItemName = styled("h5")(({ theme }) => ({
   fontWeight: "var(--extra-light-font)",
 }));
 
-const Price = styled("p")(({ theme }) => ({
-  fontSize: "12px",
-  fontWeight: "var(--medium-font)",
-}));
-
 const LinkedCard = styled(Link)(({ theme }) => ({
   textDecoration: "none",
 }));
 
-export const ProductCard = ({ data }) => {
+export const ProductCard = ({ newArrivals }) => {
   return (
     <>
-      {data.map((item) => (
-        <LinkedCard to={`/detail/${item.id}`}>
+      {newArrivals.map((item) => (
+        <LinkedCard key={item.id} to={`/detail/${item.id}`}>
           <Card
             variant="plain"
             sx={{
@@ -50,12 +45,12 @@ export const ProductCard = ({ data }) => {
             <Image src={"Assets/class.png"} />
             <CardInfo>
               <Sheet sx={{ background: "var(--bright)", padding: "0 " }}>
-                <Brandname>Grande</Brandname>
+                <Brandname>{item.brand}</Brandname>
                 <ItemName>{item.title}</ItemName>
-                <Price>${item.price}</Price>
+                <Brandname>${item.price}</Brandname>
               </Sheet>
               <Sheet sx={{ background: "var(--bright)" }}>
-                <FavoriteBorderOutlinedIcon fontSize="large" />
+                <FavoriteBorderOutlinedIcon fontSize="medium" />
               </Sheet>
             </CardInfo>
           </Card>
