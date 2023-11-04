@@ -67,12 +67,23 @@ export const Header = () => {
                 md: "none",
                 lg: "flex",
               },
-            }}>
-            <NavbarLink>Handbags</NavbarLink>
-            <NavbarLink>Watches</NavbarLink>
-            <NavbarLink>Skincare</NavbarLink>
-            <NavbarLink>Jewellery</NavbarLink>
-            <NavbarLink>Apparels</NavbarLink>
+            }}
+          >
+            <NavbarLink to={"/category?categoryName=Handbags"}>
+              Handbags
+            </NavbarLink>
+            <NavbarLink to={"/category?categoryName=Watches"}>
+              Watches
+            </NavbarLink>
+            <NavbarLink to={"/category?categoryName=Skincare"}>
+              Skincare
+            </NavbarLink>
+            <NavbarLink to={"/category?categoryName=Jewellery"}>
+              Jewellery
+            </NavbarLink>
+            <NavbarLink to={"/category?categoryName=Apparels"}>
+              Apparels
+            </NavbarLink>
           </NavbarLinksContainer>
         </SideContainer>
         <SideContainer>

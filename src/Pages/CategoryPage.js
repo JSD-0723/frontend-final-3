@@ -5,19 +5,18 @@ import { useSearchParams } from "react-router-dom";
 
 export const CategoryPage = () => {
   const [categoryProduct, setCategoryProduct] = useState([]);
-  const [searchParams, setSearchParams] = useSearchParams(
-    window.location.search
-  );
+  const [searchParams] = useSearchParams(window.location.search);
 
-  const newArrivals = searchParams.get("newArrivals");
+  const newArrival = searchParams.get("newArrivals");
   const categoryName = searchParams.get("categoryName");
   const brandName = searchParams.get("brandName");
-  const queryParams = {
-    newArrival: newArrivals,
-    categoryName: categoryName,
-    brandName: brandName,
-  };
+
   useEffect(() => {
+    const queryParams = {
+      newArrival,
+      categoryName,
+      brandName,
+    };
     searchProduct(queryParams)
       .then((response) => {
         setCategoryProduct(response.data);
@@ -25,8 +24,7 @@ export const CategoryPage = () => {
       .catch((error) => {
         console.log("Error in fetching data", error);
       });
-  }, [searchParams]);
-  console.log(categoryProduct);
+  }, [newArrival, categoryName, brandName]);
 
   return <Category categoryProduct={categoryProduct} />;
 };

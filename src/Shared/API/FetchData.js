@@ -17,7 +17,11 @@ export const loadCategories = () => {
 };
 
 export const searchProduct = (queryParams) => {
-  const queryString = new URLSearchParams(queryParams).toString();
+  const query = Object.fromEntries(
+    Object.entries(queryParams).filter(([_, v]) => v !== null)
+  );
+
+  const queryString = new URLSearchParams(query).toString();
   return axios
     .get(`${BACKUP_HOST}api/products/v1/search?${queryString}`)
     .then((response) => response.data);
