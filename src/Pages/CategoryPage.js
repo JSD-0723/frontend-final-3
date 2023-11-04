@@ -12,6 +12,7 @@ export const CategoryPage = () => {
   const brandName = searchParams.get("brandName");
 
   useEffect(() => {
+    console.log(brandName);
     const queryParams = {
       newArrival,
       categoryName,

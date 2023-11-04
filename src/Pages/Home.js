@@ -5,9 +5,12 @@ import ThreeCards from "../Components/ThreeCards";
 import { Sheet } from "@mui/joy";
 import { styled } from "@mui/joy/styles";
 import { useEffect, useState } from "react";
-import { loadNewArrivals } from "../Shared/API/FetchData";
+import {
+  loadNewArrivals,
+  loadHandpickedProducts,
+  loadBrands,
+} from "../Shared/API/FetchData";
 import Carousel from "../Components/Carousel";
-import { useSearchParams } from "react-router-dom";
 
 const Container = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -17,16 +20,33 @@ const Container = styled(Sheet)(({ theme }) => ({
 }));
 
 export const Home = () => {
-  const [newArrivals, setNewArriavls] = useState([]);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [newArrivals, setNewArrivals] = useState([]);
+  const [handpicked, setHandPicked] = useState([]);
+  const [brands, setBrands] = useState([]);
 
   useEffect(() => {
     loadNewArrivals()
       .then((response) => {
-        setNewArriavls(response.data);
+        setNewArrivals(response.data);
       })
       .catch((error) => {
-        console.log("Error in fetching data", error);
+        console.log("Error fetching New Arrivals", error);
+      });
+
+    loadHandpickedProducts()
+      .then((response) => {
+        setHandPicked(response.data);
+      })
+      .catch((error) => {
+        console.log("Error fetching Handpicked", error);
+      });
+
+    loadBrands()
+      .then((response) => {
+        setBrands(response.data);
+      })
+      .catch((error) => {
+        console.log("Error fetching Brands", error);
       });
   }, []);
 
@@ -35,8 +55,8 @@ export const Home = () => {
     <>
       <Container>
         <SlideShowComponent newArrivals={sliderNewArrivals} />
-        <Handpicked />
-        <Brands />
+        <Handpicked handpicked={handpicked} />
+        <Brands brands={brands} />
         <ThreeCards />
       </Container>
     </>
