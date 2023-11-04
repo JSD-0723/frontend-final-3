@@ -17,7 +17,7 @@ export const SlideShowComponent = ({ newArrivals }) => {
     <>
       <ComponantNavigater>
         <h2>New Arrivals</h2>
-        <NavigateButton to={"/category"} text={"View All"} />
+        <NavigateButton to={"/category?newArrivals=true"} text={"View All"} />
       </ComponantNavigater>
       <Box
         sx={{

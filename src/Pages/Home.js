@@ -7,6 +7,7 @@ import { styled } from "@mui/joy/styles";
 import { useEffect, useState } from "react";
 import { loadNewArrivals } from "../Shared/API/FetchData";
 import Carousel from "../Components/Carousel";
+import { useSearchParams } from "react-router-dom";
 
 const Container = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -17,6 +18,7 @@ const Container = styled(Sheet)(({ theme }) => ({
 
 export const Home = () => {
   const [newArrivals, setNewArriavls] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     loadNewArrivals()

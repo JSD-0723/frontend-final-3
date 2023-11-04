@@ -2,20 +2,23 @@ import axios from "axios";
 
 const BACKEND_HOST = "https://final-project-rk77.onrender.com/";
 
+const BACKUP_HOST = "https://e-commerce.cleverapps.io/";
+
 export const loadNewArrivals = () => {
   return axios
-    .get(`${BACKEND_HOST}api/products/?newArrival=true&page=1`)
+    .get(`${BACKUP_HOST}api/products/v1/search?newArrival=true&page=1`)
     .then((response) => response.data);
 };
 
 export const loadCategories = () => {
   return axios
-    .get(`${BACKEND_HOST}api/categories`)
+    .get("https://e-commerce.cleverapps.io/api/categories")
     .then((response) => response.data);
 };
 
-export const loadCategoryProducts = (categoryId) => {
+export const searchProduct = (queryParams) => {
+  const queryString = new URLSearchParams(queryParams).toString();
   return axios
-    .get(`${BACKEND_HOST}api/categories/${categoryId}`)
+    .get(`${BACKUP_HOST}api/products/v1/search?${queryString}`)
     .then((response) => response.data);
 };

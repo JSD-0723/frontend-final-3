@@ -7,10 +7,10 @@ import Typography from "@mui/joy/Typography";
 import { KeyboardArrowRight } from "@mui/icons-material";
 import Pagination from "./Pagination";
 import { Stack } from "@mui/material";
-import { ProductCard } from "./ProductCard";
+import { CategoryCard } from "./CategoryCard";
 import Grid from "@mui/joy/Grid";
 
-function Category({ products }) {
+function Category({ categoryProduct }) {
   return (
     <Stack sx={{ direction: "column", m: 3 }}>
       <Box sx={{ flexGrow: 1 }}>
@@ -38,7 +38,7 @@ function Category({ products }) {
           py: 6,
           px: 3,
         }}>
-        <ProductCard products={products} />
+        <CategoryCard categoryProduct={categoryProduct} />
       </Grid>
       <Pagination />
     </Stack>

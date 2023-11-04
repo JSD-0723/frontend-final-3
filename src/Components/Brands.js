@@ -1,4 +1,5 @@
 import { Grid, Sheet } from "@mui/joy";
+import { Link } from "react-router-dom";
 import { styled } from "@mui/joy/styles";
 
 const Image = styled("img")(({ theme }) => ({
@@ -25,10 +26,14 @@ export const Brands = () => {
           padding: "20px",
         }}>
         <Grid>
-          <Image src={"/Assets/zara.png"} />
+          <Link to={"/category?brandName=zara"}>
+            <Image src={"/Assets/zara.png"} />
+          </Link>
         </Grid>
         <Grid>
-          <Image src={"/Assets/D&G.png"} />
+          <Link to={"/category?brandName=D&G"}>
+            <Image src={"/Assets/D&G.png"} />
+          </Link>
         </Grid>
         <Grid>
           <Image src={"/Assets/H&M.png"} />

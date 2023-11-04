@@ -116,8 +116,6 @@ export const FooterContent = () => {
       });
   }, []);
 
-  console.log(categories);
-
   return (
     <>
       <FooterContainer>
@@ -125,7 +123,9 @@ export const FooterContent = () => {
           <List>
             <StyledParagraph>Shop by Category</StyledParagraph>
             {categories.map((item) => (
-              <FilterLinks to={`/category/${item.id}`} key={item.id}>
+              <FilterLinks
+                to={`/category?categoryName=${item.name}`}
+                key={item.id}>
                 {item.name}
               </FilterLinks>
             ))}
