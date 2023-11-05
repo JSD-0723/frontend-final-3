@@ -10,7 +10,7 @@ import { Stack } from "@mui/material";
 import { CategoryCard } from "./CategoryCard";
 import Grid from "@mui/joy/Grid";
 
-function Category({ categoryProduct }) {
+function Category({ categoryProduct, onNext, totalPages, currentPage }) {
   return (
     <Stack sx={{ direction: "column", m: 3 }}>
       <Box sx={{ flexGrow: 1 }}>
@@ -40,7 +40,11 @@ function Category({ categoryProduct }) {
         }}>
         <CategoryCard categoryProduct={categoryProduct} />
       </Grid>
-      <Pagination />
+      <Pagination
+        onNext={onNext}
+        totalPages={totalPages}
+        currentPage={currentPage}
+      />
     </Stack>
   );
 }
