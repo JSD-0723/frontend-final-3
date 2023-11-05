@@ -331,7 +331,7 @@
   }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1280px) and (max-width: 1350px) {
+@media only screen and (min-width: 1180px) and (max-width: 1350px) {
   .tag {
     position: absolute;
     right: 0px;

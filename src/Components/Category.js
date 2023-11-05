@@ -10,23 +10,45 @@ import { Stack } from "@mui/material";
 import { CategoryCard } from "./CategoryCard";
 import Grid from "@mui/joy/Grid";
 
-function Category({ categoryProduct, onNext, totalPages, currentPage }) {
+function Category({
+  categoryTitle,
+  categoryProduct,
+  onNext,
+  totalPages,
+  currentPage,
+  pageChangeHandler,
+}) {
   return (
-    <Stack sx={{ direction: "column", m: 3 }}>
-      <Box sx={{ flexGrow: 1 }}>
-        <img src={base} alt="Black Friday Sales" />
+    <Stack sx={{ m: 3 }}>
+
+      <Box sx={{
+        flexGrow: 1, position: 'relative',
+        height: {
+          xs: 200,
+          sm: 270,
+          md: 370,
+          lg: 430,
+          xl: 450,
+        },
+      }}>
+        <Box className='container'>
+          <img src={base} alt={base} />
+        </Box>
       </Box>
-      <Breadcrumbs separator={<KeyboardArrowRight />} aria-label="breadcrumbs">
+
+      <Breadcrumbs separator={<KeyboardArrowRight />} aria-label="breadcrumbs" sx={{ml: -1.2}}>
         {["Home"].map((item) => (
-          <Link key={item} color="#1B4B66" sx={{ textDecoration: "none" }}>
+          <Link to="/" key={item} color="#1B4B66" sx={{ textDecoration: "none" }}>
             {item}
           </Link>
         ))}
-        <Typography sx={{ color: "#626262" }}>Category</Typography>
+        <Typography sx={{ color: "#626262" }}> {categoryTitle} </Typography>
       </Breadcrumbs>
-      <Typography level="h2" sx={{ color: "#1B4B66" }}>
-        Category Name
+
+      <Typography level="h2" sx={{ color: "#1B4B66", my: 2.8, fontWeight: 500 }}>
+        {categoryTitle}
       </Typography>
+
       <Grid
         container
         spacing={{ xs: 1, sm: 2, md: 3 }}
@@ -36,14 +58,17 @@ function Category({ categoryProduct, onNext, totalPages, currentPage }) {
           width: 1 / 1,
           justifyContent: "flex",
           py: 6,
-          px: 3,
-        }}>
+          px: 1,
+        }}
+      >
         <CategoryCard categoryProduct={categoryProduct} />
       </Grid>
+
       <Pagination
         onNext={onNext}
         totalPages={totalPages}
         currentPage={currentPage}
+        pageChangeHandler={pageChangeHandler}
       />
     </Stack>
   );

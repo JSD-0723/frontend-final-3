@@ -27,7 +27,8 @@ export const Footer = () => {
             lg: "none",
             xl: "none",
           },
-          marginBottom: "60px",
+          mb: "60px",
+          mt: 4,
         }}>
         <AccordionComponent
           title={"More about CORA'L"}

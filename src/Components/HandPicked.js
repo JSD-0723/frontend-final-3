@@ -5,7 +5,7 @@ import HandpickedCard from "./HandpickedCard";
 
 function Handpicked({ handpicked }) {
   return (
-    <Box sx={{ background: "#1B4B66", mb:5 }}>
+    <Box sx={{ background: "#1B4B66", mb:5, }}>
       <Typography
         level="h2"
         fontSize="2rem"
@@ -15,14 +15,11 @@ function Handpicked({ handpicked }) {
       </Typography>
       <Grid
         container
-        spacing={{ xs: 1, sm: 2, md: 3 }}
-        columns={{ xs: 6, sm: 6, md: 12 }}
         sx={{
           gap: 3,
           width: 1 / 1,
           justifyContent: "space-evenly",
-          py: 6,
-          px: 3,
+          py: 5,
         }}
       >
         {handpicked.map((product) => {

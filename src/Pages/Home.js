@@ -57,7 +57,7 @@ export const Home = () => {
   return (
     <>
       <Container>
-        <Carousel/>
+        <Carousel />
         <SlideShowComponent newArrivals={sliderNewArrivals} />
         <Handpicked handpicked={fourhandpicked} />
         <Brands brands={sixBrands} />

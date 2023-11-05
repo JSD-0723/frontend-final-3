@@ -12,7 +12,16 @@ const LinkedCard = styled(Link)(({ theme }) => ({
 const HandpickedCard = ({ product }) => {
   return (
     <LinkedCard to={`/detail/${product.id}`}>
-      <Card sx={{ height: 290, width: 290, borderRadius: 20, border: 0 }}>
+      <Card sx={{
+        display: "flex", justifyContent: 'space-evenly', alignItems: "center", borderRadius: 20, border: 0, aspectRatio: '1/1',
+        width: {
+          xs: 210,
+          sm: 230,
+          md: 250,
+          lg: 270,
+          xl: 290,
+        }
+      }}>
         <CardCover>
           <img src={product.imageUrl} alt={product.title} />
         </CardCover>

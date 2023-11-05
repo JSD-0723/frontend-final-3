@@ -3,6 +3,8 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import { styled } from "@mui/joy/styles";
 import { Link } from "react-router-dom";
 import Card from "@mui/joy/Card";
+import { Box } from "@mui/material";
+import noFishFound from "../Assets/404.gif";
 
 const CardInfo = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -31,6 +33,9 @@ const LinkedCard = styled(Link)(({ theme }) => ({
 }));
 
 export const CategoryCard = ({ categoryProduct }) => {
+  if (!categoryProduct || categoryProduct.length === 0) {
+    return <Box component="img" src={noFishFound} alt="No Products Found!" />;
+  }
   return (
     <>
       {categoryProduct.map((item) => (
@@ -41,7 +46,8 @@ export const CategoryCard = ({ categoryProduct }) => {
               background: "var(--bright)",
               minWidth: "260px",
               padding: "0",
-            }}>
+            }}
+          >
             <Image src={item.imageUrl} />
             <CardInfo>
               <Sheet sx={{ background: "var(--bright)", padding: "0 " }}>

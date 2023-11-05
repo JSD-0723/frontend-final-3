@@ -6,12 +6,15 @@ export default function PaginationControlled({
   onNext,
   currentPage,
   totalPages,
+  pageChangeHandler,
 }) {
   return (
     <Pagination
       hidePrevButton
+      onChange={pageChangeHandler}
       renderItem={(item) => (
         <PaginationItem
+        sx={{width: '3rem',}}
           components={{
             next: (props) => (
               <button
@@ -22,7 +25,8 @@ export default function PaginationControlled({
                   fontSize: "0.9rem",
                   margin: 1,
                 }}
-                onClick={onNext}>
+                onClick={onNext}
+              >
                 Next
               </button>
             ),
@@ -36,9 +40,11 @@ export default function PaginationControlled({
       sx={{
         backgroundColor: "#F1F1F1",
         width: "fit-content",
-        borderRadius: 2,
+        borderRadius: 3,
         px: 0.3,
         py: 0.5,
+        ml: -1,
+        mb: 9,
         color: "#626262",
         "& .MuiPaginationItem-root": {
           color: "#626262",
@@ -46,6 +52,8 @@ export default function PaginationControlled({
         "& .Mui-selected": {
           backgroundColor: "#1B4B66 !important",
           color: "#FFFFFF",
+          borderRadius: 2.5, 
+          
         },
       }}
     />
