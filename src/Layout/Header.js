@@ -59,7 +59,14 @@ export const Header = () => {
   const handleNavigation = (e) => {
     const newValue = e.target.value;
     setSearchValue(newValue);
-    navigate(`/category?keyword=${newValue}`);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleNavigation(e);
+      navigate(`/category?keyword=${searchValue}`);
+      setSearchValue("");
+    }
   };
 
   return (
@@ -97,7 +104,11 @@ export const Header = () => {
           </NavbarLinksContainer>
         </SideContainer>
         <SideContainer>
-          <SearchInput onChange={handleNavigation} value={searchValue} />
+          <SearchInput
+            onKeyPress={handleKeyPress}
+            onChange={handleNavigation}
+            value={searchValue}
+          />
           <IconContainer>
             <FavoriteBorderOutlinedIcon
               sx={{
@@ -121,17 +132,19 @@ export const Header = () => {
                 },
               }}
             />
-            <LocalMallOutlinedIcon
-              sx={{
-                display: {
-                  xs: "none",
-                  sm: "none",
-                  md: "none",
-                  lg: "inline",
-                  xl: "inline",
-                },
-              }}
-            />
+            <NavbarLink to={"/cart"}>
+              <LocalMallOutlinedIcon
+                sx={{
+                  display: {
+                    xs: "none",
+                    sm: "none",
+                    md: "none",
+                    lg: "inline",
+                    xl: "inline",
+                  },
+                }}
+              />
+            </NavbarLink>
             <NotificationsOutlinedIcon
               sx={{
                 display: {

@@ -1,7 +1,7 @@
 import Input from "@mui/joy/Input";
 import SearchIcon from "@mui/icons-material/Search";
 
-export const SearchInput = ({ value, onChange }) => {
+export const SearchInput = ({ value, onKeyPress, onChange }) => {
   return (
     <>
       <Input
@@ -13,6 +13,7 @@ export const SearchInput = ({ value, onChange }) => {
         startDecorator={<SearchIcon />}
         placeholder="Search for products or brands....."
         value={value}
+        onKeyPress={onKeyPress}
         onChange={onChange}
       />
     </>
