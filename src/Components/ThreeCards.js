@@ -22,7 +22,7 @@ function ThreeCards() {
       container
       spacing={{ xs: 2, md: 0 }}
       columns={{ xs: 12, sm: 12, md: 12 }}
-      sx={{ flexGrow: 1, width: 4 / 4 }}>
+      sx={{ flexGrow: 1, width: 4 / 4, pl:1 }}>
       <Grid xs={12} sm={16} md={12} sx={{}}>
         <Card sx={{ height: "400px", mx: 2, border: 0, mb: 4 }}>
           <CardCover sx={{ objectFit: "fill" }}>

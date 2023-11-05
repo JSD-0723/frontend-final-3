@@ -17,7 +17,7 @@ function Category({ categoryProduct, onNext, totalPages, currentPage }) {
         <img src={base} alt="Black Friday Sales" />
       </Box>
       <Breadcrumbs separator={<KeyboardArrowRight />} aria-label="breadcrumbs">
-        {["Home", ["Brand"]].map((item) => (
+        {["Home"].map((item) => (
           <Link key={item} color="#1B4B66" sx={{ textDecoration: "none" }}>
             {item}
           </Link>

@@ -5,11 +5,11 @@ import HandpickedCard from "./HandpickedCard";
 
 function Handpicked({ handpicked }) {
   return (
-    <Box sx={{ background: "#1B4B66" }}>
+    <Box sx={{ background: "#1B4B66", mb:5 }}>
       <Typography
         level="h2"
         fontSize="2rem"
-        sx={{ color: "white", pl: 3.5, pt: 3 }}
+        sx={{ color: "white", pl: 3, pt: 3, }}
       >
         Handpicked Collections
       </Typography>
