@@ -12,12 +12,14 @@ export const CategoryPage = () => {
   const newArrival = searchParams.get("newArrivals");
   const categoryName = searchParams.get("categoryName");
   const brandName = searchParams.get("brandName");
+  const keyword = searchParams.get("keyword");
 
   useEffect(() => {
     const queryParams = {
       newArrival,
       categoryName,
       brandName,
+      keyword,
       page: currentPage,
     };
     searchProduct(queryParams)
@@ -28,7 +30,7 @@ export const CategoryPage = () => {
       .catch((error) => {
         console.log("Error in fetching data", error);
       });
-  }, [newArrival, categoryName, brandName, currentPage]);
+  }, [newArrival, categoryName, brandName, currentPage, keyword]);
 
   const onNext = () => {
     setCurrentPage(currentPage + 1);
