@@ -9,7 +9,7 @@ const SlidesGenerator = () => {
 
     const slides = slidesInfo.map(({ clickHandler, mainDivClass, imgPath, title, subTitle, backgroundColor }) => (
         <>
-            <Box sx={{ flexGrow: 1, height: 400, margin: 3, position: 'relative' }}>
+            <Box sx={{ flexGrow: 1, height: 400, margin: 3, position: 'relative', }}>
 
                 <Box sx={{ flexGrow: 1 }} className='container'>
                     <div className={mainDivClass}>

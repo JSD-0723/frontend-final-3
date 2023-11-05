@@ -107,7 +107,7 @@ export const FooterContent = () => {
             <p>Shop by Products</p>
             <FilterLinks>Featured</FilterLinks>
             <FilterLinks>Trendy</FilterLinks>
-            <FilterLinks>Brands</FilterLinks>
+            <FilterLinks to="#brands">Brands</FilterLinks>
           </List>
         </LeftSide>
         <Divider

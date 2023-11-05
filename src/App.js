@@ -2,14 +2,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { MainLayout } from "./Layout/MainLayout";
 import { Home } from "./Pages/Home";
 import { Detail } from "./Pages/Detail";
-import "./App.css";
-import { CssVarsProvider, extendTheme } from "@mui/joy";
+import "./Components/style.css";
 import { Cart } from "./Pages/Cart";
 import hero from "./Assets/hero.svg";
 import spring from "./Assets/spring.svg";
 import SlidesContext from "./Shared/Context/SlidesContext";
 import { Checkout } from "./Pages/Checkout";
 
+<<<<<<< Updated upstream
 const theme = extendTheme({
   colorSchemes: {
     light: {
@@ -31,6 +31,9 @@ const theme = extendTheme({
     body: "Inter, var(--joy-fontFamily-fallback)",
   },
 });
+=======
+
+>>>>>>> Stashed changes
 function App() {
   const slidesImages = [
     {

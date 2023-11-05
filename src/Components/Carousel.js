@@ -21,7 +21,25 @@ const Carousel = () => {
   };
 
   return (
+<<<<<<< Updated upstream
     <Box sx={{ flexGrow: 1,height: 400, margin: 3 }}>
+=======
+    <Box sx={{ flexGrow: 1, 
+      mb: {
+      xs: 6,
+      sm: 6,
+      md: 10,
+      lg: 8,
+      xl: 7,
+    },
+      height: {
+      xs: 180,
+      sm: 270,
+      md: 320,
+      lg: 420,
+      xl: 420,
+    }, }}>
+>>>>>>> Stashed changes
       <AutoPlaySwipeableViews
         axis={theme.direction === "ltr" ? "x-reverse" : "x"}
         index={activeStep}

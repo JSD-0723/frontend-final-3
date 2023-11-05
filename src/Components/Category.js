@@ -10,6 +10,7 @@ import { Stack } from '@mui/material';
 import ProductCard from './ProductCard';
 import Grid from '@mui/joy/Grid';
 
+<<<<<<< Updated upstream
 function Category() {
     return (
         <Stack
@@ -44,3 +45,44 @@ function Category() {
 }
 
 export default Category
+=======
+function Category({ categoryProduct, onNext, totalPages, currentPage }) {
+  return (
+    <Stack sx={{ direction: "column", m: 3 }}>
+      <Box sx={{ flexGrow: 1 }}>
+        <img src={base} alt="Black Friday Sales" />
+      </Box>
+      <Breadcrumbs separator={<KeyboardArrowRight />} aria-label="breadcrumbs">
+        {["Home", ["Brand"]].map((item) => (
+          <Link key={item} color="#1B4B66" sx={{ textDecoration: "none" }}>
+            {item}
+          </Link>
+        ))}
+        <Typography sx={{ color: "#626262" }}>Category</Typography>
+      </Breadcrumbs>
+      <Typography level="h2" sx={{ color: "#1B4B66" }}>
+        Category Name
+      </Typography>
+      <Grid
+        container
+        spacing={{ xs: 1, sm: 2, md: 3 }}
+        columns={{ xs: 6, sm: 6, md: 12 }}
+        sx={{
+          gap: 3,
+          width: 1 / 1,
+          justifyContent: "flex",
+          py: 6,
+          px: 3,
+        }}>
+        <CategoryCard categoryProduct={categoryProduct} />
+      </Grid>
+      <Pagination
+        onNext={onNext}
+        totalPages={totalPages}
+        currentPage={currentPage}
+      />
+    </Stack>
+  );
+}
+export default Category;
+>>>>>>> Stashed changes

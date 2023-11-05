@@ -7,6 +7,8 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import { styled } from "@mui/joy/styles";
 import { Link } from "react-router-dom";
 import { DrawerMobileNavigation } from "../Components/MobileNavigation";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const NavbarContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -51,6 +53,15 @@ const IconContainer = styled(Sheet)(({ theme }) => ({
 }));
 
 export const Header = () => {
+  const [searchValue, setSearchValue] = useState("");
+  let navigate = useNavigate();
+
+  const handleNavigation = (e) => {
+    const newValue = e.target.value;
+    setSearchValue(newValue);
+    navigate(`/category?keyword=${newValue}`);
+  };
+
   return (
     <>
       <NavbarContainer>
@@ -68,15 +79,33 @@ export const Header = () => {
                 lg: "flex",
               },
             }}>
+<<<<<<< Updated upstream
             <NavbarLink>Handbags</NavbarLink>
             <NavbarLink>Watches</NavbarLink>
             <NavbarLink>Skincare</NavbarLink>
             <NavbarLink>Jewellery</NavbarLink>
             <NavbarLink>Apparels</NavbarLink>
+=======
+            <NavbarLink to={"/category?categoryName=Handbags"}>
+              Handbags
+            </NavbarLink>
+            <NavbarLink to={"/category?categoryName=Watches"}>
+              Watches
+            </NavbarLink>
+            <NavbarLink to={"/category?categoryName=Skincare"}>
+              Skincare
+            </NavbarLink>
+            <NavbarLink to={"/category?categoryName=Jewellery"}>
+              Jewellery
+            </NavbarLink>
+            <NavbarLink to={"/category?categoryName=Apparels"}>
+              Apparels
+            </NavbarLink>
+>>>>>>> Stashed changes
           </NavbarLinksContainer>
         </SideContainer>
         <SideContainer>
-          <SearchInput />
+          <SearchInput onChange={handleNavigation} value={searchValue} />
           <IconContainer>
             <FavoriteBorderOutlinedIcon
               fontSize="medium"

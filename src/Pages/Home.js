@@ -1,6 +1,28 @@
 import { SlideShowComponent } from "../Components/SlideShowComponent";
 import { Brands } from "../Components/Brands";
+<<<<<<< Updated upstream
 import { ImageSlider } from "../Components/ImageSlider";
+=======
+import Handpicked from "../Components/HandPicked";
+import ThreeCards from "../Components/ThreeCards";
+import { Sheet } from "@mui/joy";
+import { styled } from "@mui/joy/styles";
+import { useEffect, useState } from "react";
+import {
+  loadNewArrivals,
+  loadHandpickedProducts,
+  loadBrands,
+} from "../Shared/API/FetchData";
+import Carousel from "../Components/Carousel";
+import "../Components/style.css";
+
+const Container = styled(Sheet)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  background: "var(--bright)",
+  paddingBottom: "50px",
+}));
+>>>>>>> Stashed changes
 
 export const Home = () => {
   const fetchedData = {
@@ -319,10 +341,51 @@ export const Home = () => {
     ],
   };
 
+<<<<<<< Updated upstream
   return (
     <>
       <SlideShowComponent fetchedData={fetchedData} />
       <Brands />
+=======
+  useEffect(() => {
+    loadNewArrivals()
+      .then((response) => {
+        setNewArrivals(response.data);
+      })
+      .catch((error) => {
+        console.log("Error fetching New Arrivals", error);
+      });
+
+    loadHandpickedProducts()
+      .then((response) => {
+        setHandPicked(response.data);
+      })
+      .catch((error) => {
+        console.log("Error fetching Handpicked", error);
+      });
+
+    loadBrands()
+      .then((response) => {
+        setBrands(response.data);
+      })
+      .catch((error) => {
+        console.log("Error fetching Brands", error);
+      });
+  }, []);
+
+  const sliderNewArrivals = newArrivals.slice(0, 10);
+  const fourhandpicked = handpicked.slice(0, 4);
+  const sixBrands = brands.slice(0, 6);
+  return (
+    <>
+      <Container>
+        <Carousel/>
+        <SlideShowComponent newArrivals={sliderNewArrivals} />
+        <Handpicked handpicked={fourhandpicked} />
+        <Brands brands={sixBrands} />
+        <ThreeCards />
+      </Container>
+>>>>>>> Stashed changes
     </>
   );
 };
