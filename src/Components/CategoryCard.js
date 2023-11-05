@@ -30,10 +30,10 @@ const LinkedCard = styled(Link)(({ theme }) => ({
   textDecoration: "none",
 }));
 
-export const ProductCard = ({ newArrivals }) => {
+export const CategoryCard = ({ categoryProduct }) => {
   return (
     <>
-      {newArrivals.map((item) => (
+      {categoryProduct.map((item) => (
         <LinkedCard key={item.id} to={`/detail/${item.id}`}>
           <Card
             variant="plain"
@@ -59,4 +59,3 @@ export const ProductCard = ({ newArrivals }) => {
     </>
   );
 };
-// require(`${item.imageUrl}`)}

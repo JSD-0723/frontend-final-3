@@ -105,21 +105,6 @@
     font-weight: 850;
     font-size: 1.2em;
   }
-<<<<<<< Updated upstream
-  img {
-    border-radius: 10px;
-    object-fit: cover;
-    max-height: 400px;
-    display: block;
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-  }
-  
-  
-  
-=======
->>>>>>> Stashed changes
   .tag1 {
     position: absolute;
     left: 10px;

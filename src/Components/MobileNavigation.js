@@ -7,6 +7,14 @@ import ListItemButton from "@mui/joy/ListItemButton";
 import Typography from "@mui/joy/Typography";
 import ModalClose from "@mui/joy/ModalClose";
 import Menu from "@mui/icons-material/Menu";
+import { styled } from "@mui/joy/styles";
+import { Link } from "react-router-dom";
+
+const NavbarLink = styled(Link)(({ theme }) => ({
+  textDecoration: "none",
+  color: "var(--type-high-emphasis)",
+  fontWeight: "var(--medium-font)",
+}));
 
 export const DrawerMobileNavigation = () => {
   const [open, setOpen] = React.useState(false);
@@ -55,11 +63,21 @@ export const DrawerMobileNavigation = () => {
             fontSize: "xl",
             "& > div": { justifyContent: "center" },
           }}>
-          <ListItemButton>Handbags</ListItemButton>
-          <ListItemButton>Watches</ListItemButton>
-          <ListItemButton>Skincare</ListItemButton>
-          <ListItemButton>Jewellery</ListItemButton>
-          <ListItemButton>Apparels</ListItemButton>
+          <NavbarLink to={"/category?categoryName=handbags"}>
+            <ListItemButton>Handbags</ListItemButton>
+          </NavbarLink>
+          <NavbarLink to={"/category?categoryName=watches"}>
+            <ListItemButton>Watches</ListItemButton>
+          </NavbarLink>
+          <NavbarLink to={"/category?categoryName=skincare"}>
+            <ListItemButton>Skincare</ListItemButton>
+          </NavbarLink>
+          <NavbarLink to={"/category?categoryName=jewellery"}>
+            <ListItemButton>Jewellery</ListItemButton>
+          </NavbarLink>
+          <NavbarLink to={"/category?categoryName=apparels"}>
+            <ListItemButton>Apparels</ListItemButton>
+          </NavbarLink>
         </List>
       </Drawer>
     </>

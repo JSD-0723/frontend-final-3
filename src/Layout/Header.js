@@ -59,7 +59,14 @@ export const Header = () => {
   const handleNavigation = (e) => {
     const newValue = e.target.value;
     setSearchValue(newValue);
-    navigate(`/category?keyword=${newValue}`);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleNavigation(e);
+      navigate(`/category?keyword=${searchValue}`);
+      setSearchValue("");
+    }
   };
 
   return (
@@ -79,13 +86,6 @@ export const Header = () => {
                 lg: "flex",
               },
             }}>
-<<<<<<< Updated upstream
-            <NavbarLink>Handbags</NavbarLink>
-            <NavbarLink>Watches</NavbarLink>
-            <NavbarLink>Skincare</NavbarLink>
-            <NavbarLink>Jewellery</NavbarLink>
-            <NavbarLink>Apparels</NavbarLink>
-=======
             <NavbarLink to={"/category?categoryName=Handbags"}>
               Handbags
             </NavbarLink>
@@ -101,14 +101,16 @@ export const Header = () => {
             <NavbarLink to={"/category?categoryName=Apparels"}>
               Apparels
             </NavbarLink>
->>>>>>> Stashed changes
           </NavbarLinksContainer>
         </SideContainer>
         <SideContainer>
-          <SearchInput onChange={handleNavigation} value={searchValue} />
+          <SearchInput
+            onKeyPress={handleKeyPress}
+            onChange={handleNavigation}
+            value={searchValue}
+          />
           <IconContainer>
             <FavoriteBorderOutlinedIcon
-              fontSize="medium"
               sx={{
                 display: {
                   xs: "none",
@@ -120,7 +122,6 @@ export const Header = () => {
               }}
             />
             <PersonOutlineOutlinedIcon
-              fontSize="medium"
               sx={{
                 display: {
                   xs: "none",
@@ -131,18 +132,19 @@ export const Header = () => {
                 },
               }}
             />
-            <LocalMallOutlinedIcon
-              fontSize="medium"
-              sx={{
-                display: {
-                  xs: "none",
-                  sm: "none",
-                  md: "none",
-                  lg: "inline",
-                  xl: "inline",
-                },
-              }}
-            />
+            <NavbarLink to={"/cart"}>
+              <LocalMallOutlinedIcon
+                sx={{
+                  display: {
+                    xs: "none",
+                    sm: "none",
+                    md: "none",
+                    lg: "inline",
+                    xl: "inline",
+                  },
+                }}
+              />
+            </NavbarLink>
             <NotificationsOutlinedIcon
               sx={{
                 display: {

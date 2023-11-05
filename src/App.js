@@ -8,32 +8,9 @@ import hero from "./Assets/hero.svg";
 import spring from "./Assets/spring.svg";
 import SlidesContext from "./Shared/Context/SlidesContext";
 import { Checkout } from "./Pages/Checkout";
+import { CategoryPage } from "./Pages/CategoryPage";
 
-<<<<<<< Updated upstream
-const theme = extendTheme({
-  colorSchemes: {
-    light: {
-      palette: {
-        primary: {
-          solidBg: "#1B4B66",
-        },
-        neutral: {
-          solidBg: "#F1F1F1",
-        },
-        danger: {
-          solidBg: "#B00020",
-        },
-      },
-    },
-  },
-  fontFamily: {
-    display: "Inter, var(--joy-fontFamily-fallback)",
-    body: "Inter, var(--joy-fontFamily-fallback)",
-  },
-});
-=======
 
->>>>>>> Stashed changes
 function App() {
   const slidesImages = [
     {
@@ -55,18 +32,19 @@ function App() {
   ];
   return (
     <SlidesContext.Provider value={slidesImages}>
-      <CssVarsProvider theme={theme}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<MainLayout />}>
-              <Route index element={<Home />} />
-              <Route path="/detail/:productId" element={<Detail />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/checkout" element={<Checkout />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </CssVarsProvider>
+      {/* <CssVarsProvider theme={theme}> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<Home />} />
+            <Route path="/detail/:productId" element={<Detail />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/category" element={<CategoryPage />} />
+            <Route path="/checkout" element={<Checkout />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+      {/* </CssVarsProvider> */}
     </SlidesContext.Provider>
   );
 }

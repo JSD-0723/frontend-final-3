@@ -12,14 +12,12 @@ const ComponantNavigater = styled(Sheet)(({ theme }) => ({
   padding: "0 20px",
 }));
 
-export const SlideShowComponent = ({ fetchedData }) => {
-  const data = fetchedData.data;
-
+export const SlideShowComponent = ({ newArrivals }) => {
   return (
     <>
       <ComponantNavigater>
         <h2>New Arrivals</h2>
-        <NavigateButton text={"View All"} />
+        <NavigateButton to={"/category?newArrivals=true"} text={"View All"} />
       </ComponantNavigater>
       <Box
         sx={{
@@ -35,7 +33,7 @@ export const SlideShowComponent = ({ fetchedData }) => {
           },
           "::-webkit-scrollbar": { display: "none" },
         }}>
-        <ProductCard data={data} />
+        <ProductCard newArrivals={newArrivals} />
       </Box>
     </>
   );
