@@ -2,32 +2,32 @@ import Category from "../Components/Category";
 import { useEffect, useState } from "react";
 import { searchProduct } from "../Shared/API/FetchData";
 import { useSearchParams } from "react-router-dom";
-
 export const CategoryPage = () => {
   const [searchParams] = useSearchParams(window.location.search);
   const [categoryProduct, setCategoryProduct] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [categoryTitle, setCategoryTitle] = useState("Category Name");
-
   const newArrival = searchParams.get("newArrivals");
   const categoryName = searchParams.get("categoryName");
   const brandName = searchParams.get("brandName");
+  const limited = searchParams.get("limited");
+  const discount = searchParams.get("discount");
   const keyword = searchParams.get("keyword");
-
   useEffect(() => {
     checkParams();
     const queryParams = {
       newArrival,
       categoryName,
       brandName,
+      limited,
+      discount,
       keyword,
       page: currentPage,
     };
     const query = Object.fromEntries(
       Object.entries(queryParams).filter(([_, v]) => v !== null)
     );
-
     searchProduct(query)
       .then((response) => {
         setCategoryProduct(response.data);
@@ -37,7 +37,6 @@ export const CategoryPage = () => {
         console.log("Error in fetching data", error);
       });
   }, [newArrival, categoryName, brandName, currentPage, keyword]);
-
   const checkParams = () => {
     if (newArrival) {
       setCategoryTitle("New Arrivals");
@@ -53,16 +52,13 @@ export const CategoryPage = () => {
     }
     return categoryTitle;
   };
-
   const onNext = () => {
     setCurrentPage(currentPage + 1);
   };
-
   const pageChangeHandler = (event, value) => {
     setCurrentPage(value);
     window.scrollTo(0, 0);
   };
-
   return (
     <Category
       categoryTitle={categoryTitle}

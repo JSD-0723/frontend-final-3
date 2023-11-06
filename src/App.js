@@ -19,7 +19,7 @@ function App() {
       subTitle: "Trendy handbags collection for your party animal",
       backgroundColor: "#1B4B66",
       mainDivClass: "tag",
-      clickHandler: () => console.log("111"),
+      linkTo: `/category?categoryName=handbags`,
     },
     {
       imgPath: spring,
@@ -27,12 +27,11 @@ function App() {
       subTitle: "UPTO 20% OFF",
       backgroundColor: "#B00020",
       mainDivClass: "tag1",
-      clickHandler: () => console.log("2222"),
+      linkTo: `/category?categoryName=Apparels`,
     },
   ];
   return (
     <SlidesContext.Provider value={slidesImages}>
-      {/* <CssVarsProvider theme={theme}> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
@@ -44,7 +43,6 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      {/* </CssVarsProvider> */}
     </SlidesContext.Provider>
   );
 }
