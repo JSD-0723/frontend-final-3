@@ -26,6 +26,7 @@ export const loadCategories = () => {
     .then((response) => response.data);
 };
 
+
 export const searchProduct = (query) => {
   const queryString = new URLSearchParams(query).toString();
 
@@ -33,3 +34,4 @@ export const searchProduct = (query) => {
     .get(`${BACKUP_HOST}/products/v1/search?${queryString}`)
     .then((response) => response.data);
 };
+

@@ -10,13 +10,13 @@ export const Brands = ({ brands }) => {
           pl: 3,
           background: "var(--bright)",
         }}
+
         id="brands"
       >
         <Typography level="h2" fontSize="title-lg" sx={{fontWeight: 500,}}>
         Shop by Brands
         </Typography>
       </Sheet>
-
       <Grid
         container
         columns={{ lg: 2, sm: 3 }}

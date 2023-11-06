@@ -15,10 +15,8 @@ import blueArrow from "../Assets/blueArrow.svg";
 import { CardActions } from "@mui/joy";
 import IconButton from "@mui/joy/IconButton";
 import { maxHeight } from "@mui/system";
-
 function ThreeCards() {
   return (
-
     <Box sx={{ mx: 3 }}>
       <Card sx={{
         border: 0, mb: 4,
@@ -33,7 +31,6 @@ function ThreeCards() {
         <CardCover sx={{ objectFit: "fill" }}>
           <img src={Makeup} />
         </CardCover>
-
         <CardContent sx={{
           ml: 3,
           mt: {
@@ -83,8 +80,6 @@ function ThreeCards() {
           </Typography>
         </CardContent>
       </Card>
-
-
       <Box sx={{
         display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: 6,
         height: {
@@ -99,7 +94,6 @@ function ThreeCards() {
           <CardCover sx={{ objectFit: "cover" }}>
             <img src={Skincare} />
           </CardCover>
-
           <CardContent sx={{width:'50%', transform: 'translate(90%)' }}>
             <Typography
               level="title-lg"
@@ -122,12 +116,10 @@ function ThreeCards() {
             </CardActions>
           </CardContent>
         </Card>
-
         <Card sx={{ border: 0, flex: 1 }}>
           <CardCover sx={{ objectFit: "cover" }}>
             <img src={Facepack} />
           </CardCover>
-
           <CardContent sx={{
           width: {
             xs: '50%',
@@ -167,8 +159,6 @@ function ThreeCards() {
         </Card>
       </Box>
     </Box>
-
   );
 }
-
 export default ThreeCards;

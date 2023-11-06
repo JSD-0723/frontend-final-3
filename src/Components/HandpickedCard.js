@@ -33,7 +33,9 @@ const HandpickedCard = ({ product }) => {
           }}
         />
         <CardContent sx={{ justifyContent: "flex-end" }}>
+
           <Typography level="title-lg" textColor="#171520" fontSize="1.3rem">
+
             {product.title}
           </Typography>
         </CardContent>

@@ -1,7 +1,6 @@
 import Pagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
 import "./style.css";
-
 export default function PaginationControlled({
   onNext,
   currentPage,
@@ -52,8 +51,7 @@ export default function PaginationControlled({
         "& .Mui-selected": {
           backgroundColor: "#1B4B66 !important",
           color: "#FFFFFF",
-          borderRadius: 2.5, 
-          
+          borderRadius: 2.5,
         },
       }}
     />

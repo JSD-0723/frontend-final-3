@@ -20,6 +20,7 @@ export const SlideShowComponent = ({ newArrivals }) => {
         <Typography level="h2" fontSize="title-lg" sx={{fontWeight: 500, mb:2}}>
           New Arrivals
         </Typography>
+
         <NavigateButton to={"/category?newArrivals=true"} text={"View All"} />
       </ComponantNavigater>
       <Box

@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,700&display=swap');
 * {
   font-family: 'Inter', sans-serif;
-  font-family: 'Nunito Sans', sans-serif; 
+  font-family: 'Nunito Sans', sans-serif;
 }
-
 .container {
   position: absolute;
   width: 100%;
-  
 }
 .tag {
   position: absolute;
@@ -22,7 +20,6 @@
   border-radius: 15px 0px 0px 15px;
   width: 50%;
 }
-
 .tag h3{
   font-weight: 500;
   font-size: 2rem;
@@ -42,9 +39,6 @@
   position: relative;
   border-radius: 30px;
 }
-
-
-
 .tag1 {
   position: absolute;
   left: 18px;
@@ -56,7 +50,6 @@
   z-index: 1000;
   width: 45%;
 }
-
 .tag1 h3{
   font-weight: 400;
   font-size: 2.5rem;
@@ -76,8 +69,6 @@
 .container button {
   width: 25%;
 }
-
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .container button {
@@ -127,7 +118,6 @@
     width: 80%;
   }
 }
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 768px ) {
   .tag {
@@ -177,7 +167,6 @@
     display: none;
   }
 }
-
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 910px) {
   .tag {
@@ -228,7 +217,6 @@
     width: 35%;
   }
 }
-
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 911px) and (max-width: 1071px) {
   .tag {
@@ -279,7 +267,6 @@
     width: 35%;
   }
 }
-
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1072px) and (max-width: 1180px) {
   .tag {

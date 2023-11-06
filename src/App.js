@@ -9,8 +9,6 @@ import spring from "./Assets/spring.svg";
 import SlidesContext from "./Shared/Context/SlidesContext";
 import { Checkout } from "./Pages/Checkout";
 import { CategoryPage } from "./Pages/CategoryPage";
-
-
 function App() {
   const slidesImages = [
     {

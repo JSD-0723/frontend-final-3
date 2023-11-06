@@ -12,7 +12,6 @@ import {
 } from "../Shared/API/FetchData";
 import Carousel from "../Components/Carousel";
 import "../Components/style.css";
-
 const Container = styled(Sheet)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
