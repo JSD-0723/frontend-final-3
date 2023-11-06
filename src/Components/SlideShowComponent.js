@@ -4,6 +4,7 @@ import { Sheet } from "@mui/joy";
 import { ProductCard } from "./ProductCard";
 import { styled } from "@mui/joy/styles";
 import { NavigateButton } from "./NavigateButton";
+import Typography from '@mui/joy/Typography';
 
 const ComponantNavigater = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -16,7 +17,10 @@ export const SlideShowComponent = ({ newArrivals }) => {
   return (
     <>
       <ComponantNavigater>
-        <h2>New Arrivals</h2>
+        <Typography level="h2" fontSize="title-lg" sx={{fontWeight: 500, mb:2}}>
+          New Arrivals
+        </Typography>
+
         <NavigateButton to={"/category?newArrivals=true"} text={"View All"} />
       </ComponantNavigater>
       <Box
@@ -25,6 +29,7 @@ export const SlideShowComponent = ({ newArrivals }) => {
           gap: 4,
           py: 1,
           px: 2,
+          mb: 3,
           overflow: "auto",
           width: "100vw",
           scrollSnapType: "x mandatory",

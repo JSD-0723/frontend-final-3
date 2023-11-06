@@ -125,7 +125,9 @@ export const FooterContent = () => {
             {categories.map((item) => (
               <FilterLinks
                 to={`/category?categoryName=${item.name}`}
-                key={item.id}>
+                key={item.id}
+              >
+
                 {item.name}
               </FilterLinks>
             ))}
@@ -134,7 +136,7 @@ export const FooterContent = () => {
             <StyledParagraph>Shop by Products</StyledParagraph>
             <FilterLinks>Featured</FilterLinks>
             <FilterLinks>Trendy</FilterLinks>
-            <FilterLinks>Brands</FilterLinks>
+            <FilterLinks to="/">Brands</FilterLinks>
           </List>
         </LeftSide>
         <Divider

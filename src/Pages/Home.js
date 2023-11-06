@@ -11,7 +11,7 @@ import {
   loadBrands,
 } from "../Shared/API/FetchData";
 import Carousel from "../Components/Carousel";
-
+import "../Components/style.css";
 const Container = styled(Sheet)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
@@ -51,12 +51,15 @@ export const Home = () => {
   }, []);
 
   const sliderNewArrivals = newArrivals.slice(0, 10);
+  const fourhandpicked = handpicked.slice(0, 4);
+  const sixBrands = brands.slice(0, 6);
   return (
     <>
       <Container>
+        <Carousel />
         <SlideShowComponent newArrivals={sliderNewArrivals} />
-        <Handpicked handpicked={handpicked} />
-        <Brands brands={brands} />
+        <Handpicked handpicked={fourhandpicked} />
+        <Brands brands={sixBrands} />
         <ThreeCards />
       </Container>
     </>

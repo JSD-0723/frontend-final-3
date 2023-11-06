@@ -8,17 +8,20 @@ const CardInfo = styled(Sheet)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
   background: "var(--bright)",
+  
 }));
 
 const Image = styled("img")(({ theme }) => ({
   width: "100%",
   height: "16rem",
-  borderRadius: "5%",
-}));
+
+  borderRadius: "3%",
+
 
 const Brandname = styled("h4")(({ theme }) => ({
   fontSize: ".9rem",
-  fontWeight: "var(--medium-font)",
+  lineHeight: 2,
+  fontWeight:600
 }));
 
 const ItemName = styled("h5")(({ theme }) => ({
