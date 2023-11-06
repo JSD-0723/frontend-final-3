@@ -7,7 +7,7 @@ import Typography from "@mui/joy/Typography";
 import { KeyboardArrowRight } from "@mui/icons-material";
 import Pagination from "./Pagination";
 import { Stack } from "@mui/material";
-import { CategoryCard } from "./CategoryCard";
+import CategoryCard from "./CategoryCard";
 import Grid from "@mui/joy/Grid";
 
 function Category({
@@ -51,14 +51,10 @@ function Category({
 
       <Grid
         container
-        spacing={{ xs: 1, sm: 2, md: 3 }}
-        columns={{ xs: 6, sm: 6, md: 12 }}
         sx={{
-          gap: 3,
+          gap: 5,
           width: 1 / 1,
-          justifyContent: "flex",
-          py: 6,
-          px: 1,
+          py: 5,
         }}
       >
         <CategoryCard categoryProduct={categoryProduct} />
@@ -66,7 +62,7 @@ function Category({
 
       <Pagination
         onNext={onNext}
-        totalPages={totalPages}
+        totalPages={totalPages > 0 ? totalPages : Pagination.hideNextButton}
         currentPage={currentPage}
         pageChangeHandler={pageChangeHandler}
       />

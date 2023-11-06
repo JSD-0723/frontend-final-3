@@ -49,7 +49,7 @@ export const CategoryPage = () => {
       setCategoryTitle(brandName);
     }
     if (keyword) {
-      setCategoryTitle(keyword);
+      setCategoryTitle("You search for: '" + keyword + "'");
     }
     return categoryTitle;
   };

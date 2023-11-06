@@ -117,7 +117,7 @@ function ThreeCards() {
               }}>
               Skincare Essentials
             </Typography>
-            <CardActions sx={{ justifyContent: "flex-end" }}>
+            <CardActions sx={{ justifyContent: "flex-end", }}>
               <img src={pinkArrow} />
             </CardActions>
           </CardContent>
