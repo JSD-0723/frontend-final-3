@@ -9,6 +9,8 @@ import spring from "./Assets/spring.svg";
 import SlidesContext from "./Shared/Context/SlidesContext";
 import { Checkout } from "./Pages/Checkout";
 import { CategoryPage } from "./Pages/CategoryPage";
+import SignIn from "./Pages/SignIn";
+import SignUp from "./Pages/SignUp";
 function App() {
   const slidesImages = [
     {
@@ -40,6 +42,8 @@ function App() {
             <Route path="/category" element={<CategoryPage />} />
             <Route path="/checkout" element={<Checkout />} />
           </Route>
+          <Route path="/signin" element={<SignIn/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
         </Routes>
       </BrowserRouter>
       {/* </CssVarsProvider> */}

@@ -1,3 +1,6 @@
+import React, { useState } from "react";
+import Popover from "@mui/material/Popover";
+import UserMenu from "../Components/UserMenu";
 import { Sheet } from "@mui/joy";
 import { SearchInput } from "../Components/SearchInput";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
@@ -8,7 +11,6 @@ import { styled } from "@mui/joy/styles";
 import { Link } from "react-router-dom";
 import { DrawerMobileNavigation } from "../Components/MobileNavigation";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 const NavbarContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -54,6 +56,7 @@ const IconContainer = styled(Sheet)(({ theme }) => ({
 
 export const Header = () => {
   const [searchValue, setSearchValue] = useState("");
+  const [anchorEl, setAnchorEl] = useState(null);
   let navigate = useNavigate();
 
   const handleNavigation = (e) => {
@@ -68,6 +71,16 @@ export const Header = () => {
       setSearchValue("");
     }
   };
+
+  const handleUserMenuClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleUserMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  const isUserMenuOpen = Boolean(anchorEl);
 
   return (
     <>
@@ -85,7 +98,8 @@ export const Header = () => {
                 md: "none",
                 lg: "flex",
               },
-            }}>
+            }}
+          >
             <NavbarLink to={"/category?categoryName=Handbags"}>
               Handbags
             </NavbarLink>
@@ -122,6 +136,7 @@ export const Header = () => {
               }}
             />
             <PersonOutlineOutlinedIcon
+              onClick={handleUserMenuClick}
               sx={{
                 display: {
                   xs: "none",
@@ -159,6 +174,21 @@ export const Header = () => {
           </IconContainer>
         </SideContainer>
       </NavbarContainer>
+      <Popover
+        open={isUserMenuOpen}
+        anchorEl={anchorEl}
+        onClose={handleUserMenuClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
+      >
+        <UserMenu />
+      </Popover>
     </>
   );
 };
