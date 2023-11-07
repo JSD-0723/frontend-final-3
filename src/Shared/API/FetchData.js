@@ -33,3 +33,9 @@ export const searchProduct = (query) => {
     .get(`${BACKUP_HOST}/products/v1/search?${queryString}`)
     .then((response) => response.data);
 };
+
+export const loadProductDetails = (productId) => {
+  return axios
+    .get(`${BACKUP_HOST}/products/${productId}`)
+    .then((response) => response.data);
+};

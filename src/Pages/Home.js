@@ -12,7 +12,6 @@ import {
 } from "../Shared/API/FetchData";
 import Carousel from "../Components/Carousel";
 import "../Components/style.css";
-
 const Container = styled(Sheet)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
@@ -58,7 +57,7 @@ export const Home = () => {
     <>
       <Container>
         <Carousel />
-        <SlideShowComponent newArrivals={sliderNewArrivals} />
+        <SlideShowComponent products={sliderNewArrivals} />
         <Handpicked handpicked={fourhandpicked} />
         <Brands brands={sixBrands} />
         <ThreeCards />
