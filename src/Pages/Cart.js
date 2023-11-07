@@ -63,6 +63,8 @@ const RightSideContainer = styled(Sheet)(({ theme }) => ({
 }));
 
 export const Cart = () => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
   return (
     <>
       <Sheet

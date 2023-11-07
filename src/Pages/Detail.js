@@ -9,6 +9,8 @@ import { ProductDescription } from "../Components/ProductDescription";
 export const Detail = () => {
   const { productId } = useParams();
   const [details, setDetails] = useState([]);
+  const [count, setCount] = useState(1);
+
   useEffect(() => {
     loadProductDetails(productId).then((response) => {
       setDetails(response.data);
@@ -17,7 +19,24 @@ export const Detail = () => {
 
   const productInfo = details.product;
   const productImage = productInfo?.imageUrl;
-  console.log(productImage);
+
+  const localStorageHandler = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const findIdIndex = cart.findIndex(
+      (product) => product.productId === productId
+    );
+    const newProduct = { productInfo, productImage, count, productId };
+
+    if (findIdIndex !== -1) {
+      // If the product exists in the cart, update the count
+      cart[findIdIndex].count += count;
+    } else {
+      // If the product doesn't exist, add it to the cart
+      cart.push(newProduct);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
 
   const images = [
     productImage,
@@ -28,9 +47,14 @@ export const Detail = () => {
 
   return (
     <>
-      <Sheet sx={{ display: "flex", justifyContent: "space-around" }}>
+      <Sheet>
         <ImageSlider images={images} />
-        <ProductInfo details={details} />
+        <ProductInfo
+          count={count}
+          setCount={setCount}
+          onClick={localStorageHandler}
+          details={details}
+        />
       </Sheet>
       <ProductDescription details={details} />
     </>

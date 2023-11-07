@@ -135,7 +135,7 @@ function ThreeCards() {
         </Card>
 
         <Card sx={{ border: 0, flex: 1 }}>
-          <StyledLink>
+          <StyledLink to={"/category?rating=4.5&ratingType=above"}>
             <CardCover sx={{ objectFit: "cover" }}>
               <img src={Facepack} />
             </CardCover>
