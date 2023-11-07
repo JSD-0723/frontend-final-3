@@ -2,6 +2,7 @@ import Category from "../Components/Category";
 import { useEffect, useState } from "react";
 import { searchProduct } from "../Shared/API/FetchData";
 import { useSearchParams } from "react-router-dom";
+import { queries } from "@testing-library/react";
 export const CategoryPage = () => {
   const [searchParams] = useSearchParams(window.location.search);
   const [categoryProduct, setCategoryProduct] = useState([]);
@@ -13,7 +14,9 @@ export const CategoryPage = () => {
   const brandName = searchParams.get("brandName");
   const limited = searchParams.get("limited");
   const discount = searchParams.get("discount");
+  const popular = searchParams.get("rating");
   const keyword = searchParams.get("keyword");
+
   useEffect(() => {
     checkParams();
     const queryParams = {
@@ -22,6 +25,7 @@ export const CategoryPage = () => {
       brandName,
       limited,
       discount,
+      popular,
       keyword,
       page: currentPage,
     };
@@ -36,10 +40,14 @@ export const CategoryPage = () => {
       .catch((error) => {
         console.log("Error in fetching data", error);
       });
+    console.log("this is queryparam:", queryParams);
   }, [newArrival, categoryName, brandName, currentPage, keyword]);
+
+  console.log("this is searchParam:", searchParams);
   const checkParams = () => {
     if (newArrival) {
       setCategoryTitle("New Arrivals");
+      searchParams.delete("newArrivals");
     }
     if (categoryName) {
       setCategoryTitle(categoryName);
