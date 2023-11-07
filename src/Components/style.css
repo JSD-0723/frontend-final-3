@@ -381,31 +381,3 @@
   }
 }
 
-
-.wrapper {
-  height: 60px;
-  width: 50%;
-  max-width: 180px;
-  background: #fff;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.wrapper span {
-  font-size: 24px;
-  width: 100%;
-  text-align: center;
-  font-weight: 600;
-  cursor: pointer;
-  user-select: none;
-}
-
-.wrapper span.num {
-  font-size: 20px;
-  border-right: 2px solid rgba(0, 0, 0, 0.2);
-  border-left: 2px solid rgba(0, 0, 0, 0.2);
-  pointer-events: none;
-}
