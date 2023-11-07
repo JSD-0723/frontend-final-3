@@ -26,7 +26,6 @@ export const loadCategories = () => {
     .then((response) => response.data);
 };
 
-
 export const searchProduct = (query) => {
   const queryString = new URLSearchParams(query).toString();
 
@@ -35,3 +34,8 @@ export const searchProduct = (query) => {
     .then((response) => response.data);
 };
 
+export const loadProductDetails = (productId) => {
+  return axios
+    .get(`${BACKUP_HOST}/products/${productId}`)
+    .then((response) => response.data);
+};

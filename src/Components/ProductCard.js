@@ -8,7 +8,6 @@ const CardInfo = styled(Sheet)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
   background: "var(--bright)",
-  
 }));
 
 const Image = styled("img")(({ theme }) => ({
@@ -16,12 +15,12 @@ const Image = styled("img")(({ theme }) => ({
   height: "16rem",
 
   borderRadius: "3%",
-
+}));
 
 const Brandname = styled("h4")(({ theme }) => ({
   fontSize: ".9rem",
   lineHeight: 2,
-  fontWeight:600
+  fontWeight: 600,
 }));
 
 const ItemName = styled("h5")(({ theme }) => ({
@@ -33,10 +32,10 @@ const LinkedCard = styled(Link)(({ theme }) => ({
   textDecoration: "none",
 }));
 
-export const ProductCard = ({ newArrivals }) => {
+export const ProductCard = ({ products }) => {
   return (
     <>
-      {newArrivals.map((item) => (
+      {products?.map((item) => (
         <LinkedCard key={item.id} to={`/detail/${item.id}`}>
           <Card
             variant="plain"

@@ -13,11 +13,14 @@ const ComponantNavigater = styled(Sheet)(({ theme }) => ({
   padding: "0 20px",
 }));
 
-export const SlideShowComponent = ({ newArrivals }) => {
+export const SlideShowComponent = ({ products }) => {
   return (
     <>
       <ComponantNavigater>
-        <Typography level="h2" fontSize="title-lg" sx={{fontWeight: 500, mb:2}}>
+        <Typography
+          level="h2"
+          fontSize="title-lg"
+          sx={{ fontWeight: 500, mb: 2 }}>
           New Arrivals
         </Typography>
 
@@ -38,7 +41,7 @@ export const SlideShowComponent = ({ newArrivals }) => {
           },
           "::-webkit-scrollbar": { display: "none" },
         }}>
-        <ProductCard newArrivals={newArrivals} />
+        <ProductCard products={products} />
       </Box>
     </>
   );
