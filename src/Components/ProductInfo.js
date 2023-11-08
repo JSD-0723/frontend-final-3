@@ -37,7 +37,7 @@ export const ProductInfo = ({ details, onClick, count, setCount }) => {
                     }
                 }} />
                 <Typography level="h2title-md" sx={{ color: '#B6B6B6', }}>
-                    ({productInfo?.price}) Ratings
+                    ({productInfo?.ratingCount}) Ratings
                 </Typography>
             </Sheet>
             <Sheet sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
