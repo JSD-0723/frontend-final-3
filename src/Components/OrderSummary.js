@@ -29,6 +29,13 @@ const Values = styled("p")(({ theme }) => ({
 }));
 
 export const OrderSummary = ({ showButtons = true }) => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let subTotal = 0;
+  for (const item of cart) {
+    if (item.totalPrice) {
+      subTotal += item.totalPrice;
+    }
+  }
   return (
     <>
       <Divider />
@@ -40,10 +47,10 @@ export const OrderSummary = ({ showButtons = true }) => {
           <h4>Grand Total</h4>
         </LeftSide>
         <RightSide>
-          <Values>$119.69</Values>
+          <Values>${subTotal}</Values>
           <Values>-$13.40</Values>
           <Values>$12.00</Values>
-          <h4>$106.29</h4>
+          <h4>${subTotal - 13.4 + 12}</h4>
         </RightSide>
       </Container>
       {showButtons && (
