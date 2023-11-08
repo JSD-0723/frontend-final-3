@@ -11,21 +11,25 @@ const Container = styled(Sheet)(({ theme }) => ({
 
 const LeftSide = styled(Sheet)(({ theme }) => ({
   background: "var(--bright)",
+  lineHeight: 2,
 }));
 
 const RightSide = styled(Sheet)(({ theme }) => ({
   background: "var(--bright)",
   textAlign: "end",
-  paddingRight: "15px",
+  paddingRight: 9,
+  lineHeight: 2,
 }));
 
 const PriceDetail = styled("p")(({ theme }) => ({
-  fontWeight: "var(--semi-bold-font)",
+  fontWeight: 400,
   color: "var(--type-low-emphasis)",
+
 }));
 
 const Values = styled("p")(({ theme }) => ({
-  fontWeight: "var(--medium-font)",
+  fontWeight: 500,
+  color: '#171520',
 }));
 
 export const OrderSummary = ({ showButtons = true }) => {
@@ -47,9 +51,9 @@ export const OrderSummary = ({ showButtons = true }) => {
         </RightSide>
       </Container>
       {showButtons && (
-        <Container>
-          <Button as={Link} to="/checkout">
-            Proceed to Checkout
+        <Sheet sx={{display: 'flex', gap: 3, mt:3}}>
+          <Button as={Link} to="/checkout" sx={{backgroundColor: "var(--primary)", flex: '45%', border: 0, borderRadius: 8, fontWeight: 500}}>
+            Place Order
           </Button>
           <Button
             as={Link}
@@ -58,11 +62,14 @@ export const OrderSummary = ({ showButtons = true }) => {
             sx={{
               color: "var(--primary)",
               borderColor: "var(--primary)",
-              marginRight: "15px",
+              flex: '45%',
+              borderRadius: 8,
+              fontWeight: 500,
+              border:2
             }}>
             Continue Shopping
           </Button>
-        </Container>
+        </Sheet>
       )}
     </>
   );

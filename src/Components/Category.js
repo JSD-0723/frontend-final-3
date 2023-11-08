@@ -43,7 +43,7 @@ function Category({
       <Breadcrumbs
         separator={<KeyboardArrowRight />}
         aria-label="breadcrumbs"
-        sx={{ ml: -1.2 }}
+        sx={{ m:0, p:0 }}
       >
         {["Home"].map((item) => (
           <Link

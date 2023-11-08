@@ -2,16 +2,14 @@ import { Sheet } from "@mui/joy";
 import { styled } from "@mui/joy/styles";
 import { PageTitle } from "../Components/PageTitle";
 import { ProductList } from "../Components/ProductList";
-import { NavigateButton } from "../Components/NavigateButton";
 import { OrderSummary } from "../Components/OrderSummary";
 import { CartItemCard } from "../Components/CartItemCard";
 import { SectionTitle } from "../Components/SectionTitle";
 import { useState, useEffect } from "react";
-
-const RecentPage = styled("p")(({ theme }) => ({
-  fontSize: ".83rem",
-  color: "var(--type-low-emphasis)",
-}));
+import Breadcrumbs from "@mui/joy/Breadcrumbs";
+import { Link } from "react-router-dom";
+import Typography from "@mui/joy/Typography";
+import { KeyboardArrowRight } from "@mui/icons-material";
 
 const Container = styled(Sheet)(({ theme }) => ({
   background: "var(--bright)",
@@ -53,8 +51,7 @@ const LeftSideContainer = styled(Sheet)(({ theme }) => ({
 
 const RightSideContainer = styled(Sheet)(({ theme }) => ({
   background: "var(--bright)",
-  width: "30vw",
-  paddingRight: "5px",
+  width: "27vw",
   [theme.breakpoints.down("sm")]: {
     width: "100%",
   },
@@ -76,55 +73,56 @@ export const Cart = () => {
   };
   return (
     <>
-      <Sheet
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          background: "var(--bright)",
-        }}>
-        <NavigateButton text={"Home"} />
-        <RecentPage>My Cart</RecentPage>
+      <Sheet sx={{p:3, m:0}}>
+        <Breadcrumbs separator={<KeyboardArrowRight />} aria-label="breadcrumbs" sx={{m:0, p:0}}>
+          <Typography component={Link} to="/" sx={{ textDecoration: "none", color: "#1B4B66" }}>Home</Typography>
+          <Typography sx={{ color: "#626262" }}>My Cart</Typography>
+        </Breadcrumbs>
+
+        <Typography level="h2" sx={{ color: "#1B4B66", my: 2.8, fontWeight: 500 }}  >
+          My Cart
+        </Typography>
+
+        <Container>
+          <MediumScreenContainer>
+            <Sheet
+              sx={{
+                display: {
+                  lg: "none",
+                  md: "none",
+                  sm: "none",
+                  xs: "block",
+                },
+                background: "var(--accent)",
+              }}>
+              <CartItemCard
+                removeProductHandler={removeProductHandler}
+                cart={cart}
+              />
+            </Sheet>
+            <LeftSideContainer
+              sx={{
+                display: {
+                  lg: "block",
+                  md: "block",
+                  sm: "block",
+                  xs: "none",
+                },
+              }}>
+              <ProductList
+                cart={cart}
+                removeProductHandler={removeProductHandler}
+              />
+            </LeftSideContainer>
+          </MediumScreenContainer>
+          <MediumScreenContainer>
+            <RightSideContainer>
+              <SectionTitle text={"Order Summary"} />
+              <OrderSummary cart={cart} />
+            </RightSideContainer>
+          </MediumScreenContainer>
+        </Container>
       </Sheet>
-      <PageTitle text={"My Cart"} />
-      <Container>
-        <MediumScreenContainer>
-          <Sheet
-            sx={{
-              display: {
-                lg: "none",
-                md: "none",
-                sm: "none",
-                xs: "block",
-              },
-              background: "var(--accent)",
-            }}>
-            <CartItemCard
-              removeProductHandler={removeProductHandler}
-              cart={cart}
-            />
-          </Sheet>
-          <LeftSideContainer
-            sx={{
-              display: {
-                lg: "block",
-                md: "block",
-                sm: "block",
-                xs: "none",
-              },
-            }}>
-            <ProductList
-              cart={cart}
-              removeProductHandler={removeProductHandler}
-            />
-          </LeftSideContainer>
-        </MediumScreenContainer>
-        <MediumScreenContainer>
-          <RightSideContainer>
-            <SectionTitle text={"Order Summary"} />
-            <OrderSummary cart={cart} />
-          </RightSideContainer>
-        </MediumScreenContainer>
-      </Container>
     </>
   );
 };
