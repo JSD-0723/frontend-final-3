@@ -1,9 +1,4 @@
 import * as React from "react";
-import AccordionGroup from "@mui/joy/AccordionGroup";
-import Accordion from "@mui/joy/Accordion";
-import AccordionDetails from "@mui/joy/AccordionDetails";
-import AccordionSummary from "@mui/joy/AccordionSummary";
-import { SectionTitle } from "./SectionTitle";
 import { Divider } from "@mui/material";
 import { Sheet } from "@mui/joy";
 import { InputWithLabel } from "./InputWithLabel";

@@ -8,9 +8,11 @@ import { KeyboardArrowRight } from "@mui/icons-material";
 import Pagination from "./Pagination";
 import { Stack } from "@mui/material";
 import CategoryCard from "./CategoryCard";
+import CircularSpinner from "./CircularSpinner";
 import Grid from "@mui/joy/Grid";
 
 function Category({
+  loading,
   categoryTitle,
   categoryProduct,
   onNext,
@@ -20,32 +22,45 @@ function Category({
 }) {
   return (
     <Stack sx={{ m: 3 }}>
-
-      <Box sx={{
-        flexGrow: 1, position: 'relative',
-        height: {
-          xs: 200,
-          sm: 270,
-          md: 370,
-          lg: 430,
-          xl: 450,
-        },
-      }}>
-        <Box className='container'>
+      <Box
+        sx={{
+          flexGrow: 1,
+          position: "relative",
+          height: {
+            xs: 200,
+            sm: 270,
+            md: 370,
+            lg: 430,
+            xl: 450,
+          },
+        }}
+      >
+        <Box className="container">
           <img src={base} alt={base} />
         </Box>
       </Box>
 
-      <Breadcrumbs separator={<KeyboardArrowRight />} aria-label="breadcrumbs" sx={{ml: -1.2,}}>     
+      <Breadcrumbs
+        separator={<KeyboardArrowRight />}
+        aria-label="breadcrumbs"
+        sx={{ m:0, p:0 }}
+      >
         {["Home"].map((item) => (
-          <Link to="/" key={item} style={{ textDecoration: "none", color: '#1B4B66' }}>
+          <Link
+            to="/"
+            key={item}
+            style={{ textDecoration: "none", color: "#1B4B66" }}
+          >
             {item}
           </Link>
         ))}
         <Typography sx={{ color: "#626262" }}> {categoryTitle} </Typography>
       </Breadcrumbs>
 
-      <Typography level="h2" sx={{ color: "#1B4B66", my: 2.8, fontWeight: 500 }}>
+      <Typography
+        level="h2"
+        sx={{ color: "#1B4B66", my: 2.8, fontWeight: 500 }}
+      >
         {categoryTitle}
       </Typography>
 
@@ -57,7 +72,11 @@ function Category({
           py: 5,
         }}
       >
-        <CategoryCard categoryProduct={categoryProduct} />
+        {loading ? (
+          <CircularSpinner />
+        ) : (
+          <CategoryCard categoryProduct={categoryProduct} />
+        )}
       </Grid>
 
       <Pagination
@@ -70,4 +89,3 @@ function Category({
   );
 }
 export default Category;
-

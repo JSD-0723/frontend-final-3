@@ -41,13 +41,6 @@ const QtySelect = styled(Sheet)(({ theme }) => ({
   margin: "8px 0px",
 }));
 
-const StyledSelect = styled("select")(({ theme }) => ({
-  border: "none",
-  background: "var(--grey)",
-  fontWeight: "var(--semi-bold-font)",
-  fontSize: "1rem",
-}));
-
 const DiscountedPrice = styled("p")(({ theme }) => ({
   fontSize: "1.2rem",
   fontWeight: "var(--bold-font)",
