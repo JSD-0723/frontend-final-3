@@ -2,7 +2,6 @@ import { Box } from "@mui/system";
 import Typography from "@mui/joy/Typography";
 import Grid from "@mui/joy/Grid";
 import HandpickedCard from "./HandpickedCard";
-
 function Handpicked({ handpicked }) {
   return (
     <Box sx={{ background: "#1B4B66", mb:5, }}>

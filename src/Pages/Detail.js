@@ -10,6 +10,7 @@ import { KeyboardArrowRight } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import Typography from "@mui/joy/Typography";
 
+
 export const Detail = () => {
   const { productId } = useParams();
   const [details, setDetails] = useState([]);
@@ -24,13 +25,21 @@ export const Detail = () => {
   const productInfo = details.product;
   const productImage = productInfo?.imageUrl;
 
+  const productPrice = productInfo?.price;
+  const totalPrice = productPrice * count;
+
   const localStorageHandler = () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const findIdIndex = cart.findIndex(
       (product) => product.productId === productId
     );
-    const newProduct = { productInfo, productImage, count, productId };
-
+    const newProduct = {
+      productInfo,
+      productImage,
+      count,
+      productId,
+      totalPrice,
+    };
     if (findIdIndex !== -1) {
       // If the product exists in the cart, update the count
       cart[findIdIndex].count += count;
@@ -103,7 +112,6 @@ export const Detail = () => {
           />
         </Sheet>
       </Sheet>
-
       <ProductDescription details={details} />
     </>
   );

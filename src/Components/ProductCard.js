@@ -14,7 +14,6 @@ const Image = styled("img")(({ theme }) => ({
   width: "100%",
   height: "16rem",
   aspectRatio: 1/1,
-  borderRadius: "3%",
 }));
 
 const Brandname = styled("h4")(({ theme }) => ({

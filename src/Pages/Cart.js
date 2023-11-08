@@ -6,6 +6,7 @@ import { NavigateButton } from "../Components/NavigateButton";
 import { OrderSummary } from "../Components/OrderSummary";
 import { CartItemCard } from "../Components/CartItemCard";
 import { SectionTitle } from "../Components/SectionTitle";
+import { useState, useEffect } from "react";
 
 const RecentPage = styled("p")(({ theme }) => ({
   fontSize: ".83rem",
@@ -63,8 +64,16 @@ const RightSideContainer = styled(Sheet)(({ theme }) => ({
 }));
 
 export const Cart = () => {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
+  const [cart, setCart] = useState([]);
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCart(storedCart);
+  }, []);
+  const removeProductHandler = (productId) => {
+    const updatedCart = cart.filter((item) => item.productId !== productId);
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
   return (
     <>
       <Sheet
@@ -89,7 +98,10 @@ export const Cart = () => {
               },
               background: "var(--accent)",
             }}>
-            <CartItemCard />
+            <CartItemCard
+              removeProductHandler={removeProductHandler}
+              cart={cart}
+            />
           </Sheet>
           <LeftSideContainer
             sx={{
@@ -100,13 +112,16 @@ export const Cart = () => {
                 xs: "none",
               },
             }}>
-            <ProductList />
+            <ProductList
+              cart={cart}
+              removeProductHandler={removeProductHandler}
+            />
           </LeftSideContainer>
         </MediumScreenContainer>
         <MediumScreenContainer>
           <RightSideContainer>
             <SectionTitle text={"Order Summary"} />
-            <OrderSummary />
+            <OrderSummary cart={cart} />
           </RightSideContainer>
         </MediumScreenContainer>
       </Container>
