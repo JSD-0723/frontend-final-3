@@ -13,85 +13,115 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 
 export const ProductInfo = ({ details, onClick, count, setCount }) => {
     const productInfo = details.product;
-    [count, setCount] = React.useState(1);
 
     return (
 
-        <Sheet>
+        <Sheet sx={{ width: '100%', backgroundColor: 'none', }}>
             <Typography level="h2" sx={{ fontWeight: 600 }}>
                 {productInfo?.brand}
             </Typography>
             <Typography level="h4" sx={{ fontWeight: 400, color: '#626262' }}>
                 {productInfo?.title}
             </Typography>
-            <Rating icon={<StarRateRoundedIcon fontSize="inherit" />} emptyIcon={<StarRateRoundedIcon style={{ opacity: 0.55 }} fontSize="inherit" />} name="read-only" value={productInfo?.totalRating? productInfo?.totalRating:0} readOnly sx={{
-                color: '#FF8C4B',
-                "& .MuiRating-icon": {
-                    width: {
-                        xs: '1.3rem',
-                        sm: '1.4rem',
-                        md: '1.5rem',
-                        lg: '1.6rem',
-                        xl: '1.7rem',
+            <Sheet sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                <Rating icon={<StarRateRoundedIcon fontSize="inherit" />} emptyIcon={<StarRateRoundedIcon fontSize="inherit" />} name="read-only" value={productInfo?.totalRating ? productInfo?.totalRating : 0} readOnly sx={{
+                    color: '#FF8C4B',
+                    my: 2,
+                    mx: -0.6,
+                    fontSize: {
+                        xs: 28,
+                        sm: 30,
+                        md: 32,
+                        lg: 34,
+                        xl: 36,
                     }
-                },
-                fontSize: {
-                    xs: 28,
-                    sm: 30,
-                    md: 32,
-                    lg: 34,
-                    xl: 36,
-                }
-            }} />
-            <Typography fontSize="xl" sx={{ fontWeight: 700, }}>
-                ${productInfo?.price}
-            </Typography>
+                }} />
+                <Typography level="h2title-md" sx={{ color: '#B6B6B6', }}>
+                    ({productInfo?.price}) Ratings
+                </Typography>
+            </Sheet>
+            <Sheet sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+                <Typography level="h1" >
+                    ${productInfo?.price}
+                </Typography>
+                <Typography level="h2" sx={{ color: '#B6B6B6', textDecoration: 'line-through', fontWeight: 500 }}>
+                    ${productInfo?.price}
+                </Typography>
+                <Typography level="h4" sx={{ color: '#FF404B', fontWeight: 500 }}>
+                    ${productInfo?.price}
+                </Typography>
+            </Sheet>
 
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: 2,
-                    mt: 4,
-                }}
-            >
+            <hr style={{ width: '100%', border: '0.1px solid #B6B6B6' }}></hr>
+
+            <Sheet sx={{ display: 'flex', alignItems: 'center', my: 5, gap: 2 }}>
+                <Typography level="title-lg" sx={{ fontWeight: 600 }}>
+                    Quantity:
+                </Typography>
                 <Box
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        gap: 2,
-                        pt: 4,
-                        mb: 2,
-                        borderTop: '1px solid',
-                        borderColor: 'background.level1',
+                        border: 1,
+                        borderColor: '#1B4B66',
+                        borderRadius: 4,
                     }}
                 >
-                    <IconButton
-                        size="sm"
-                        variant="outlined"
-                        onClick={() => setCount((c) => c > 1 ? c - 1 : c)}
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 0.8,
+                        }}
                     >
-                        <Remove />
-                    </IconButton>
-                    <Typography fontWeight="md" textColor="text.secondary">
-                        {count}
-                    </Typography>
-                    <IconButton
-                        size="sm"
-                        variant="outlined"
-                        onClick={() => setCount((c) => c + 1)}
-                    >
-                        <Add />
-                    </IconButton>
+                        <IconButton
+                            size="sm"
+                            onClick={() => setCount((c) => c > 1 ? c - 1 : c)}
+                        >
+                            <Remove />
+                        </IconButton>
+                        <Typography fontWeight="md" textColor="text.secondary">
+                            {count}
+                        </Typography>
+                        <IconButton
+                            size="sm"
+                            onClick={() => setCount((c) => c + 1)}
+                        >
+                            <Add />
+                        </IconButton>
+                    </Box>
                 </Box>
-            </Box>
-            <Button variant="contained" startIcon={<LocalMallOutlinedIcon onClick={onClick} />}>
-                Add to Bag
-            </Button>
-            <Button variant="outlined" startIcon={<FavoriteBorderOutlinedIcon />}>
-                Add to Wishlist
-            </Button>
+
+            </Sheet>
+
+            <Sheet sx={{ display: 'flex', gap: 3 }}>
+                <Button variant="contained"
+                    sx={{
+                        flex: '55%',
+                        backgroundColor: '#1B4B66',
+                        textTransform: 'none',
+                        borderRadius: 2,
+                        fontSize: 18,
+                        boxShadow: 'none',
+                    }}
+                    startIcon={<LocalMallOutlinedIcon onClick={onClick} />
+                    }>
+                    Add to bag
+                </Button>
+                <Button variant="outlined"
+                    sx={{
+                        flex: '45%',
+                        textTransform: 'none',
+                        borderRadius: 2,
+                        borderColor: '#1B4B66',
+                        color: '#1B4B66',
+                        fontSize: 18,
+                        boxShadow: 'none'
+                    }}
+                    startIcon={<FavoriteBorderOutlinedIcon />}>
+                    Add to Wishlist
+                </Button>
+            </Sheet>
         </Sheet>
 
     );

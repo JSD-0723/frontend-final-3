@@ -37,45 +37,34 @@ export const TabsBottomNavExample = () => {
           },
         })}>
         <TabList size="sm" disableUnderline>
-          <Tab disableIndicator orientation="vertical">
-            <Link to={"/"}>
+          <Tab disableIndicator orientation="vertical" component={Link} to="/" >
               <ListItemDecorator>
                 <HomeRoundedIcon
-                  fontSize="xl"
                   sx={{ color: "var(--primary)" }}
                 />
               </ListItemDecorator>
-            </Link>
             Home
           </Tab>
-          <Tab disableIndicator orientation="vertical">
-            <Link>
+          <Tab disableIndicator orientation="vertical" component={Link} to="/category">
               <ListItemDecorator>
                 <CategoryOutlinedIcon
-                  fontSize="xl"
                   sx={{ color: "var(--primary)" }}
                 />
               </ListItemDecorator>
-            </Link>
             Category
           </Tab>
-          <Tab disableIndicator orientation="vertical">
-            <Link>
+          <Tab disableIndicator orientation="vertical" component={Link} to="/signin">
               <ListItemDecorator>
-                <Person fontSize="xl" sx={{ color: "var(--primary)" }} />
+                <Person sx={{ color: "var(--primary)" }} />
               </ListItemDecorator>
-            </Link>
             Profile
           </Tab>
-          <Tab disableIndicator orientation="vertical">
-            <Link to={"/cart"}>
+          <Tab disableIndicator orientation="vertical" component={Link} to="/cart">
               <ListItemDecorator>
                 <LocalMallOutlinedIcon
-                  fontSize="xl"
                   sx={{ color: "var(--primary)" }}
                 />
               </ListItemDecorator>
-            </Link>
             Bag
           </Tab>
         </TabList>

@@ -13,7 +13,7 @@ const CardInfo = styled(Sheet)(({ theme }) => ({
 const Image = styled("img")(({ theme }) => ({
   width: "100%",
   height: "16rem",
-
+  aspectRatio: 1/1,
   borderRadius: "3%",
 }));
 
