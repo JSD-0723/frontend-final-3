@@ -11,8 +11,15 @@ import { Sheet } from "@mui/joy";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
-export const ProductInfo = ({ details, onClick, count, setCount }) => {
+export const ProductInfo = ({
+  details,
+  onClick,
+  count,
+  setCount,
+  availableInStock,
+}) => {
   const productInfo = details.product;
+  const isAddDisabled = count >= availableInStock;
 
   return (
     <Sheet sx={{ width: "100%", backgroundColor: "none" }}>
@@ -90,7 +97,11 @@ export const ProductInfo = ({ details, onClick, count, setCount }) => {
             <Typography fontWeight="md" textColor="text.secondary">
               {count}
             </Typography>
-            <IconButton size="sm" onClick={() => setCount((c) => c + 1)}>
+
+            <IconButton
+              disabled={isAddDisabled}
+              size="sm"
+              onClick={() => setCount((c) => c + 1)}>
               <Add />
             </IconButton>
           </Box>
