@@ -7,7 +7,7 @@ import AccordionSummary from "@mui/joy/AccordionSummary";
 export const AccordionComponent = ({ title, Content }) => {
   return (
     <>
-      <AccordionGroup sx={{ background: "var(--bright)" }}>
+      <AccordionGroup sx={{ background: "var(--bright)", mb:3 }}>
         <Accordion defaultExpanded={true} sx={{ padding: "0px" }}>
           <AccordionSummary sx={{ padding: "0px 25px" }}>
             {title}

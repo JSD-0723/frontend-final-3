@@ -12,7 +12,8 @@ import Typography from "@mui/joy/Typography";
 import { KeyboardArrowRight } from "@mui/icons-material";
 
 const Container = styled(Sheet)(({ theme }) => ({
-  background: "var(--bright)",
+  background: '"var(--bright)"',
+  border:0,
   display: "flex",
   justifyContent: "space-between",
   padding: "0px 7px 30px",
@@ -37,6 +38,7 @@ const MediumScreenContainer = styled(Sheet)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     width: "100%",
   },
+  border: 0
 }));
 
 const LeftSideContainer = styled(Sheet)(({ theme }) => ({
@@ -93,7 +95,7 @@ export const Cart = () => {
                   sm: "none",
                   xs: "block",
                 },
-                background: "var(--accent)",
+                border: 0
               }}>
               <CartItemCard
                 removeProductHandler={removeProductHandler}

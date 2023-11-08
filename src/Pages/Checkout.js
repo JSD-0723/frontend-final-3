@@ -3,34 +3,56 @@ import { AddressForm } from "../Components/AddressForm";
 import { SectionTitle } from "../Components/SectionTitle";
 import { Divider } from "@mui/material";
 import { OrderImage } from "../Components/OrderImage";
-import { PageTitle } from "../Components/PageTitle";
 import { styled } from "@mui/joy/styles";
 import { OrderSummary } from "../Components/OrderSummary";
 import { AccordionComponent } from "../Components/AccordionComponent";
 import { PlaceOrder } from "../Components/PlaceOrder";
+import Breadcrumbs from "@mui/joy/Breadcrumbs";
+import { Link } from "react-router-dom";
+import Typography from "@mui/joy/Typography";
+import { KeyboardArrowRight } from "@mui/icons-material";
 
-const ContainerAll = styled(Sheet)(({ theme }) => ({
-  display: "flex",
-  justifyContent: "space-between",
-  background: "var(--bright)",
-}));
 
 const RightSide = styled(Sheet)(({ theme }) => ({
-  display: "flex",
+  display: 'flex',
   flexDirection: "column",
   gap: "50px",
-  background: "var(--bright)",
-  paddingBottom: "30px",
 }));
 
 export const Checkout = () => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   return (
-    <>
-      <PageTitle text={"Checkout"} />
-      <ContainerAll>
-        <Sheet sx={{ width: "55vw" }}>
+    <Sheet sx={{ p: 3, m: 0, }}>
+      <Breadcrumbs separator={<KeyboardArrowRight />} aria-label="breadcrumbs" sx={{ m: 0, p: 0 }}>
+        <Typography component={Link} to="/" sx={{ textDecoration: "none", color: "#1B4B66" }}>Home</Typography>
+        <Typography sx={{ color: "#626262" }}>My Cart</Typography>
+      </Breadcrumbs>
+
+      <Typography level="h2" sx={{ color: "#1B4B66", my: 2.8, fontWeight: 500 }}  >
+        Checkout
+      </Typography>
+
+
+
+      <Sheet sx={{
+        display: 'flex',
+        flexDirection: {
+          xs: 'column',
+          sm: 'column',
+          md: 'row',
+          lg: 'row',
+          xl: 'row',
+        },
+        gap: {
+          xs: 0,
+          sm: 0,
+          md: 16,
+          lg: 20,
+          xl: 20,
+        },
+      }}>
+        <Sheet sx={{ flex: '62%', }}>
           <RightSide>
             <AccordionComponent
               Content={<AddressForm />}
@@ -42,10 +64,10 @@ export const Checkout = () => {
             />
           </RightSide>
         </Sheet>
-        <RightSide>
-          <Sheet sx={{ width: "30vw" }}>
+        <Sheet sx={{ flex: '38%', }}>
+          <Sheet sx={{ background: "var(--bright)", mb: 7, }}>
             <SectionTitle text={"Order Summary"} />
-            <Divider />
+            <Divider sx={{ mb: 2 }} />
             {cart.map((item) => (
               <OrderImage
                 imageUrl={item.productImage}
@@ -58,8 +80,9 @@ export const Checkout = () => {
             <SectionTitle text={"Order Details"} />
             <OrderSummary showButtons={false} />
           </Sheet>
-        </RightSide>
-      </ContainerAll>
-    </>
+        </Sheet>
+      </Sheet>
+    </Sheet>
+
   );
 };

@@ -11,6 +11,7 @@ import { styled } from "@mui/joy/styles";
 import { Link } from "react-router-dom";
 import { DrawerMobileNavigation } from "../Components/MobileNavigation";
 import { useNavigate } from "react-router-dom";
+import Badge from '@mui/material/Badge';
 
 const NavbarContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -50,7 +51,7 @@ const NavbarLink = styled(Link)(({ theme }) => ({
 const IconContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
   gap: "15px",
-  alignItems: "center",
+  alignItems: "bottom",
   background: "var(--bright)",
 }));
 
@@ -124,6 +125,7 @@ export const Header = () => {
             value={searchValue}
           />
           <IconContainer>
+
             <FavoriteBorderOutlinedIcon
               sx={{
                 display: {
@@ -148,6 +150,7 @@ export const Header = () => {
               }}
             />
             <NavbarLink to={"/cart"}>
+            <Badge color="primary" variant="dot">
               <LocalMallOutlinedIcon
                 sx={{
                   display: {
@@ -159,6 +162,7 @@ export const Header = () => {
                   },
                 }}
               />
+              </Badge>
             </NavbarLink>
             <NotificationsOutlinedIcon
               sx={{

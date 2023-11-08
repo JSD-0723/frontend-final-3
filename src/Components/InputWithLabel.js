@@ -2,8 +2,8 @@ import { styled } from "@mui/joy/styles";
 import Input from "@mui/joy/Input";
 
 const StyledLabel = styled("label")(({ theme }) => ({
-  fontWeight: "var(--medium-font)",
-  fontSize: "0.8rem",
+  fontSize: "0.85rem",
+  fontWeight:500
 }));
 
 export const InputWithLabel = ({ placeholder, label, value }) => {
@@ -11,7 +11,7 @@ export const InputWithLabel = ({ placeholder, label, value }) => {
     <>
       <StyledLabel>{label}</StyledLabel>
       <Input
-        sx={{ color: "var(--type-low-emphasis)" }}
+        sx={{ color: "var(--type-low-emphasis)", backgroundColor: '#F1F1F1', fontSize: 14, mb:2 }}
         placeholder={placeholder}
         value={value}
         variant="solid"
