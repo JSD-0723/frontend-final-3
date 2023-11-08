@@ -28,7 +28,6 @@ export const ProductDescription = ({ details }) => {
           backgroundColor: '#F1F1F1', borderRadius: 9, border: 'none', boxShadow: 'none', color: '#626262',
           "& .Mui-selected": { backgroundColor: '#1B4B66', borderRadius: 10, m: 1, color: 'white', },
           "& .Mui-selected::after": { display: 'none',},
-          "& .MuiTab-root:hover": {backgroundColor: '#F1F1F1', borderRadius: 10,},
           "& .Mui-selected:hover": { backgroundColor: '#1B4B66', borderRadius: 10, m: 1, color: 'white', },
         }}>
           <Tab>Product Description</Tab>
