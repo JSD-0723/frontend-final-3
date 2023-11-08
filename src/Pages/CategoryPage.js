@@ -40,10 +40,8 @@ export const CategoryPage = () => {
       .catch((error) => {
         console.log("Error in fetching data", error);
       });
-    console.log("this is queryparam:", queryParams);
   }, [newArrival, categoryName, brandName, currentPage, keyword]);
 
-  console.log("this is searchParam:", searchParams);
   const checkParams = () => {
     if (newArrival) {
       setCategoryTitle("New Arrivals");

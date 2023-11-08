@@ -32,15 +32,15 @@ const PriceDetail = styled(Sheet)(({ theme }) => ({
   fontWeight: "var(--semi-bold-font)",
 }));
 
-export const OrderImage = ({ price, discount, discountedPrice }) => {
+export const OrderImage = ({ imageUrl, productInfo, count }) => {
   return (
     <>
       <ProductInfo>
-        <Image src="/Assets/class.png" alt="" />
+        <Image src={imageUrl} alt="" />
         <Sheet sx={{ background: "var(--bright)" }}>
-          <BrandName>Coach</BrandName>
-          <ItemDesc>Leather Coach Bag</ItemDesc>
-          <ItemDesc>Qty- 1</ItemDesc>
+          <BrandName>{productInfo.brand}</BrandName>
+          <ItemDesc>{productInfo.title}</ItemDesc>
+          <ItemDesc>Qty- {count}</ItemDesc>
           <PriceDetail>
             <DiscountedPrice></DiscountedPrice>
             <Price></Price>

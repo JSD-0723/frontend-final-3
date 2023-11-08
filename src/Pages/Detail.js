@@ -19,14 +19,21 @@ export const Detail = () => {
 
   const productInfo = details.product;
   const productImage = productInfo?.imageUrl;
+  const productPrice = productInfo?.price;
+  const totalPrice = productPrice * count;
 
   const localStorageHandler = () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const findIdIndex = cart.findIndex(
       (product) => product.productId === productId
     );
-    const newProduct = { productInfo, productImage, count, productId };
-
+    const newProduct = {
+      productInfo,
+      productImage,
+      count,
+      productId,
+      totalPrice,
+    };
     if (findIdIndex !== -1) {
       // If the product exists in the cart, update the count
       cart[findIdIndex].count += count;

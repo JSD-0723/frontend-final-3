@@ -37,7 +37,7 @@ const QtySelect = styled(Sheet)(({ theme }) => ({
   background: "var(--grey)",
   padding: "7px",
   borderRadius: "8px",
-  width: "40%",
+  width: "50%",
   margin: "8px 0px",
 }));
 
@@ -78,54 +78,34 @@ const RemoveButton = styled(Button)(({ theme }) => ({
   padding: "10px 0px",
 }));
 
-export const CartItemCard = () => {
+export const CartItemCard = ({ cart, removeProductHandler }) => {
   return (
     <>
-      <Container>
-        <ProductInfo>
-          <Image src="/Assets/coach.png" alt="" />
-          <Sheet sx={{ background: "var(--bright)" }}>
-            <BrandName>Coach</BrandName>
-            <ItemDesc>Leather Coach Bag</ItemDesc>
-            <QtySelect>
-              <ItemDesc>Qty:</ItemDesc>
-              <StyledSelect>
-                <option value="">1</option>
-              </StyledSelect>
-            </QtySelect>
-            <PriceDetail>
-              <DiscountedPrice>$54.69</DiscountedPrice>
-              <Price>$69.99</Price>
-              <Discount>20% OFF</Discount>
-            </PriceDetail>
-          </Sheet>
-        </ProductInfo>
-        <Divider />
-        <RemoveButton variant="plain">Remove</RemoveButton>
-      </Container>
-
-      <Container>
-        <ProductInfo>
-          <Image src="/Assets/coach.png" alt="" />
-          <Sheet sx={{ background: "var(--bright)" }}>
-            <BrandName>Coach</BrandName>
-            <ItemDesc>Leather Coach Bag</ItemDesc>
-            <QtySelect>
-              <ItemDesc>Qty:</ItemDesc>
-              <StyledSelect>
-                <option value="">1</option>
-              </StyledSelect>
-            </QtySelect>
-            <PriceDetail>
-              <DiscountedPrice>$54.69</DiscountedPrice>
-              <Price>$69.99</Price>
-              <Discount>20% OFF</Discount>
-            </PriceDetail>
-          </Sheet>
-        </ProductInfo>
-        <Divider />
-        <RemoveButton variant="plain">Remove</RemoveButton>
-      </Container>
+      {cart.map((item) => (
+        <Container>
+          <ProductInfo>
+            <Image src={item.productImage} alt="" />
+            <Sheet sx={{ background: "var(--bright)" }}>
+              <BrandName>{item.productInfo.brand}</BrandName>
+              <ItemDesc>{item.productInfo.title}</ItemDesc>
+              <QtySelect>
+                <ItemDesc>Qty: {item.count}</ItemDesc>
+              </QtySelect>
+              <PriceDetail>
+                <DiscountedPrice>$</DiscountedPrice>
+                <Price>${item.productInfo.price}</Price>
+                <Discount>% OFF</Discount>
+              </PriceDetail>
+            </Sheet>
+          </ProductInfo>
+          <Divider />
+          <RemoveButton
+            onClick={() => removeProductHandler(item.productId)}
+            variant="plain">
+            Remove
+          </RemoveButton>
+        </Container>
+      ))}
     </>
   );
 };
