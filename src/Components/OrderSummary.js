@@ -24,12 +24,11 @@ const RightSide = styled(Sheet)(({ theme }) => ({
 const PriceDetail = styled("p")(({ theme }) => ({
   fontWeight: 400,
   color: "var(--type-low-emphasis)",
-
 }));
 
 const Values = styled("p")(({ theme }) => ({
   fontWeight: 500,
-  color: '#171520',
+  color: "#171520",
 }));
 
 export const OrderSummary = ({ showButtons = true }) => {
@@ -40,6 +39,8 @@ export const OrderSummary = ({ showButtons = true }) => {
       subTotal += item.totalPrice;
     }
   }
+  const formattedSubTotal = Math.floor(subTotal);
+
   return (
     <>
       <Divider />
@@ -51,15 +52,35 @@ export const OrderSummary = ({ showButtons = true }) => {
           <h4>Grand Total</h4>
         </LeftSide>
         <RightSide>
-          <Values>${subTotal}</Values>
-          <Values>-$13.40</Values>
-          <Values>$12.00</Values>
-          <h4>${subTotal - 13.4 + 12}</h4>
+          {cart.length === 0 ? (
+            <>
+              <Values>-</Values>
+              <Values>-</Values>
+              <Values>-</Values>
+              <h4>-</h4>
+            </>
+          ) : (
+            <>
+              <Values>${formattedSubTotal}</Values>
+              <Values>-$13.40</Values>
+              <Values>$12.00</Values>
+              <h4>${formattedSubTotal - 13.4 + 12}</h4>
+            </>
+          )}
         </RightSide>
       </Container>
       {showButtons && (
-        <Sheet sx={{display: 'flex', gap: 3, mt:3}}>
-          <Button as={Link} to="/checkout" sx={{backgroundColor: "var(--primary)", flex: '45%', border: 0, borderRadius: 8, fontWeight: 500}}>
+        <Sheet sx={{ display: "flex", gap: 3, mt: 3 }}>
+          <Button
+            as={Link}
+            to="/checkout"
+            sx={{
+              backgroundColor: "var(--primary)",
+              flex: "45%",
+              border: 0,
+              borderRadius: 8,
+              fontWeight: 500,
+            }}>
             Place Order
           </Button>
           <Button
@@ -69,10 +90,10 @@ export const OrderSummary = ({ showButtons = true }) => {
             sx={{
               color: "var(--primary)",
               borderColor: "var(--primary)",
-              flex: '45%',
+              flex: "45%",
               borderRadius: 8,
               fontWeight: 500,
-              border:2
+              border: 2,
             }}>
             Continue Shopping
           </Button>

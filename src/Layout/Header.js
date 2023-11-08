@@ -150,34 +150,14 @@ export const Header = () => {
               }}
             />
             <NavbarLink to={"/cart"}>
-            <Badge color="primary" variant="dot">
-              <LocalMallOutlinedIcon
-                sx={{
-                  display: {
-                    xs: "none",
-                    sm: "none",
-                    md: "none",
-                    lg: "inline",
-                    xl: "inline",
-                  },
-                }}
-              />
+              <Badge color="primary" variant="dot">
+                <LocalMallOutlinedIcon />
               </Badge>
             </NavbarLink>
-            <NotificationsOutlinedIcon
-              sx={{
-                display: {
-                  xs: "inline",
-                  sm: "inline",
-                  md: "inline",
-                  lg: "none",
-                  xl: "none",
-                },
-              }}
-            />
+            
           </IconContainer>
         </SideContainer>
-      </NavbarContainer>
+      </NavbarContainer >
       <Popover
         open={isUserMenuOpen}
         anchorEl={anchorEl}
