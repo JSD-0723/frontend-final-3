@@ -2,17 +2,18 @@ import { Button, Divider, Sheet } from "@mui/joy";
 import { styled } from "@mui/joy/styles";
 
 const Container = styled(Sheet)(({ theme }) => ({
-  background: "var(--bright)",
+  background: 'white',
   width: "100%",
   margin: "0 auto",
   padding: "7px",
   borderRadius: "8px",
+  marginBottom: 12,
 }));
 
 const ProductInfo = styled(Sheet)(({ theme }) => ({
   display: "flex",
   gap: "17px",
-  padding: "20px 0px",
+  padding: "20px 10px",
   background: "var(--bright)",
   width: "100%",
 }));
@@ -25,10 +26,12 @@ const Image = styled("img")(({ theme }) => ({
 
 const ItemDesc = styled("p")(({ theme }) => ({
   color: "var(--type-low-emphasis)",
+  fontSize:18
 }));
 
 const BrandName = styled("p")(({ theme }) => ({
   fontWeight: "var(--semi-bold-font)",
+  fontSize:18
 }));
 
 const QtySelect = styled(Sheet)(({ theme }) => ({
@@ -37,7 +40,7 @@ const QtySelect = styled(Sheet)(({ theme }) => ({
   background: "var(--grey)",
   padding: "7px",
   borderRadius: "8px",
-  width: "50%",
+  width: 'fit-content',
   margin: "8px 0px",
 }));
 
@@ -69,6 +72,8 @@ const RemoveButton = styled(Button)(({ theme }) => ({
   color: "var(--primary)",
   fontSize: "1.1rem",
   padding: "10px 0px",
+  backgroundColor: 'white',
+  fontWeight: 600,
 }));
 
 export const CartItemCard = ({ cart, removeProductHandler }) => {

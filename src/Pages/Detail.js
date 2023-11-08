@@ -1,4 +1,4 @@
-import { Sheet } from "@mui/joy";
+import { Box } from "@mui/joy";
 import { ImageSlider } from "../Components/ImageSlider";
 import { ProductInfo } from "../Components/ProductInfo";
 import { useEffect, useState } from "react";
@@ -79,7 +79,7 @@ export const Detail = () => {
         <Typography sx={{ color: "#626262" }}>{productInfo?.title}</Typography>
       </Breadcrumbs>
 
-      <Sheet
+      <Box
         sx={{
           display: "flex",
           flexDirection: {
@@ -91,7 +91,7 @@ export const Detail = () => {
           },
           mb: 7,
         }}>
-        <Sheet
+        <Box
           sx={{
             flex: "50%",
             px: 3,
@@ -104,8 +104,8 @@ export const Detail = () => {
             },
           }}>
           <ImageSlider images={images} />
-        </Sheet>
-        <Sheet
+        </Box>
+        <Box
           sx={{
             flex: "50%",
             pl: {
@@ -125,8 +125,8 @@ export const Detail = () => {
             availableInStock={availableInStock}
             cart={cart}
           />
-        </Sheet>
-      </Sheet>
+        </Box>
+      </Box>
       <ProductDescription details={details} />
     </>
   );

@@ -1,5 +1,4 @@
 import * as React from "react";
-import Box from "@mui/joy/Box";
 import IconButton from "@mui/joy/IconButton";
 import Typography from "@mui/joy/Typography";
 import Add from "@mui/icons-material/Add";
@@ -7,7 +6,7 @@ import Remove from "@mui/icons-material/Remove";
 import Rating from "@mui/material/Rating";
 import StarRateRoundedIcon from "@mui/icons-material/StarRateRounded";
 import Button from "@mui/material/Button";
-import { Sheet } from "@mui/joy";
+import { Box } from "@mui/joy";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
@@ -22,14 +21,14 @@ export const ProductInfo = ({
   const productInfo = details.product;
   const isAddDisabled = count >= availableInStock;
   return (
-    <Sheet sx={{ width: "100%", backgroundColor: "none" }}>
+    <Box sx={{ width: "100%", backgroundColor: "none" }}>
       <Typography level="h2" sx={{ fontWeight: 600 }}>
         {productInfo?.brand}
       </Typography>
       <Typography level="h4" sx={{ fontWeight: 400, color: "#626262" }}>
         {productInfo?.title}
       </Typography>
-      <Sheet sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+      <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
         <Rating
           icon={<StarRateRoundedIcon fontSize="inherit" />}
           emptyIcon={<StarRateRoundedIcon fontSize="inherit" />}
@@ -53,8 +52,8 @@ export const ProductInfo = ({
         <Typography level="h2title-md" sx={{ color: "#B6B6B6" }}>
           ({productInfo?.ratingCount}) Ratings
         </Typography>
-      </Sheet>
-      <Sheet sx={{ display: "flex", alignItems: "center", gap: 2, mb: 3 }}>
+      </Box>
+      <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 3 }}>
         <Typography level="h1">${productInfo?.price}</Typography>
         <Typography
           level="h2"
@@ -68,9 +67,9 @@ export const ProductInfo = ({
         <Typography level="h4" sx={{ color: "#FF404B", fontWeight: 500 }}>
           ${productInfo?.price}
         </Typography>
-      </Sheet>
+      </Box>
       <hr style={{ width: "100%", border: "0.1px solid #B6B6B6" }}></hr>
-      <Sheet sx={{ display: "flex", alignItems: "center", my: 5, gap: 2 }}>
+      <Box sx={{ display: "flex", alignItems: "center", my: 5, gap: 2 }}>
         <Typography level="title-lg" sx={{ fontWeight: 600 }}>
           Quantity:
         </Typography>
@@ -104,8 +103,8 @@ export const ProductInfo = ({
             </IconButton>
           </Box>
         </Box>
-      </Sheet>
-      <Sheet sx={{ display: "flex", gap: 3 }}>
+      </Box>
+      <Box sx={{ display: "flex", gap: 3 }}>
         <Button
           variant="contained"
           onClick={onClick}
@@ -134,7 +133,7 @@ export const ProductInfo = ({
           startIcon={<FavoriteBorderOutlinedIcon />}>
           Add to Wishlist
         </Button>
-      </Sheet>
-    </Sheet>
+      </Box>
+    </Box>
   );
 };

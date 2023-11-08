@@ -6,6 +6,7 @@ const ProductInfo = styled(Sheet)(({ theme }) => ({
   gap: "12px",
   padding: "20px 0px 0px",
   background: "var(--bright)",
+  marginBottom: 5
 }));
 
 const Image = styled("img")(({ theme }) => ({

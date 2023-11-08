@@ -65,7 +65,7 @@ export const ProductDescription = ({ details }) => {
                 </ListItemAvatar>
                 <ListItemText
                   primary={<> <Typography sx={{ fontWeight: 600 }}>{review.title}</Typography> <Typography>
-                    Rating: {review.rating}/5.0
+                    Rating: {review.rating}/5
                   </Typography> </>}
 
                   secondary={

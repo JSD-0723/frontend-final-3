@@ -10,9 +10,11 @@ import Breadcrumbs from "@mui/joy/Breadcrumbs";
 import { Link } from "react-router-dom";
 import Typography from "@mui/joy/Typography";
 import { KeyboardArrowRight } from "@mui/icons-material";
+import Box from '@mui/material/Box';
 
-const Container = styled(Sheet)(({ theme }) => ({
-  background: "var(--bright)",
+const Container = styled(Box)(({ theme }) => ({
+  background: '"var(--bright)"',
+  border:0,
   display: "flex",
   justifyContent: "space-between",
   padding: "0px 7px 30px",
@@ -30,16 +32,17 @@ const Container = styled(Sheet)(({ theme }) => ({
   },
 }));
 
-const MediumScreenContainer = styled(Sheet)(({ theme }) => ({
+const MediumScreenContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     width: "80%",
   },
   [theme.breakpoints.down("md")]: {
     width: "100%",
   },
+  border: 0
 }));
 
-const LeftSideContainer = styled(Sheet)(({ theme }) => ({
+const LeftSideContainer = styled(Box)(({ theme }) => ({
   width: "60vw",
   [theme.breakpoints.down("sm")]: {
     width: "100%",
@@ -49,7 +52,7 @@ const LeftSideContainer = styled(Sheet)(({ theme }) => ({
   },
 }));
 
-const RightSideContainer = styled(Sheet)(({ theme }) => ({
+const RightSideContainer = styled(Box)(({ theme }) => ({
   background: "var(--bright)",
   width: "27vw",
   [theme.breakpoints.down("sm")]: {
@@ -73,7 +76,7 @@ export const Cart = () => {
   };
   return (
     <>
-      <Sheet sx={{p:3, m:0}}>
+      <Box sx={{p:3, m:0}}>
         <Breadcrumbs separator={<KeyboardArrowRight />} aria-label="breadcrumbs" sx={{m:0, p:0}}>
           <Typography component={Link} to="/" sx={{ textDecoration: "none", color: "#1B4B66" }}>Home</Typography>
           <Typography sx={{ color: "#626262" }}>My Cart</Typography>
@@ -85,7 +88,7 @@ export const Cart = () => {
 
         <Container>
           <MediumScreenContainer>
-            <Sheet
+            <Box
               sx={{
                 display: {
                   lg: "none",
@@ -93,13 +96,13 @@ export const Cart = () => {
                   sm: "none",
                   xs: "block",
                 },
-                background: "var(--accent)",
+                border: 0
               }}>
               <CartItemCard
                 removeProductHandler={removeProductHandler}
                 cart={cart}
               />
-            </Sheet>
+            </Box>
             <LeftSideContainer
               sx={{
                 display: {
@@ -122,7 +125,7 @@ export const Cart = () => {
             </RightSideContainer>
           </MediumScreenContainer>
         </Container>
-      </Sheet>
+      </Box>
     </>
   );
 };

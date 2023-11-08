@@ -1,10 +1,10 @@
-import { Sheet } from "@mui/joy";
+import { Box } from "@mui/joy";
 import React, { useState } from "react";
 import { styled } from "@mui/joy/styles";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 
-const SliderContainer = styled(Sheet)(({ theme }) => ({
+const SliderContainer = styled(Box)(({ theme }) => ({
   width: "100%",
   
   display: "flex",
@@ -18,7 +18,7 @@ const DisplyedPic = styled("img")(({ theme }) => ({
   borderRadius: "16px",
 }));
 
-const ThumbnailStack = styled(Sheet)(({ theme }) => ({
+const ThumbnailStack = styled(Box)(({ theme }) => ({
   marginTop: "20px",
   display: "flex",
   alignItems: "center",
