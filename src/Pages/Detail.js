@@ -14,6 +14,8 @@ export const Detail = () => {
   const { productId } = useParams();
   const [details, setDetails] = useState([]);
   const [count, setCount] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const productPrice = details.product?.price;
 
   useEffect(() => {
     loadProductDetails(productId).then((response) => {
@@ -21,14 +23,16 @@ export const Detail = () => {
     });
   }, [productId]);
 
+  useEffect(() => {
+    setTotalPrice(productPrice * count);
+  }, [count, details]);
+
   const productInfo = details.product;
   const productImage = productInfo?.imageUrl;
   const availableInStock = productInfo?.availableInStock;
-  const productPrice = productInfo?.price;
-  const totalPrice = productPrice * count;
 
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const localStorageHandler = () => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const findIdIndex = cart.findIndex(
       (product) => product.productId === productId
     );
@@ -40,10 +44,11 @@ export const Detail = () => {
       totalPrice,
     };
     if (findIdIndex !== -1) {
-      // If the product exists in the cart, update the count
       cart[findIdIndex].count += count;
+      cart[findIdIndex].totalPrice = (
+        productPrice * cart[findIdIndex].count
+      ).toFixed(2);
     } else {
-      // If the product doesn't exist, add it to the cart
       cart.push(newProduct);
     }
 
@@ -118,6 +123,7 @@ export const Detail = () => {
             onClick={localStorageHandler}
             details={details}
             availableInStock={availableInStock}
+            cart={cart}
           />
         </Sheet>
       </Sheet>

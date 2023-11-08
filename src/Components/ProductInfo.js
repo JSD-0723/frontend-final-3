@@ -17,10 +17,10 @@ export const ProductInfo = ({
   count,
   setCount,
   availableInStock,
+  cart,
 }) => {
   const productInfo = details.product;
   const isAddDisabled = count >= availableInStock;
-
   return (
     <Sheet sx={{ width: "100%", backgroundColor: "none" }}>
       <Typography level="h2" sx={{ fontWeight: 600 }}>
