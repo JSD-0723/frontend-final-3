@@ -47,6 +47,7 @@ const Carousel = () => {
             {SlidesGenerator()}
           </AutoPlaySwipeableViews>
         </Box>
+
     </>
   );
 };

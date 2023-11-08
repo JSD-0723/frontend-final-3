@@ -1,7 +1,6 @@
 import { Button, Divider, Sheet } from "@mui/joy";
 import { styled } from "@mui/joy/styles";
 import { Link } from "react-router-dom";
-import { SectionTitle } from "./SectionTitle";
 
 const Container = styled(Sheet)(({ theme }) => ({
   display: "flex",

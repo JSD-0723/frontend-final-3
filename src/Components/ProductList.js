@@ -29,7 +29,7 @@ const Container = styled(Sheet)(({ theme }) => ({
   flexDirection: "column",
 }));
 
-export const ProductList = () => {
+export const ProductList = ({ cart, removeProductHandler }) => {
   return (
     <>
       <FlexedContainer>
@@ -49,52 +49,32 @@ export const ProductList = () => {
       </FlexedContainer>
       <Divider />
       <Sheet sx={{ display: "flex", flexDirection: "column" }}>
-        <FlexedContainer>
-          <OrderImage />
-          <ProductElements>
-            <Container>
-              <FlexedContainer>
-                <p>$54.69</p>
-                <p>1</p>
-                <p>$54.69</p>
-              </FlexedContainer>
-              <Sheet sx={{ textAlign: "center", background: "var(--bright)" }}>
-                <RemoveButton variant="palin">Remove</RemoveButton>
-              </Sheet>
-            </Container>
-          </ProductElements>
-        </FlexedContainer>
-        <FlexedContainer>
-          <OrderImage />
-          <ProductElements>
-            <Container>
-              <FlexedContainer>
-                <p>$54.69</p>
-                <p>1</p>
-                <p>$54.69</p>
-              </FlexedContainer>
-              <Sheet sx={{ textAlign: "center", background: "var(--bright)" }}>
-                <RemoveButton variant="palin">Remove</RemoveButton>
-              </Sheet>
-            </Container>
-          </ProductElements>
-        </FlexedContainer>
-
-        <FlexedContainer>
-          <OrderImage />
-          <ProductElements>
-            <Container>
-              <FlexedContainer>
-                <p>$54.69</p>
-                <p>1</p>
-                <p>$54.69</p>
-              </FlexedContainer>
-              <Sheet sx={{ textAlign: "center", background: "var(--bright)" }}>
-                <RemoveButton variant="palin">Remove</RemoveButton>
-              </Sheet>
-            </Container>
-          </ProductElements>
-        </FlexedContainer>
+        {cart.map((item, index) => (
+          <FlexedContainer key={index}>
+            <OrderImage
+              imageUrl={item.productImage}
+              productInfo={item.productInfo}
+              count={item.count}
+            />
+            <ProductElements>
+              <Container>
+                <FlexedContainer>
+                  <p>${item.productInfo.price}</p>
+                  <p>{item.count}</p>
+                  <p>${item.totalPrice}</p>
+                </FlexedContainer>
+                <Sheet
+                  sx={{ textAlign: "center", background: "var(--bright)" }}>
+                  <RemoveButton
+                    onClick={() => removeProductHandler(item.productId)}
+                    variant="palin">
+                    Remove
+                  </RemoveButton>
+                </Sheet>
+              </Container>
+            </ProductElements>
+          </FlexedContainer>
+        ))}
       </Sheet>
     </>
   );

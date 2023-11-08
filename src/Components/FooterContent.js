@@ -128,6 +128,7 @@ export const FooterContent = () => {
                 to={`/category?categoryName=${item.name}`}
                 key={item.id}
               >
+
                 {item.name}
               </FilterLinks>
             ))}

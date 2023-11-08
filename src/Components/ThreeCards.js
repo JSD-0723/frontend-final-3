@@ -89,7 +89,6 @@ function ThreeCards() {
           </CardContent>
         </Card>
       </StyledLink>
-
       <Box
         sx={{
           display: "flex",
@@ -104,7 +103,6 @@ function ThreeCards() {
             xl: 230,
           },
         }}>
-
         <Card sx={{ border: 0, flex: 1 }}>
           <StyledLink to={"/category?discount=15"}>
             <CardCover sx={{ objectFit: "cover" }}>
@@ -131,6 +129,7 @@ function ThreeCards() {
                 <img src={pinkArrow} />
               </CardActions>
             </CardContent>
+
           </StyledLink>
         </Card>
 
@@ -177,11 +176,12 @@ function ThreeCards() {
                 <img src={blueArrow} />
               </CardActions>
             </CardContent>
+
           </StyledLink>
         </Card>
-
       </Box>
     </Box>
   );
 }
 export default ThreeCards;
+
