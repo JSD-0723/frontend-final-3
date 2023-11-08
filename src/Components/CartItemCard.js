@@ -91,11 +91,21 @@ export const CartItemCard = ({ cart, removeProductHandler }) => {
               <QtySelect>
                 <ItemDesc>Qty: {item.count}</ItemDesc>
               </QtySelect>
-              <PriceDetail>
-                <DiscountedPrice>$</DiscountedPrice>
-                <Price>${item.productInfo.price}</Price>
-                <Discount>% OFF</Discount>
-              </PriceDetail>
+              {item.productInfo.discount ? (
+                // Render DiscountedPrice when there is a discount
+                <PriceDetail>
+                  <DiscountedPrice>
+                    ${item.productInfo.discountedPrice}
+                  </DiscountedPrice>
+                  <Price>${item.productInfo.price}</Price>
+                  <Discount>{item.productInfo.discount}% OFF</Discount>
+                </PriceDetail>
+              ) : (
+                // Render Price when there is no discount
+                <PriceDetail>
+                  <DiscountedPrice>${item.productInfo.price}</DiscountedPrice>
+                </PriceDetail>
+              )}
             </Sheet>
           </ProductInfo>
           <Divider />
