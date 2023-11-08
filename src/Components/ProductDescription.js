@@ -1,11 +1,8 @@
-import { Sheet } from "@mui/joy";
 import { ProductCard } from "./ProductCard";
 import Tabs from '@mui/joy/Tabs';
 import TabList from '@mui/joy/TabList';
 import Tab from '@mui/joy/Tab';
 import TabPanel from '@mui/joy/TabPanel';
-import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded';
-import Rating from '@mui/material/Rating';
 import Typography from '@mui/joy/Typography';
 import React from "react";
 import List from '@mui/material/List';
@@ -15,6 +12,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import User from '../Assets/user.png'
+import Box from "@mui/joy/Box";
 
 export const ProductDescription = ({ details }) => {
   const productInfo = details.product;
@@ -23,12 +21,11 @@ export const ProductDescription = ({ details }) => {
 
   return (
     <>
-      <Tabs aria-label="Basic tabs" defaultValue={0} sx={{ px: 3,textDecoration: 'none' }}>
+      <Tabs aria-label="Basic tabs" defaultValue={0} sx={{ px: 3, textDecoration: 'none' }}>
         <TabList sx={{
           backgroundColor: '#F1F1F1', borderRadius: 9, border: 'none', boxShadow: 'none', color: '#626262',
-          "& .Mui-selected": { backgroundColor: '#1B4B66', borderRadius: 10, m: 1, color: 'white', },
-          "& .Mui-selected::after": { display: 'none',},
-          "& .Mui-selected:hover": { backgroundColor: '#1B4B66', borderRadius: 10, m: 1, color: 'white', },
+          "& .Mui-selected": { backgroundColor: '#1B4B66 !important', borderRadius: 10, m: 1, color: 'white', },
+          "& .Mui-selected::after": { display: 'none', backgroundColor: '#1B4B66' },
         }}>
           <Tab>Product Description</Tab>
           <Tab>Related Products</Tab>
@@ -42,9 +39,21 @@ export const ProductDescription = ({ details }) => {
         </TabPanel>
 
         <TabPanel value={1}>
-          <Sheet sx={{ display: 'flex', gap: 5, my: 3 }}>
+          <Box
+            sx={{
+              display: "flex",
+              gap: 4,
+              py: 1,
+              mb: 3,
+              overflow: "auto",
+              scrollSnapType: "x mandatory",
+              "& > *": {
+                scrollSnapAlign: "center",
+              },
+              "::-webkit-scrollbar": { display: "none" },
+            }}>
             <ProductCard products={relatedProducts} />
-          </Sheet>
+          </Box>
         </TabPanel>
 
         <TabPanel value={2}>
@@ -58,7 +67,7 @@ export const ProductDescription = ({ details }) => {
                   primary={<> <Typography sx={{ fontWeight: 600 }}>{review.title}</Typography> <Typography>
                     Rating: {review.rating}/5.0
                   </Typography> </>}
-                  
+
                   secondary={
                     <React.Fragment>
                       <Typography

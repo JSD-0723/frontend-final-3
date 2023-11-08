@@ -53,7 +53,7 @@ export default function CategoryCard({ categoryProduct }) {
               <Typography level="body-sm" sx={{ color: '#626262', fontWeight: 400, maxWidth: '75%', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden' }}>{item.brand}</Typography>
             </div>
             <CardContent orientation="horizontal" sx={{ mx: -0.9, my: -0.5, alignItems: 'center', }}>
-              <Rating icon={<StarRateRoundedIcon fontSize="inherit" />} emptyIcon={<StarRateRoundedIcon style={{ opacity: 0.55 }} fontSize="inherit" />} name="read-only" value={item?.totalRating ? item?.totalRating : 0} readOnly sx={{
+              <Rating icon={<StarRateRoundedIcon fontSize="inherit" />} emptyIcon={<StarRateRoundedIcon style={{ opacity: 0.55 }} fontSize="inherit" />} name="read-only" precision={0.1} value={item?.totalRating ? item?.totalRating : 0} readOnly sx={{
                 color: '#FF8C4B',
                 "& .MuiRating-icon": {
                   width: {

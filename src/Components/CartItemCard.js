@@ -41,13 +41,6 @@ const QtySelect = styled(Sheet)(({ theme }) => ({
   margin: "8px 0px",
 }));
 
-const StyledSelect = styled("select")(({ theme }) => ({
-  border: "none",
-  background: "var(--grey)",
-  fontWeight: "var(--semi-bold-font)",
-  fontSize: "1rem",
-}));
-
 const DiscountedPrice = styled("p")(({ theme }) => ({
   fontSize: "1.2rem",
   fontWeight: "var(--bold-font)",
@@ -91,11 +84,21 @@ export const CartItemCard = ({ cart, removeProductHandler }) => {
               <QtySelect>
                 <ItemDesc>Qty: {item.count}</ItemDesc>
               </QtySelect>
-              <PriceDetail>
-                <DiscountedPrice>$</DiscountedPrice>
-                <Price>${item.productInfo.price}</Price>
-                <Discount>% OFF</Discount>
-              </PriceDetail>
+              {item.productInfo.discount ? (
+                // Render DiscountedPrice when there is a discount
+                <PriceDetail>
+                  <DiscountedPrice>
+                    ${item.productInfo.discountedPrice}
+                  </DiscountedPrice>
+                  <Price>${item.productInfo.price}</Price>
+                  <Discount>{item.productInfo.discount}% OFF</Discount>
+                </PriceDetail>
+              ) : (
+                // Render Price when there is no discount
+                <PriceDetail>
+                  <DiscountedPrice>${item.productInfo.price}</DiscountedPrice>
+                </PriceDetail>
+              )}
             </Sheet>
           </ProductInfo>
           <Divider />

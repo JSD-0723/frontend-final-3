@@ -24,6 +24,8 @@ const RightSide = styled(Sheet)(({ theme }) => ({
 }));
 
 export const Checkout = () => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
   return (
     <>
       <PageTitle text={"Checkout"} />
@@ -44,8 +46,13 @@ export const Checkout = () => {
           <Sheet sx={{ width: "30vw" }}>
             <SectionTitle text={"Order Summary"} />
             <Divider />
-            <OrderImage />
-            <OrderImage />
+            {cart.map((item) => (
+              <OrderImage
+                imageUrl={item.productImage}
+                productInfo={item.productInfo}
+                count={item.count}
+              />
+            ))}
           </Sheet>
           <Sheet sx={{ background: "var(--bright)" }}>
             <SectionTitle text={"Order Details"} />

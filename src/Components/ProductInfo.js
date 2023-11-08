@@ -25,7 +25,7 @@ export const ProductInfo = ({ details, onClick, count, setCount }) => {
                 {productInfo?.title}
             </Typography>
             <Sheet sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                <Rating icon={<StarRateRoundedIcon fontSize="inherit" />} emptyIcon={<StarRateRoundedIcon fontSize="inherit" />} name="read-only" value={productInfo?.totalRating ? productInfo?.totalRating : 0} readOnly sx={{
+                <Rating icon={<StarRateRoundedIcon fontSize="inherit" />} emptyIcon={<StarRateRoundedIcon fontSize="inherit" />} name="read-only" precision={0.1} value={productInfo?.totalRating ? productInfo?.totalRating : 0} readOnly sx={{
                     color: '#FF8C4B',
                     my: 2,
                     mx: -0.6,
@@ -97,6 +97,7 @@ export const ProductInfo = ({ details, onClick, count, setCount }) => {
 
             <Sheet sx={{ display: 'flex', gap: 3 }}>
                 <Button variant="contained"
+                onClick={onClick}
                     sx={{
                         flex: '55%',
                         backgroundColor: '#1B4B66',
@@ -105,9 +106,9 @@ export const ProductInfo = ({ details, onClick, count, setCount }) => {
                         fontSize: 18,
                         boxShadow: 'none',
                     }}
-                    startIcon={<LocalMallOutlinedIcon onClick={onClick} />
+                    startIcon={<LocalMallOutlinedIcon />
                     }>
-                    Add to bag
+                    Add to Cart
                 </Button>
                 <Button variant="outlined"
                     sx={{

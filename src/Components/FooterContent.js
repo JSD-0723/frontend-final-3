@@ -155,21 +155,21 @@ export const FooterContent = () => {
         <RightSide>
           <IconsContainer>
             <Link to={"https://www.facebook.com/"}>
-              <img src={Fblogo} />
+              <img src={Fblogo} alt="Facebook logo"/>
             </Link>
             <Link to={"https://www.instagram.com/"}>
-              <img src={Instalogo} />
+              <img src={Instalogo} alt="Instagram logo"/>
             </Link>
             <Link to={"https://www.twitter.com/"}>
-              <img src={Twitterlogo} />
+              <img src={Twitterlogo} alt="Twitter logo"/>
             </Link>
             <Link to={"https://www.youtube.com/"}>
-              <img src={Youtubelogo} />
+              <img src={Youtubelogo} alt="Youtube logo"/>
             </Link>
           </IconsContainer>
           <Sheet>
             <Location>
-              <img src={Locationlogo} />
+              <img src={Locationlogo} alt="Location icon"/>
               <StyledParagraph>United States</StyledParagraph>
             </Location>
             <Sheet>

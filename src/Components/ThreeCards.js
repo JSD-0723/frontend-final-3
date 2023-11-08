@@ -36,7 +36,7 @@ function ThreeCards() {
             },
           }}>
           <CardCover sx={{ objectFit: "fill" }}>
-            <img src={Makeup} />
+            <img src={Makeup} alt="Makeup"/>
           </CardCover>
           <CardContent
             sx={{
@@ -106,7 +106,7 @@ function ThreeCards() {
         <Card sx={{ border: 0, flex: 1 }}>
           <StyledLink to={"/category?discount=15"}>
             <CardCover sx={{ objectFit: "cover" }}>
-              <img src={Skincare} />
+              <img src={Skincare} alt="Skincare"/>
             </CardCover>
             <CardContent sx={{ width: "50%", transform: "translate(90%)" }}>
               <Typography
@@ -126,7 +126,7 @@ function ThreeCards() {
                 Skincare Essentials
               </Typography>
               <CardActions sx={{ justifyContent: "flex-end" }}>
-                <img src={pinkArrow} />
+                <img src={pinkArrow} alt="arrow icon"/>
               </CardActions>
             </CardContent>
 
@@ -136,7 +136,7 @@ function ThreeCards() {
         <Card sx={{ border: 0, flex: 1 }}>
           <StyledLink to={"/category?rating=4.5&ratingType=above"}>
             <CardCover sx={{ objectFit: "cover" }}>
-              <img src={Facepack} />
+              <img src={Facepack} alt="Facepack"/>
             </CardCover>
             <CardContent
               sx={{
@@ -173,7 +173,7 @@ function ThreeCards() {
                 Facepacks & Peels
               </Typography>
               <CardActions sx={{ justifyContent: "flex-end" }}>
-                <img src={blueArrow} />
+                <img src={blueArrow} alt="arrow icon"/>
               </CardActions>
             </CardContent>
 
