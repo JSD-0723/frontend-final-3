@@ -5,22 +5,20 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 
 const SliderContainer = styled(Sheet)(({ theme }) => ({
-  width: "40vw",
-  background: "var(--bright)",
+  width: "100%",
+  
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
 }));
 
 const DisplyedPic = styled("img")(({ theme }) => ({
-  width: "500px",
-  height: "500px",
-  background: "var(--bright)",
+  width: '100%',
+  aspectRatio: '5/4',
   borderRadius: "16px",
 }));
 
 const ThumbnailStack = styled(Sheet)(({ theme }) => ({
-  background: "var(--bright)",
   marginTop: "20px",
   display: "flex",
   alignItems: "center",
@@ -28,8 +26,9 @@ const ThumbnailStack = styled(Sheet)(({ theme }) => ({
 }));
 
 const PreviewPic = styled("img")(({ theme }) => ({
-  width: "80px",
-  height: "80px",
+  maxWidth: "80px",
+  maxHeight: "80px",
+  aspectRatio: 1/1,
   borderRadius: "8px",
 }));
 
@@ -69,4 +68,3 @@ export const ImageSlider = ({ images }) => {
   );
 };
 
-// require(`${images[currentImageIndex]}`)

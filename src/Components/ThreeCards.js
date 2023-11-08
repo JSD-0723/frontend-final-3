@@ -15,6 +15,9 @@ import { styled } from "@mui/joy/styles";
 
 const StyledLink = styled(Link)(({ theme }) => ({
   textDecoration: "none",
+  boxSizing: 'border-box',
+  m: 0,
+  p: 0,
 }));
 function ThreeCards() {
   return (
@@ -100,8 +103,8 @@ function ThreeCards() {
             xl: 230,
           },
         }}>
-        <StyledLink to={"/category?discount=15"}>
-          <Card sx={{ border: 0, flex: 1 }}>
+        <Card sx={{ border: 0, flex: 1 }}>
+          <StyledLink to={"/category?discount=15"}>
             <CardCover sx={{ objectFit: "cover" }}>
               <img src={Skincare} />
             </CardCover>
@@ -126,10 +129,12 @@ function ThreeCards() {
                 <img src={pinkArrow} />
               </CardActions>
             </CardContent>
-          </Card>
-        </StyledLink>
-        <StyledLink to={"/category?rating=4.5&ratingType=above"}>
-          <Card sx={{ border: 0, flex: 1 }}>
+
+          </StyledLink>
+        </Card>
+
+        <Card sx={{ border: 0, flex: 1 }}>
+          <StyledLink to={"/category?rating=4.5&ratingType=above"}>
             <CardCover sx={{ objectFit: "cover" }}>
               <img src={Facepack} />
             </CardCover>
@@ -171,10 +176,12 @@ function ThreeCards() {
                 <img src={blueArrow} />
               </CardActions>
             </CardContent>
-          </Card>
-        </StyledLink>
+
+          </StyledLink>
+        </Card>
       </Box>
     </Box>
   );
 }
 export default ThreeCards;
+

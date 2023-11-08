@@ -21,7 +21,6 @@ const Carousel = () => {
 
   return (
     <>
-      <Link to={`/category?categoryName=handbags`}>
         <Box
           sx={{
             flexGrow: 1,
@@ -48,7 +47,7 @@ const Carousel = () => {
             {SlidesGenerator()}
           </AutoPlaySwipeableViews>
         </Box>
-      </Link>
+
     </>
   );
 };

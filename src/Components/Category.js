@@ -2,7 +2,7 @@ import React from "react";
 import base from "../Assets/base.svg";
 import { Box } from "@mui/system";
 import Breadcrumbs from "@mui/joy/Breadcrumbs";
-import Link from "@mui/joy/Link";
+import { Link } from "react-router-dom";
 import Typography from "@mui/joy/Typography";
 import { KeyboardArrowRight } from "@mui/icons-material";
 import Pagination from "./Pagination";
@@ -36,9 +36,9 @@ function Category({
         </Box>
       </Box>
 
-      <Breadcrumbs separator={<KeyboardArrowRight />} aria-label="breadcrumbs" sx={{ml: -1.2}}>
+      <Breadcrumbs separator={<KeyboardArrowRight />} aria-label="breadcrumbs" sx={{ml: -1.2,}}>     
         {["Home"].map((item) => (
-          <Link to="/" key={item} color="#1B4B66" sx={{ textDecoration: "none" }}>
+          <Link to="/" key={item} style={{ textDecoration: "none", color: '#1B4B66' }}>
             {item}
           </Link>
         ))}

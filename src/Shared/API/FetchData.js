@@ -39,3 +39,4 @@ export const loadProductDetails = (productId) => {
     .get(`${BACKUP_HOST}/products/${productId}`)
     .then((response) => response.data);
 };
+
