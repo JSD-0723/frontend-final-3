@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/frontend-final-4-new/static/css/main.d7098e43.css",
-    "main.js": "/frontend-final-4-new/static/js/main.749612f2.js",
+    "main.js": "/frontend-final-4-new/static/js/main.a5d96add.js",
     "static/js/787.f179fa9f.chunk.js": "/frontend-final-4-new/static/js/787.f179fa9f.chunk.js",
     "static/media/404.gif": "/frontend-final-4-new/static/media/404.c19654604d43a6962803.gif",
     "static/media/hero.svg": "/frontend-final-4-new/static/media/hero.850f426554ece6d97535db4668ae6943.svg",
@@ -20,11 +20,11 @@
     "static/media/blueArrow.svg": "/frontend-final-4-new/static/media/blueArrow.2c12f07fbe93ff410c3e273a1c062531.svg",
     "static/media/pinkArrow.svg": "/frontend-final-4-new/static/media/pinkArrow.6558ce4514b92802b04ec5a778f08b4a.svg",
     "main.d7098e43.css.map": "/frontend-final-4-new/static/css/main.d7098e43.css.map",
-    "main.749612f2.js.map": "/frontend-final-4-new/static/js/main.749612f2.js.map",
+    "main.a5d96add.js.map": "/frontend-final-4-new/static/js/main.a5d96add.js.map",
     "787.f179fa9f.chunk.js.map": "/frontend-final-4-new/static/js/787.f179fa9f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d7098e43.css",
-    "static/js/main.749612f2.js"
+    "static/js/main.a5d96add.js"
   ]
 }
