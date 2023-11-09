@@ -68,7 +68,9 @@ export const Detail = () => {
         separator={<KeyboardArrowRight />}
         aria-label="breadcrumbs"
         sx={{ mx: 2, mt: 2, width: "fit-content" }}>
-        <Link to="/" style={{ textDecoration: "none", color: "#1B4B66" }}>
+        <Link
+          to="/"
+          style={{ textDecoration: "none", color: "#1B4B66" }}>
           Home
         </Link>
         <Link

@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 
 const FooterContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
-  bottom:-10,
+  bottom: -10,
   justifyContent: "space-between",
   padding: "30px 50px",
   paddingBottom: "85px",
@@ -125,10 +125,8 @@ export const FooterContent = () => {
             <StyledParagraph>Shop by Category</StyledParagraph>
             {categories.map((item) => (
               <FilterLinks
-                to={`/category?categoryName=${item.name}`}
-                key={item.id}
-              >
-
+                to={`frontend-final-4-new/category?categoryName=${item.name}`}
+                key={item.id}>
                 {item.name}
               </FilterLinks>
             ))}
@@ -155,21 +153,21 @@ export const FooterContent = () => {
         <RightSide>
           <IconsContainer>
             <Link to={"https://www.facebook.com/"}>
-              <img src={Fblogo} alt="Facebook logo"/>
+              <img src={Fblogo} alt="Facebook logo" />
             </Link>
             <Link to={"https://www.instagram.com/"}>
-              <img src={Instalogo} alt="Instagram logo"/>
+              <img src={Instalogo} alt="Instagram logo" />
             </Link>
             <Link to={"https://www.twitter.com/"}>
-              <img src={Twitterlogo} alt="Twitter logo"/>
+              <img src={Twitterlogo} alt="Twitter logo" />
             </Link>
             <Link to={"https://www.youtube.com/"}>
-              <img src={Youtubelogo} alt="Youtube logo"/>
+              <img src={Youtubelogo} alt="Youtube logo" />
             </Link>
           </IconsContainer>
           <Sheet>
             <Location>
-              <img src={Locationlogo} alt="Location icon"/>
+              <img src={Locationlogo} alt="Location icon" />
               <StyledParagraph>United States</StyledParagraph>
             </Location>
             <Sheet>

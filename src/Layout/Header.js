@@ -11,7 +11,7 @@ import { styled } from "@mui/joy/styles";
 import { Link } from "react-router-dom";
 import { DrawerMobileNavigation } from "../Components/MobileNavigation";
 import { useNavigate } from "react-router-dom";
-import Badge from '@mui/material/Badge';
+import Badge from "@mui/material/Badge";
 
 const NavbarContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -99,21 +99,25 @@ export const Header = () => {
                 md: "none",
                 lg: "flex",
               },
-            }}
-          >
-            <NavbarLink to={"/category?categoryName=Handbags"}>
+            }}>
+            <NavbarLink
+              to={"/category?categoryName=Handbags"}>
               Handbags
             </NavbarLink>
-            <NavbarLink to={"/category?categoryName=Watches"}>
+            <NavbarLink
+              to={"/category?categoryName=Watches"}>
               Watches
             </NavbarLink>
-            <NavbarLink to={"/category?categoryName=Skincare"}>
+            <NavbarLink
+              to={"/category?categoryName=Skincare"}>
               Skincare
             </NavbarLink>
-            <NavbarLink to={"/category?categoryName=Jewellery"}>
+            <NavbarLink
+              to={"/category?categoryName=Jewellery"}>
               Jewellery
             </NavbarLink>
-            <NavbarLink to={"/category?categoryName=Apparels"}>
+            <NavbarLink
+              to={"/category?categoryName=Apparels"}>
               Apparels
             </NavbarLink>
           </NavbarLinksContainer>
@@ -125,7 +129,6 @@ export const Header = () => {
             value={searchValue}
           />
           <IconContainer>
-
             <FavoriteBorderOutlinedIcon
               sx={{
                 display: {
@@ -154,10 +157,9 @@ export const Header = () => {
                 <LocalMallOutlinedIcon />
               </Badge>
             </NavbarLink>
-            
           </IconContainer>
         </SideContainer>
-      </NavbarContainer >
+      </NavbarContainer>
       <Popover
         open={isUserMenuOpen}
         anchorEl={anchorEl}
@@ -169,8 +171,7 @@ export const Header = () => {
         transformOrigin={{
           vertical: "top",
           horizontal: "left",
-        }}
-      >
+        }}>
         <UserMenu />
       </Popover>
     </>
