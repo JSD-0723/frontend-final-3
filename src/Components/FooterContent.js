@@ -125,7 +125,7 @@ export const FooterContent = () => {
             <StyledParagraph>Shop by Category</StyledParagraph>
             {categories.map((item) => (
               <FilterLinks
-                to={`frontend-final-4-new/category?categoryName=${item.name}`}
+                to={`/category?categoryName=${item.name}`}
                 key={item.id}>
                 {item.name}
               </FilterLinks>

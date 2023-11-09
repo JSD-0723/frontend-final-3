@@ -63,23 +63,19 @@ export const DrawerMobileNavigation = () => {
             fontSize: "xl",
             "& > div": { justifyContent: "center" },
           }}>
-          <NavbarLink
-            to={"frontend-final-4-new/category?categoryName=handbags"}>
+          <NavbarLink to={"/category?categoryName=handbags"}>
             <ListItemButton>Handbags</ListItemButton>
           </NavbarLink>
-          <NavbarLink to={"frontend-final-4-new/category?categoryName=watches"}>
+          <NavbarLink to={"/category?categoryName=watches"}>
             <ListItemButton>Watches</ListItemButton>
           </NavbarLink>
-          <NavbarLink
-            to={"frontend-final-4-new/category?categoryName=skincare"}>
+          <NavbarLink to={"/category?categoryName=skincare"}>
             <ListItemButton>Skincare</ListItemButton>
           </NavbarLink>
-          <NavbarLink
-            to={"frontend-final-4-new/category?categoryName=jewellery"}>
+          <NavbarLink to={"/category?categoryName=jewellery"}>
             <ListItemButton>Jewellery</ListItemButton>
           </NavbarLink>
-          <NavbarLink
-            to={"frontend-final-4-new/category?categoryName=apparels"}>
+          <NavbarLink to={"/category?categoryName=apparels"}>
             <ListItemButton>Apparels</ListItemButton>
           </NavbarLink>
         </List>

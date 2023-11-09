@@ -11,7 +11,7 @@ const LinkedCard = styled(Link)(({ theme }) => ({
 
 const HandpickedCard = ({ product }) => {
   return (
-    <LinkedCard to={`frontend-final-4-new/detail/${product.id}`}>
+    <LinkedCard to={`/detail/${product.id}`}>
       <Card
         sx={{
           display: "flex",

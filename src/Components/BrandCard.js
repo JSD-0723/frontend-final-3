@@ -22,7 +22,7 @@ const StyleCard = styled(Card)(({ theme }) => ({
 const BrandCard = ({ brand }) => {
   return (
     <StyleCard>
-      <Link to={`frontend-final-4-new/category?brandName=${brand.name}`}>
+      <Link to={`/category?brandName=${brand.name}`}>
         <Image src={brand.imageUrl} alt={brand.name} />
       </Link>
     </StyleCard>

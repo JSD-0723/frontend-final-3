@@ -24,10 +24,7 @@ export const SlideShowComponent = ({ products }) => {
           New Arrivals
         </Typography>
 
-        <NavigateButton
-          to={"frontend-final-4-new/category?newArrivals=true"}
-          text={"View All"}
-        />
+        <NavigateButton to={"/category?newArrivals=true"} text={"View All"} />
       </ComponantNavigater>
       <Box
         sx={{

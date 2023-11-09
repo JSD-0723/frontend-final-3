@@ -22,7 +22,7 @@ const StyledLink = styled(Link)(({ theme }) => ({
 function ThreeCards() {
   return (
     <Box sx={{ mx: 3 }}>
-      <StyledLink to={"frontend-final-4-new/category?limited=true"}>
+      <StyledLink to={"/category?limited=true"}>
         <Card
           sx={{
             border: 0,
@@ -104,7 +104,7 @@ function ThreeCards() {
           },
         }}>
         <Card sx={{ border: 0, flex: 1 }}>
-          <StyledLink to={"frontend-final-4-new/category?discount=15"}>
+          <StyledLink to={"/category?discount=15"}>
             <CardCover sx={{ objectFit: "cover" }}>
               <img src={Skincare} alt="Skincare" />
             </CardCover>
@@ -133,8 +133,7 @@ function ThreeCards() {
         </Card>
 
         <Card sx={{ border: 0, flex: 1 }}>
-          <StyledLink
-            to={"frontend-final-4-new/category?rating=4.5&ratingType=above"}>
+          <StyledLink to={"/category?rating=4.5&ratingType=above"}>
             <CardCover sx={{ objectFit: "cover" }}>
               <img src={Facepack} alt="Facepack" />
             </CardCover>
