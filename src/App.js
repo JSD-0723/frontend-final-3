@@ -33,23 +33,14 @@ function App() {
   ];
   return (
     <SlidesContext.Provider value={slidesImages}>
-      <BrowserRouter basename="/">
+      <BrowserRouter basename="/frontend-final-4-new">
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
-            <Route
-              path="/detail/:productId"
-              element={<Detail />}
-            />
+            <Route path="/detail/:productId" element={<Detail />} />
             <Route path="/cart" element={<Cart />} />
-            <Route
-              path="/category"
-              element={<CategoryPage />}
-            />
-            <Route
-              path="/checkout"
-              element={<Checkout />}
-            />
+            <Route path="/category" element={<CategoryPage />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Route>
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
