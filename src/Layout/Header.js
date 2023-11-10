@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Popover from "@mui/material/Popover";
 import UserMenu from "../Components/UserMenu";
 import { Sheet } from "@mui/joy";
@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { DrawerMobileNavigation } from "../Components/MobileNavigation";
 import { useNavigate } from "react-router-dom";
 import Badge from "@mui/material/Badge";
+import CartMenu from "../Components/CartMenu";
 
 const NavbarContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -58,6 +59,7 @@ const IconContainer = styled(Sheet)(({ theme }) => ({
 export const Header = () => {
   const [searchValue, setSearchValue] = useState("");
   const [anchorEl, setAnchorEl] = useState(null);
+  const [cartAnchorEl, setCartAnchorEl] = useState(null);
   let navigate = useNavigate();
 
   const handleNavigation = (e) => {
@@ -83,6 +85,15 @@ export const Header = () => {
 
   const isUserMenuOpen = Boolean(anchorEl);
 
+  const handleCartMenuClick = (event) => {
+    setCartAnchorEl(event.currentTarget);
+  };
+
+  const handleCartMenuClose = () => {
+    setCartAnchorEl(null);
+  };
+
+  const isCartMenuOpen = Boolean(cartAnchorEl);
   return (
     <>
       <NavbarContainer>
@@ -99,25 +110,21 @@ export const Header = () => {
                 md: "none",
                 lg: "flex",
               },
-            }}>
-            <NavbarLink
-              to={"/category?categoryName=Handbags"}>
+            }}
+          >
+            <NavbarLink to={"/category?categoryName=Handbags"}>
               Handbags
             </NavbarLink>
-            <NavbarLink
-              to={"/category?categoryName=Watches"}>
+            <NavbarLink to={"/category?categoryName=Watches"}>
               Watches
             </NavbarLink>
-            <NavbarLink
-              to={"/category?categoryName=Skincare"}>
+            <NavbarLink to={"/category?categoryName=Skincare"}>
               Skincare
             </NavbarLink>
-            <NavbarLink
-              to={"/category?categoryName=Jewellery"}>
+            <NavbarLink to={"/category?categoryName=Jewellery"}>
               Jewellery
             </NavbarLink>
-            <NavbarLink
-              to={"/category?categoryName=Apparels"}>
+            <NavbarLink to={"/category?categoryName=Apparels"}>
               Apparels
             </NavbarLink>
           </NavbarLinksContainer>
@@ -152,11 +159,13 @@ export const Header = () => {
                 },
               }}
             />
-            <NavbarLink to={"/cart"}>
-              <Badge color="primary" variant="dot">
-                <LocalMallOutlinedIcon />
-              </Badge>
-            </NavbarLink>
+            <Badge
+              color="primary"
+              variant="dot"
+              onClick={handleCartMenuClick}
+            >
+              <LocalMallOutlinedIcon />
+            </Badge>
           </IconContainer>
         </SideContainer>
       </NavbarContainer>
@@ -171,8 +180,24 @@ export const Header = () => {
         transformOrigin={{
           vertical: "top",
           horizontal: "left",
-        }}>
+        }}
+      >
         <UserMenu />
+      </Popover>
+      <Popover
+        open={isCartMenuOpen}
+        anchorEl={cartAnchorEl}
+        onClose={handleCartMenuClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
+      >
+        <CartMenu setCartAnchorEl={setCartAnchorEl}/>
       </Popover>
     </>
   );
