@@ -67,7 +67,6 @@ export const CategoryPage = () => {
       .catch((error) => {
         console.log("Error in fetching data", error);
       });
-    console.log("this is queryparam:", queryParams);
   }, [
     newArrival,
     categoryName,
@@ -78,8 +77,6 @@ export const CategoryPage = () => {
     keyword,
     limited,
   ]);
-
-  console.log("this is searchParam:", searchParams);
 
   return (
     <Category
