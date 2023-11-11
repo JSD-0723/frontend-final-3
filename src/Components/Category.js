@@ -8,9 +8,8 @@ import { KeyboardArrowRight } from "@mui/icons-material";
 import Pagination from "./Pagination";
 import { Stack } from "@mui/material";
 import CategoryCard from "./CategoryCard";
-import CircularSpinner from "./CircularSpinner";
 import Grid from "@mui/joy/Grid";
-
+import ProductSkeleton from "./ProductSkeleton";
 function Category({
   loading,
   categoryTitle,
@@ -38,7 +37,6 @@ function Category({
           <img src={base} alt={base} />
         </Box>
       </Box>
-
       <Breadcrumbs
         separator={<KeyboardArrowRight />}
         aria-label="breadcrumbs"
@@ -53,13 +51,11 @@ function Category({
         ))}
         <Typography sx={{ color: "#626262" }}> {categoryTitle} </Typography>
       </Breadcrumbs>
-
       <Typography
         level="h2"
         sx={{ color: "#1B4B66", my: 2.8, fontWeight: 500 }}>
         {categoryTitle}
       </Typography>
-
       <Grid
         container
         sx={{
@@ -68,12 +64,11 @@ function Category({
           py: 5,
         }}>
         {loading ? (
-          <CircularSpinner />
+          <ProductSkeleton />
         ) : (
           <CategoryCard categoryProduct={categoryProduct} />
         )}
       </Grid>
-
       <Pagination
         onNext={onNext}
         totalPages={totalPages > 0 ? totalPages : Pagination.hideNextButton}
