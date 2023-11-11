@@ -12,16 +12,21 @@ const LinkedCard = styled(Link)(({ theme }) => ({
 const HandpickedCard = ({ product }) => {
   return (
     <LinkedCard to={`/detail/${product.id}`}>
-      <Card sx={{
-        display: "flex", justifyContent: 'space-evenly', alignItems: "center", borderRadius: 20, border: 0, aspectRatio: '1/1',
-        width: {
-          xs: 210,
-          sm: 230,
-          md: 250,
-          lg: 270,
-          xl: 290,
-        }
-      }}>
+      <Card
+        sx={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          borderRadius: 20,
+          border: 0,
+          aspectRatio: "1/1",
+          width: {
+            xs: 180,
+            sm: 230,
+            md: 250,
+            lg: 270,
+            xl: 290,
+          },
+        }}>
         <CardCover>
           <img src={product.imageUrl} alt={product.title} />
         </CardCover>
@@ -32,10 +37,8 @@ const HandpickedCard = ({ product }) => {
               "linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0) 100px), linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0) 150px)",
           }}
         />
-        <CardContent sx={{ justifyContent: "flex-end" }}>
-
+        <CardContent sx={{ justifyContent: "flex-end", }}>
           <Typography level="title-lg" textColor="#171520" fontSize="1.3rem">
-
             {product.title}
           </Typography>
         </CardContent>

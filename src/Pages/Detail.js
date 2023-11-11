@@ -30,6 +30,8 @@ export const Detail = () => {
   const productInfo = details.product;
   const productImage = productInfo?.imageUrl;
   const availableInStock = productInfo?.availableInStock;
+  const altImages = productInfo?.images;
+  console.log(altImages);
 
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const localStorageHandler = () => {
@@ -54,13 +56,6 @@ export const Detail = () => {
 
     localStorage.setItem("cart", JSON.stringify(cart));
   };
-
-  const images = [
-    productImage,
-    "/Assets/class.png",
-    "/Assets/chanel.png",
-    "/Assets/biba.png",
-  ];
 
   return (
     <>
@@ -103,7 +98,7 @@ export const Detail = () => {
               xl: 0,
             },
           }}>
-          <ImageSlider images={images} />
+          <ImageSlider altImages={altImages} />
         </Box>
         <Box
           sx={{

@@ -22,7 +22,8 @@ export const Brands = ({ brands }) => {
         columns={{ lg: 2, sm: 3 }}
         spacing={{ xs: 1, sm: 2, md: 3 }}
         sx={{
-          p: 3,
+          py: 3,
+          px:0,
           pb:6,
           justifyContent: 'space-evenly',
         }}

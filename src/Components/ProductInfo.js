@@ -16,7 +16,6 @@ export const ProductInfo = ({
   count,
   setCount,
   availableInStock,
-  cart,
 }) => {
   const productInfo = details.product;
   const isAddDisabled = count >= availableInStock;

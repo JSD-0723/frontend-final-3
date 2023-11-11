@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Popover from "@mui/material/Popover";
 import UserMenu from "../Components/UserMenu";
 import { Sheet } from "@mui/joy";
@@ -11,7 +11,8 @@ import { styled } from "@mui/joy/styles";
 import { Link } from "react-router-dom";
 import { DrawerMobileNavigation } from "../Components/MobileNavigation";
 import { useNavigate } from "react-router-dom";
-import Badge from '@mui/material/Badge';
+import Badge from "@mui/material/Badge";
+import CartMenu from "../Components/CartMenu";
 
 const NavbarContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
@@ -58,6 +59,7 @@ const IconContainer = styled(Sheet)(({ theme }) => ({
 export const Header = () => {
   const [searchValue, setSearchValue] = useState("");
   const [anchorEl, setAnchorEl] = useState(null);
+  const [cartAnchorEl, setCartAnchorEl] = useState(null);
   let navigate = useNavigate();
 
   const handleNavigation = (e) => {
@@ -83,6 +85,15 @@ export const Header = () => {
 
   const isUserMenuOpen = Boolean(anchorEl);
 
+  const handleCartMenuClick = (event) => {
+    setCartAnchorEl(event.currentTarget);
+  };
+
+  const handleCartMenuClose = () => {
+    setCartAnchorEl(null);
+  };
+
+  const isCartMenuOpen = Boolean(cartAnchorEl);
   return (
     <>
       <NavbarContainer>
@@ -125,7 +136,6 @@ export const Header = () => {
             value={searchValue}
           />
           <IconContainer>
-
             <FavoriteBorderOutlinedIcon
               sx={{
                 display: {
@@ -149,15 +159,16 @@ export const Header = () => {
                 },
               }}
             />
-            <NavbarLink to={"/cart"}>
-              <Badge color="primary" variant="dot">
-                <LocalMallOutlinedIcon />
-              </Badge>
-            </NavbarLink>
-            
+            <Badge
+              color="primary"
+              variant="dot"
+              onClick={handleCartMenuClick}
+            >
+              <LocalMallOutlinedIcon />
+            </Badge>
           </IconContainer>
         </SideContainer>
-      </NavbarContainer >
+      </NavbarContainer>
       <Popover
         open={isUserMenuOpen}
         anchorEl={anchorEl}
@@ -172,6 +183,21 @@ export const Header = () => {
         }}
       >
         <UserMenu />
+      </Popover>
+      <Popover
+        open={isCartMenuOpen}
+        anchorEl={cartAnchorEl}
+        onClose={handleCartMenuClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
+      >
+        <CartMenu setCartAnchorEl={setCartAnchorEl}/>
       </Popover>
     </>
   );
