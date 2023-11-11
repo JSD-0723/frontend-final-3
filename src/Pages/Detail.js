@@ -31,7 +31,6 @@ export const Detail = () => {
   const productImage = productInfo?.imageUrl;
   const availableInStock = productInfo?.availableInStock;
   const altImages = productInfo?.images;
-
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const localStorageHandler = () => {
     const findIdIndex = cart.findIndex(

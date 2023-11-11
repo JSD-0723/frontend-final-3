@@ -14,6 +14,9 @@ export default function UserMenu() {
       <ListItemButton component={Link} to="/signin">
         <ListItemText primary="Sign in" />
       </ListItemButton>
+      <ListItemButton component={Link} to="/signup">
+        <ListItemText primary="Sign up" />
+      </ListItemButton>
     </List>
   );
 }

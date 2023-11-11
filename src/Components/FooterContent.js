@@ -12,7 +12,6 @@ import { useEffect, useState } from "react";
 
 const FooterContainer = styled(Sheet)(({ theme }) => ({
   display: "flex",
-  bottom: -10,
   justifyContent: "space-between",
   padding: "30px 50px",
   paddingBottom: "85px",

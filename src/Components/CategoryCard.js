@@ -42,8 +42,9 @@ export default function CategoryCard({ categoryProduct }) {
                 sm: 235,
                 md: 270,
                 lg: 305,
-                xl: 340,
-              },
+                xl: 330,
+              }
+
             }}>
             <Image src={item.imageUrl} />
             <div>
