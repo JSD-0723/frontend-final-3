@@ -4,11 +4,9 @@ import CardContent from "@mui/joy/CardContent";
 import Typography from "@mui/joy/Typography";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/joy/styles";
-
 const LinkedCard = styled(Link)(({ theme }) => ({
   textDecoration: "none",
 }));
-
 const HandpickedCard = ({ product }) => {
   return (
     <LinkedCard to={`/detail/${product.id}`}>
@@ -46,5 +44,4 @@ const HandpickedCard = ({ product }) => {
     </LinkedCard>
   );
 };
-
 export default HandpickedCard;

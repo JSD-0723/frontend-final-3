@@ -137,5 +137,5 @@ const CartMenuItem = ({ item, counts, updateCount, removeProductHandler }) => {
     </>
   );
 };
-
 export default CartMenuItem;
+

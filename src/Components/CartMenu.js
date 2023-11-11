@@ -7,7 +7,7 @@ import OrderDetails from "./OrderDetails";
 import { Link, useNavigate } from "react-router-dom";
 import BackArrow from "./BackArrow";
 import CartMenuItem from "./CartMenuItem";
-
+import { OrderSummary } from "./OrderSummary";
 const Content = styled("div")({
   backgroundColor: `rgba(255, 255, 255, 1)`,
   borderRadius: `0px`,
@@ -22,11 +22,9 @@ const Content = styled("div")({
   height: "auto",
   width: "370px",
 });
-
 const CartMenu = ({ setCartAnchorEl }) => {
   const [cart, setCart] = useState([]);
   const [counts, setCounts] = useState({});
-
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(storedCart);
@@ -36,7 +34,6 @@ const CartMenu = ({ setCartAnchorEl }) => {
     });
     setCounts(initialCounts);
   }, []);
-
   const updateCount = (productId, newCount) => {
     const updatedCounts = {
       ...counts,
@@ -45,7 +42,6 @@ const CartMenu = ({ setCartAnchorEl }) => {
     setCounts(updatedCounts);
     updateLocalStorage(productId, updatedCounts);
   };
-
   const updateLocalStorage = (productId, updatedCounts) => {
     const updatedCart = cart.map((item) => ({
       ...item,
@@ -54,20 +50,16 @@ const CartMenu = ({ setCartAnchorEl }) => {
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
-
   const removeProductHandler = (productId) => {
     const updatedCart = cart.filter((item) => item.productId !== productId);
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
-
   const navigate = useNavigate();
-
   const handleButtonClick = () => {
     setCartAnchorEl(false);
     navigate("/cart");
   };
-
   return (
     <Content>
       <BackArrow setCartAnchorEl={setCartAnchorEl} />
@@ -80,15 +72,9 @@ const CartMenu = ({ setCartAnchorEl }) => {
           removeProductHandler={removeProductHandler}
         />
       ))}
-      <OrderDetails
-        textValueArray={[
-          { text: "Subtotal", value: "109.38" },
-          { text: "Tax", value: "2.00" },
-        ]}
-        totalText={"Total"}
-        totalValue={111.38}
-        totalFontWeight={"600"}
-      />
+      <Sheet sx={{ width: '100%'}}>
+      <OrderSummary showButtons={false} sx={{ width: '100%'}}/>
+      </Sheet>
       <Button
         sx={{
           backgroundColor: "#1B4B66",
@@ -97,7 +83,6 @@ const CartMenu = ({ setCartAnchorEl }) => {
           borderRadius: "8px",
           padding: "10px 40px",
           display: ["none", "flex", "flex"],
-          
           width: "98%",
           display: "flex",
           marginTop: "24px",
@@ -136,5 +121,4 @@ const CartMenu = ({ setCartAnchorEl }) => {
     </Content>
   );
 };
-
 export default CartMenu;

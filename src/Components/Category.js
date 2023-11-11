@@ -33,8 +33,7 @@ function Category({
             lg: 430,
             xl: 450,
           },
-        }}
-      >
+        }}>
         <Box className="container">
           <img src={base} alt={base} />
         </Box>
@@ -43,14 +42,12 @@ function Category({
       <Breadcrumbs
         separator={<KeyboardArrowRight />}
         aria-label="breadcrumbs"
-        sx={{ m:0, p:0 }}
-      >
+        sx={{ m: 0, p: 0 }}>
         {["Home"].map((item) => (
           <Link
             to="/"
             key={item}
-            style={{ textDecoration: "none", color: "#1B4B66" }}
-          >
+            style={{ textDecoration: "none", color: "#1B4B66" }}>
             {item}
           </Link>
         ))}
@@ -59,8 +56,7 @@ function Category({
 
       <Typography
         level="h2"
-        sx={{ color: "#1B4B66", my: 2.8, fontWeight: 500 }}
-      >
+        sx={{ color: "#1B4B66", my: 2.8, fontWeight: 500 }}>
         {categoryTitle}
       </Typography>
 
@@ -70,8 +66,7 @@ function Category({
           gap: 5,
           width: 1 / 1,
           py: 5,
-        }}
-      >
+        }}>
         {loading ? (
           <CircularSpinner />
         ) : (

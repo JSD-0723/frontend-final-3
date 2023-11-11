@@ -34,4 +34,6 @@ const BackArrow = ({ setCartAnchorEl }) => {
   );
 };
 
+
 export default BackArrow;
+

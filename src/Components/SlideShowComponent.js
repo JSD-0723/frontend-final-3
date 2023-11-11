@@ -4,7 +4,7 @@ import { Sheet } from "@mui/joy";
 import { ProductCard } from "./ProductCard";
 import { styled } from "@mui/joy/styles";
 import { NavigateButton } from "./NavigateButton";
-import Typography from '@mui/joy/Typography';
+import Typography from "@mui/joy/Typography";
 
 const ComponantNavigater = styled(Sheet)(({ theme }) => ({
   display: "flex",
