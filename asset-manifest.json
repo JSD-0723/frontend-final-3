@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend-final-4-new/static/css/main.d7098e43.css",
-    "main.js": "/frontend-final-4-new/static/js/main.6794412b.js",
+    "main.css": "/frontend-final-4-new/static/css/main.c23edd57.css",
+    "main.js": "/frontend-final-4-new/static/js/main.bb60c56e.js",
     "static/js/787.f179fa9f.chunk.js": "/frontend-final-4-new/static/js/787.f179fa9f.chunk.js",
     "static/media/404.gif": "/frontend-final-4-new/static/media/404.c19654604d43a6962803.gif",
     "static/media/hero.svg": "/frontend-final-4-new/static/media/hero.850f426554ece6d97535db4668ae6943.svg",
@@ -9,6 +9,7 @@
     "static/media/spring.svg": "/frontend-final-4-new/static/media/spring.1df6516ea717759617838b91bbf764b6.svg",
     "static/media/Makeup.svg": "/frontend-final-4-new/static/media/Makeup.8358992acea0fb40b83b5b4604cf9a18.svg",
     "static/media/Facepack.svg": "/frontend-final-4-new/static/media/Facepack.5ce5fc7f1b7110d4665b565969dc802d.svg",
+    "static/media/back.jpeg": "/frontend-final-4-new/static/media/back.62e000c4186ad409f609.jpeg",
     "static/media/base.svg": "/frontend-final-4-new/static/media/base.9c11780a5505534c7efdddc142523033.svg",
     "static/media/user.png": "/frontend-final-4-new/static/media/user.f93109ccaf6090e65a5f.png",
     "static/media/insta logo.svg": "/frontend-final-4-new/static/media/insta logo.b8884121da01e742b0ec1a767eb53821.svg",
@@ -19,12 +20,12 @@
     "index.html": "/frontend-final-4-new/index.html",
     "static/media/blueArrow.svg": "/frontend-final-4-new/static/media/blueArrow.2c12f07fbe93ff410c3e273a1c062531.svg",
     "static/media/pinkArrow.svg": "/frontend-final-4-new/static/media/pinkArrow.6558ce4514b92802b04ec5a778f08b4a.svg",
-    "main.d7098e43.css.map": "/frontend-final-4-new/static/css/main.d7098e43.css.map",
-    "main.6794412b.js.map": "/frontend-final-4-new/static/js/main.6794412b.js.map",
+    "main.c23edd57.css.map": "/frontend-final-4-new/static/css/main.c23edd57.css.map",
+    "main.bb60c56e.js.map": "/frontend-final-4-new/static/js/main.bb60c56e.js.map",
     "787.f179fa9f.chunk.js.map": "/frontend-final-4-new/static/js/787.f179fa9f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d7098e43.css",
-    "static/js/main.6794412b.js"
+    "static/css/main.c23edd57.css",
+    "static/js/main.bb60c56e.js"
   ]
 }
