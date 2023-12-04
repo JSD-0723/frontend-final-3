@@ -1,9 +1,10 @@
 {
-  "homepage":"https://jsd-0723.github.io/frontend-final-4-new",
+  "homepage": "https://jsd-0723.github.io/frontend-final-4-new",
   "name": "frontend-final-4-new",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.23.5",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.11",

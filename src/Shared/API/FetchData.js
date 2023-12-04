@@ -2,7 +2,7 @@ import axios from "axios";
 
 // const BACKEND_HOST = "https://final-project-rk77.onrender.com/";
 
-const BACKUP_HOST = "https://e-commerce.cleverapps.io/api";
+const BACKUP_HOST = "https://back-up.onrender.com/api";
 
 export const loadNewArrivals = () => {
   return axios
@@ -39,4 +39,3 @@ export const loadProductDetails = (productId) => {
     .get(`${BACKUP_HOST}/products/${productId}`)
     .then((response) => response.data);
 };
-
